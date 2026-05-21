@@ -6,6 +6,7 @@
     "todo": 126,
     "blocked": 0,
     "completion_rate": 0,
+    "operator_rows": 63,
     "by_priority": {
       "P0": 96,
       "P1": 26,
@@ -16,8 +17,8 @@
       "omni_models": 34,
       "ms_custom_ops": 14
     },
-    "generated_at": "2026-05-21T17:45:58.952727+08:00",
-    "source": "migration-analysis-v0.3.md Appendix E"
+    "generated_at": "2026-05-21T19:00:23.674753+08:00",
+    "source": "migration-analysis-v0.3.md Appendix E + Section 5.3"
   },
   "items": [
     {
@@ -31,6 +32,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -46,6 +49,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -61,6 +66,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -76,6 +83,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -91,6 +100,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -106,6 +117,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -121,6 +134,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -136,6 +151,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -151,6 +168,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -166,6 +185,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -181,6 +202,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -196,6 +219,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -211,6 +236,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -226,6 +253,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -241,6 +270,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -256,6 +287,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -271,6 +304,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -286,6 +321,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -301,6 +338,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -316,6 +355,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -331,6 +372,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -346,6 +389,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -361,6 +406,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -376,6 +423,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -391,6 +440,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -406,6 +457,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -421,6 +474,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -436,6 +491,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -451,6 +508,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -466,6 +525,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -481,6 +542,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -496,6 +559,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -511,6 +576,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -526,6 +593,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -541,6 +610,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -556,6 +627,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -571,6 +644,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -586,6 +661,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -601,6 +678,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -616,6 +695,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -631,6 +712,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -646,6 +729,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -661,6 +746,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -676,6 +763,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -691,6 +780,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -706,6 +797,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -721,6 +814,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -736,6 +831,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -751,6 +848,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -766,6 +865,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -781,6 +882,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -796,6 +899,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -811,6 +916,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -826,6 +933,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -841,6 +950,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -856,6 +967,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -871,6 +984,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -886,6 +1001,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -901,6 +1018,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -916,6 +1035,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -931,6 +1052,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -946,6 +1069,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -961,6 +1086,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -976,6 +1103,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -991,6 +1120,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1006,6 +1137,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1021,6 +1154,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1036,6 +1171,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1051,6 +1188,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1066,6 +1205,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1081,6 +1222,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1096,6 +1239,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1111,6 +1256,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1126,6 +1273,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1141,6 +1290,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1156,6 +1307,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1171,6 +1324,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1186,6 +1341,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1201,6 +1358,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1216,6 +1375,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1231,6 +1392,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1246,6 +1409,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1261,6 +1426,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1276,6 +1443,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1291,6 +1460,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1306,6 +1477,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1321,6 +1494,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1336,6 +1511,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1351,6 +1528,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1366,6 +1545,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1381,6 +1562,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1396,6 +1579,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1411,6 +1596,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1426,6 +1613,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1441,6 +1630,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1456,6 +1647,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1471,6 +1664,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1486,6 +1681,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1501,6 +1698,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1516,6 +1715,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1531,6 +1732,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1546,6 +1749,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1561,6 +1766,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1576,6 +1783,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1591,6 +1800,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1606,6 +1817,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1621,6 +1834,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1636,6 +1851,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1651,6 +1868,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1666,6 +1885,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1681,6 +1902,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1696,6 +1919,8 @@
       "status": "todo",
       "rows": "",
       "item_count": 1,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1711,6 +1936,249 @@
       "status": "todo",
       "rows": "13, 21, 22, 27, 38, 39, 40, 41, 42, 43, 48, 56, 57, 58, 59, 60, 71",
       "item_count": 17,
+      "children": [
+        {
+          "row": 13,
+          "api": "torch.ops.custom._npu_fused_infer_attention_sin...",
+          "parent_ids": [
+            "4.1"
+          ],
+          "coverage": "4.1",
+          "reference": "相邻：test_npu_fused_infer_attention_score_v2.py sink case",
+          "handling": "omni-ops fused/sink 内部变体，归 attention sink golden",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 21,
+          "api": "torch.ops.custom.npu_fused_infer_attention_sink",
+          "parent_ids": [
+            "4.1"
+          ],
+          "coverage": "4.1",
+          "reference": "相邻：test_npu_fused_infer_attention_score_v2.py sink case",
+          "handling": "以 fused_infer_attention_score 或组合 attention 改写，sink 语义需 golden",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 22,
+          "api": "torch.ops.custom.npu_fused_infer_attention_sink...",
+          "parent_ids": [
+            "4.1"
+          ],
+          "coverage": "4.1",
+          "reference": "相邻：test_npu_fused_infer_attention_score_v2.py sink case",
+          "handling": "out 变体改写为普通返回值",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 27,
+          "api": "torch.ops.npu.npu_fused_infer_attention_score",
+          "parent_ids": [
+            "4.1"
+          ],
+          "coverage": "4.1",
+          "reference": "可参考：test_npu_fused_infer_attention_score*.py",
+          "handling": "mindspore.ops.fused_infer_attention_score / speed_fusion_attention，参数和 layout 需核对",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 38,
+          "api": "torch_npu._npu_attention_pioneer",
+          "parent_ids": [
+            "4.1"
+          ],
+          "coverage": "4.1",
+          "reference": "未找到",
+          "handling": "pioneer 路径，需 prefill/decode golden",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 39,
+          "api": "torch_npu._npu_attention_pioneer.out",
+          "parent_ids": [
+            "4.1"
+          ],
+          "coverage": "4.1",
+          "reference": "未找到",
+          "handling": "out 变体改写为普通返回值",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 40,
+          "api": "torch_npu._npu_attention_pioneer_get_max_workspace",
+          "parent_ids": [
+            "4.1"
+          ],
+          "coverage": "4.1",
+          "reference": "未找到",
+          "handling": "workspace 查询接口，按运行时需求确认是否实现或 xfail",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 41,
+          "api": "torch_npu._npu_fused_infer_attention_score_get_...",
+          "parent_ids": [
+            "4.1"
+          ],
+          "coverage": "4.1",
+          "reference": "可参考：test_npu_fused_infer_attention_score*_with_workspace.py",
+          "handling": "fused attention workspace/辅助接口，归 fused_infer_attention_score 看护",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 42,
+          "api": "torch_npu._npu_fused_infer_attention_score_v2_g...",
+          "parent_ids": [
+            "4.1"
+          ],
+          "coverage": "4.1",
+          "reference": "可参考：test_npu_fused_infer_attention_score_v2_with_workspace.py",
+          "handling": "v2 fused attention 辅助接口，归 fused_infer_attention_score 看护",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 43,
+          "api": "torch_npu._npu_fused_infer_attention_score_v2_i...",
+          "parent_ids": [
+            "4.1"
+          ],
+          "coverage": "4.1",
+          "reference": "可参考：test_npu_fused_infer_attention_score_v2.py",
+          "handling": "v2 fused attention 辅助接口，归 fused_infer_attention_score 看护",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 48,
+          "api": "torch_npu.npu_attention_update",
+          "parent_ids": [
+            "4.1",
+            "4.2"
+          ],
+          "coverage": "4.1, 4.2",
+          "reference": "可参考：test_npu_attention_update.py",
+          "handling": "归 attention/KV update 联合看护",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 56,
+          "api": "torch_npu.npu_fused_infer_attention_score",
+          "parent_ids": [
+            "4.1"
+          ],
+          "coverage": "4.1",
+          "reference": "可参考：test_npu_fused_infer_attention_score*.py",
+          "handling": "mindspore.ops.fused_infer_attention_score / speed_fusion_attention",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 57,
+          "api": "torch_npu.npu_fused_infer_attention_score.out",
+          "parent_ids": [
+            "4.1"
+          ],
+          "coverage": "4.1",
+          "reference": "可参考：test_npu_fused_infer_attention_score*.py",
+          "handling": "out 变体改写为普通返回值",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 58,
+          "api": "torch_npu.npu_fused_infer_attention_score_v2",
+          "parent_ids": [
+            "4.1"
+          ],
+          "coverage": "4.1",
+          "reference": "可参考：test_npu_fused_infer_attention_score_v2*.py",
+          "handling": "v2 参数和 layout 需核对",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 59,
+          "api": "torch_npu.npu_fused_infer_attention_score_v2.out",
+          "parent_ids": [
+            "4.1"
+          ],
+          "coverage": "4.1",
+          "reference": "可参考：test_npu_fused_infer_attention_score_v2*.py",
+          "handling": "out/v2 变体改写为普通返回值",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 60,
+          "api": "torch_npu.npu_fusion_attention",
+          "parent_ids": [
+            "4.1"
+          ],
+          "coverage": "4.1",
+          "reference": "相邻：test_npu_flash_attention*.py、test_prompt_flash_attention.py",
+          "handling": "mindspore.ops.flash_attention_score，参数和 layout 有差异",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 71,
+          "api": "torch_npu.npu_mla_prolog_v3",
+          "parent_ids": [
+            "4.1",
+            "4.4"
+          ],
+          "coverage": "4.1, 4.4",
+          "reference": "可参考：test_mla_prolog_v3.py、test_atb_mla_*",
+          "handling": "mindspore.ops.mla / mla_preprocess 候选，需 MLA golden",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        }
+      ],
+      "child_count": 17,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1726,6 +2194,66 @@
       "status": "todo",
       "rows": "19, 48, 93, 94",
       "item_count": 4,
+      "children": [
+        {
+          "row": 19,
+          "api": "torch.ops.custom.npu_ai_infra_scatter_block_upd...",
+          "parent_ids": [
+            "4.2"
+          ],
+          "coverage": "4.2",
+          "reference": "未找到",
+          "handling": "scatter block update ai_infra 变体，需 cache 写入 golden",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 48,
+          "api": "torch_npu.npu_attention_update",
+          "parent_ids": [
+            "4.1",
+            "4.2"
+          ],
+          "coverage": "4.1, 4.2",
+          "reference": "可参考：test_npu_attention_update.py",
+          "handling": "归 attention/KV update 联合看护",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 93,
+          "api": "torch_npu.npu_scatter_nd_update_",
+          "parent_ids": [
+            "4.2"
+          ],
+          "coverage": "4.2",
+          "reference": "可参考：test_npu_scatter_nd_update.py",
+          "handling": "mindspore.ops.scatter_nd_update，需处理 inplace 语义",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 94,
+          "api": "torch_npu.npu_scatter_pa_kv_cache",
+          "parent_ids": [
+            "4.2"
+          ],
+          "coverage": "4.2",
+          "reference": "可参考：test_scatter_pa_kv_cache.py",
+          "handling": "mindspore.ops.kv_cache_scatter_update",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        }
+      ],
+      "child_count": 4,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1741,6 +2269,37 @@
       "status": "todo",
       "rows": "17, 66",
       "item_count": 2,
+      "children": [
+        {
+          "row": 17,
+          "api": "torch.ops.custom.npu_ai_infra_kv_rmsnorm_rope_c...",
+          "parent_ids": [
+            "4.3"
+          ],
+          "coverage": "4.3",
+          "reference": "相邻：test_npu_kv_rms_norm_rope_cache.py",
+          "handling": "KV RMSNorm + RoPE cache ai_infra 变体，需单独 golden",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 66,
+          "api": "torch_npu.npu_kv_rmsnorm_rope_cache",
+          "parent_ids": [
+            "4.3"
+          ],
+          "coverage": "4.3",
+          "reference": "可参考：test_npu_kv_rms_norm_rope_cache.py",
+          "handling": "RMSNorm + RoPE + cache 写入组合验证",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        }
+      ],
+      "child_count": 2,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1756,6 +2315,110 @@
       "status": "todo",
       "rows": "16, 20, 23, 26, 44, 67, 71",
       "item_count": 7,
+      "children": [
+        {
+          "row": 16,
+          "api": "torch.ops.custom.npu_ai_infra_kv_quant_sparse_f...",
+          "parent_ids": [
+            "4.4",
+            "4.9"
+          ],
+          "coverage": "4.4, 4.9",
+          "reference": "可参考：test_npu_kv_quant_sparse_flash_attention.py",
+          "handling": "KV quant sparse flash attention，参考 sparse_flash_attention，量化参数需确认",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 20,
+          "api": "torch.ops.custom.npu_ai_infra_sparse_flash_atte...",
+          "parent_ids": [
+            "4.4"
+          ],
+          "coverage": "4.4",
+          "reference": "可参考：test_npu_sparse_flash_attention.py",
+          "handling": "sparse flash attention ai_infra 变体，参数需人工核对",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 23,
+          "api": "torch.ops.custom.npu_lightning_indexer_enhance",
+          "parent_ids": [
+            "4.4"
+          ],
+          "coverage": "4.4",
+          "reference": "相邻：test_npu_lightning_indexer.py",
+          "handling": "参考 mindspore.ops.lightning_indexer，enhance 语义需单独确认",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 26,
+          "api": "torch.ops.custom.npu_sparse_flash_attention_enh...",
+          "parent_ids": [
+            "4.4"
+          ],
+          "coverage": "4.4",
+          "reference": "可参考：test_npu_sparse_flash_attention.py",
+          "handling": "参考 mindspore.ops.sparse_flash_attention，需 Pangu sparse metadata golden",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 44,
+          "api": "torch_npu._npu_kv_quant_sparse_flash_attention_...",
+          "parent_ids": [
+            "4.4",
+            "4.9"
+          ],
+          "coverage": "4.4, 4.9",
+          "reference": "可参考：test_npu_kv_quant_sparse_flash_attention.py",
+          "handling": "sparse + quant 组合，首发 bf16 外能力默认 xfail",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 67,
+          "api": "torch_npu.npu_lightning_indexer",
+          "parent_ids": [
+            "4.4"
+          ],
+          "coverage": "4.4",
+          "reference": "可参考：test_npu_lightning_indexer.py",
+          "handling": "mindspore.ops.lightning_indexer",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 71,
+          "api": "torch_npu.npu_mla_prolog_v3",
+          "parent_ids": [
+            "4.1",
+            "4.4"
+          ],
+          "coverage": "4.1, 4.4",
+          "reference": "可参考：test_mla_prolog_v3.py、test_atb_mla_*",
+          "handling": "mindspore.ops.mla / mla_preprocess 候选，需 MLA golden",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        }
+      ],
+      "child_count": 7,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1771,6 +2434,107 @@
       "status": "todo",
       "rows": "45, 46, 65, 87, 91, 92, 95",
       "item_count": 7,
+      "children": [
+        {
+          "row": 45,
+          "api": "torch_npu.npu_add_rms_norm",
+          "parent_ids": [
+            "4.5"
+          ],
+          "coverage": "4.5",
+          "reference": "可参考：test_npu_add_rms_norm*.py",
+          "handling": "mindspore.ops.add_rms_norm",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 46,
+          "api": "torch_npu.npu_apply_rotary_pos_emb",
+          "parent_ids": [
+            "4.5"
+          ],
+          "coverage": "4.5",
+          "reference": "可参考：test_npu_apply_rotary_pos_emb.py、test_atb_rope.py",
+          "handling": "mindspore.ops.rotary_position_embedding，参数语义需人工核对",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 65,
+          "api": "torch_npu.npu_interleave_rope",
+          "parent_ids": [
+            "4.5"
+          ],
+          "coverage": "4.5",
+          "reference": "相邻：test_npu_rotary_mul.py、test_atb_rope.py",
+          "handling": "mindspore.ops.rotary_position_embedding，参数不同",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 87,
+          "api": "torch_npu.npu_mrope",
+          "parent_ids": [
+            "4.5"
+          ],
+          "coverage": "4.5",
+          "reference": "可参考：test_mrope.py",
+          "handling": "mindspore.ops.rotary_position_embedding，多模态 RoPE 语义需人工改写",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 91,
+          "api": "torch_npu.npu_rms_norm",
+          "parent_ids": [
+            "4.5"
+          ],
+          "coverage": "4.5",
+          "reference": "可参考：test_npu_rms_norm.py、test_npu_rms_norm_backward.py",
+          "handling": "mindspore.ops.rms_norm",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 92,
+          "api": "torch_npu.npu_rotary_mul",
+          "parent_ids": [
+            "4.5"
+          ],
+          "coverage": "4.5",
+          "reference": "可参考：test_npu_rotary_mul.py、test_npu_rotary_mul_backward.py",
+          "handling": "mindspore.ops.rotary_position_embedding，参数和布局需核对",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 95,
+          "api": "torch_npu.npu_swiglu",
+          "parent_ids": [
+            "4.5"
+          ],
+          "coverage": "4.5",
+          "reference": "可参考：test_npu_swi_glu.py、test_npu_swi_glu_backward.py",
+          "handling": "mindspore.ops.swiglu",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        }
+      ],
+      "child_count": 7,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1786,6 +2550,121 @@
       "status": "todo",
       "rows": "61, 63, 72, 76, 78, 80, 82, 84",
       "item_count": 8,
+      "children": [
+        {
+          "row": 61,
+          "api": "torch_npu.npu_grouped_matmul",
+          "parent_ids": [
+            "4.6"
+          ],
+          "coverage": "4.6",
+          "reference": "可参考：test_npu_grouped_matmul.py",
+          "handling": "mindspore.ops.grouped_matmul，参数不同，需 Pangu expert golden",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 63,
+          "api": "torch_npu.npu_grouped_matmul_finalize_routing",
+          "parent_ids": [
+            "4.6"
+          ],
+          "coverage": "4.6",
+          "reference": "可参考：test_npu_grouped_matmul_finalize_routing.py",
+          "handling": "无单一对等接口，拆分 grouped matmul + finalize 验证",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 72,
+          "api": "torch_npu.npu_moe_compute_expert_tokens",
+          "parent_ids": [
+            "4.6"
+          ],
+          "coverage": "4.6",
+          "reference": "可参考：test_npu_moe_compute_tokens.py",
+          "handling": "mindspore.ops.moe_compute_expert_tokens，参数不同",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 76,
+          "api": "torch_npu.npu_moe_finalize_routing",
+          "parent_ids": [
+            "4.6"
+          ],
+          "coverage": "4.6",
+          "reference": "可参考：test_npu_moe_finalize_routing_v2.py",
+          "handling": "mindspore.ops.moe_finalize_routing，参数不同",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 78,
+          "api": "torch_npu.npu_moe_gating_top_k",
+          "parent_ids": [
+            "4.6"
+          ],
+          "coverage": "4.6",
+          "reference": "可参考：test_npu_moe_gating_topk.py",
+          "handling": "mindspore.ops.topkrouter，包含 softmax/top-k 语义，参数不同",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 80,
+          "api": "torch_npu.npu_moe_gating_top_k_softmax",
+          "parent_ids": [
+            "4.6"
+          ],
+          "coverage": "4.6",
+          "reference": "可参考：test_npu_moe_gating_top_k_softmax.py",
+          "handling": "mindspore.ops.moe_gating_top_k_softmax，参数不同",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 82,
+          "api": "torch_npu.npu_moe_init_routing",
+          "parent_ids": [
+            "4.6"
+          ],
+          "coverage": "4.6",
+          "reference": "可参考：test_npu_moe_init_routing.py、test_npu_moe_init_routing_v2.py",
+          "handling": "mindspore.ops.moe_init_routing_v2，参数不同",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 84,
+          "api": "torch_npu.npu_moe_init_routing_v2",
+          "parent_ids": [
+            "4.6"
+          ],
+          "coverage": "4.6",
+          "reference": "可参考：test_npu_moe_init_routing_v2.py",
+          "handling": "mindspore.ops.moe_init_routing_v2，参数不同",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        }
+      ],
+      "child_count": 8,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1801,6 +2680,37 @@
       "status": "todo",
       "rows": "74, 75",
       "item_count": 2,
+      "children": [
+        {
+          "row": 74,
+          "api": "torch_npu.npu_moe_distribute_combine_v2",
+          "parent_ids": [
+            "4.7"
+          ],
+          "coverage": "4.7",
+          "reference": "可参考：test_moe_distribute_combine_v2.py、test_moe_distribute_combineA2.py",
+          "handling": "mindspore.ops.moe_distribute_combine，v2 参数需确认",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 75,
+          "api": "torch_npu.npu_moe_distribute_dispatch_v2",
+          "parent_ids": [
+            "4.7"
+          ],
+          "coverage": "4.7",
+          "reference": "可参考：test_moe_distribute_dispatch_v2.py、test_moe_distribute_dispatchA2.py",
+          "handling": "mindspore.ops.moe_distribute_dispatch，v2 参数需确认",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        }
+      ],
+      "child_count": 2,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1816,6 +2726,23 @@
       "status": "todo",
       "rows": "85",
       "item_count": 1,
+      "children": [
+        {
+          "row": 85,
+          "api": "torch_npu.npu_moe_re_routing",
+          "parent_ids": [
+            "4.8"
+          ],
+          "coverage": "4.8",
+          "reference": "只有 fake/meta 或相邻 token permute/unpermute 测试",
+          "handling": "无单一对等接口，按 routing 流程拆分或 xfail",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        }
+      ],
+      "child_count": 1,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1831,6 +2758,156 @@
       "status": "todo",
       "rows": "16, 44, 49, 52, 68, 69, 70, 89, 90, 98",
       "item_count": 10,
+      "children": [
+        {
+          "row": 16,
+          "api": "torch.ops.custom.npu_ai_infra_kv_quant_sparse_f...",
+          "parent_ids": [
+            "4.4",
+            "4.9"
+          ],
+          "coverage": "4.4, 4.9",
+          "reference": "可参考：test_npu_kv_quant_sparse_flash_attention.py",
+          "handling": "KV quant sparse flash attention，参考 sparse_flash_attention，量化参数需确认",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 44,
+          "api": "torch_npu._npu_kv_quant_sparse_flash_attention_...",
+          "parent_ids": [
+            "4.4",
+            "4.9"
+          ],
+          "coverage": "4.4, 4.9",
+          "reference": "可参考：test_npu_kv_quant_sparse_flash_attention.py",
+          "handling": "sparse + quant 组合，首发 bf16 外能力默认 xfail",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 49,
+          "api": "torch_npu.npu_dequant_swiglu_quant",
+          "parent_ids": [
+            "4.9"
+          ],
+          "coverage": "4.9",
+          "reference": "可参考：test_npu_dequant_swiglu_quant.py",
+          "handling": "mindspore.ops.dequant_swiglu_quant，量化扩展默认 P2",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 52,
+          "api": "torch_npu.npu_dynamic_quant",
+          "parent_ids": [
+            "4.9"
+          ],
+          "coverage": "4.9",
+          "reference": "可参考：test_npu_dynamic_quant*.py",
+          "handling": "mindspore.ops.dynamic_quant_ext，参数不同，默认 P2",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 68,
+          "api": "torch_npu.npu_mhc_post",
+          "parent_ids": [
+            "4.9",
+            "4.14"
+          ],
+          "coverage": "4.9, 4.14",
+          "reference": "未找到",
+          "handling": "MHC 首发外，默认 unsupported/xfail",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 69,
+          "api": "torch_npu.npu_mhc_pre",
+          "parent_ids": [
+            "4.9",
+            "4.14"
+          ],
+          "coverage": "4.9, 4.14",
+          "reference": "未找到",
+          "handling": "MHC 首发外，默认 unsupported/xfail",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 70,
+          "api": "torch_npu.npu_mhc_sinkhorn",
+          "parent_ids": [
+            "4.9",
+            "4.14"
+          ],
+          "coverage": "4.9, 4.14",
+          "reference": "未找到",
+          "handling": "MHC 首发外，默认 unsupported/xfail",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 89,
+          "api": "torch_npu.npu_quant_lightning_indexer",
+          "parent_ids": [
+            "4.9",
+            "4.14"
+          ],
+          "coverage": "4.9, 4.14",
+          "reference": "可参考：test_npu_quant_lightning_indexer.py",
+          "handling": "quant + lightning，首发 bf16 外能力默认 xfail",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 90,
+          "api": "torch_npu.npu_quant_matmul",
+          "parent_ids": [
+            "4.9"
+          ],
+          "coverage": "4.9",
+          "reference": "可参考：test_npu_quant_matmul.py、test_npu_quant_matmul_reduce_sum.py",
+          "handling": "mindspore.ops.quant_matmul，量化 matmul 参数不同",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 98,
+          "api": "torch_npu.torch.ops.custom.npu_ai_infra_quant_l...",
+          "parent_ids": [
+            "4.9",
+            "4.14"
+          ],
+          "coverage": "4.9, 4.14",
+          "reference": "相邻：quant/lightning 相关测试",
+          "handling": "omni-ops-master 量化相关条目，默认首发外",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        }
+      ],
+      "child_count": 10,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1846,6 +2923,8 @@
       "status": "todo",
       "rows": "非 5.3 算子行；见 `torch.ops.vllm.*` Python reference",
       "item_count": 0,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1861,6 +2940,23 @@
       "status": "todo",
       "rows": "97",
       "item_count": 1,
+      "children": [
+        {
+          "row": 97,
+          "api": "torch_npu.npu_transpose_batchmatmul",
+          "parent_ids": [
+            "4.11"
+          ],
+          "coverage": "4.11",
+          "reference": "可参考：test_npu_transpose_batchmatmul.py",
+          "handling": "mindspore.ops.matmul + transpose 拆分组合",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        }
+      ],
+      "child_count": 1,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1876,6 +2972,8 @@
       "status": "todo",
       "rows": "非 5.3 算子行；覆盖 HCCL/all_gatherv/reduce_scatterv/all_to_all 等通信原语",
       "item_count": 0,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1891,6 +2989,8 @@
       "status": "todo",
       "rows": "非 5.3 算子行；来自模型 forward 插桩组合路径",
       "item_count": 0,
+      "children": [],
+      "child_count": 0,
       "evidence": [],
       "owner": "",
       "notes": ""
@@ -1906,8 +3006,1091 @@
       "status": "todo",
       "rows": "14, 15, 18, 24, 25, 55, 68, 69, 70, 88, 89, 96, 98",
       "item_count": 13,
+      "children": [
+        {
+          "row": 14,
+          "api": "torch.ops.custom.npu_aggregate_hidden",
+          "parent_ids": [
+            "4.14"
+          ],
+          "coverage": "4.14",
+          "reference": "未找到",
+          "handling": "MOME/AggregateConv 相关能力，首发外或需确认",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 15,
+          "api": "torch.ops.custom.npu_ai_infra_fused_causal_conv1d",
+          "parent_ids": [
+            "4.14"
+          ],
+          "coverage": "4.14",
+          "reference": "未找到",
+          "handling": "causal conv1d 首发外或无对等接口，进入 unsupported/xfail 清单",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 18,
+          "api": "torch.ops.custom.npu_ai_infra_manifold_constrai...",
+          "parent_ids": [
+            "4.14"
+          ],
+          "coverage": "4.14",
+          "reference": "未找到",
+          "handling": "manifold 相关首发外能力，进入 unsupported/xfail 清单",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 24,
+          "api": "torch.ops.custom.npu_manifold_constrained_hyper...",
+          "parent_ids": [
+            "4.14"
+          ],
+          "coverage": "4.14",
+          "reference": "未找到",
+          "handling": "首发外或无对等接口，进入 unsupported/xfail 清单",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 25,
+          "api": "torch.ops.custom.npu_sinkhorn",
+          "parent_ids": [
+            "4.14"
+          ],
+          "coverage": "4.14",
+          "reference": "未找到",
+          "handling": "首发外或无对等接口，进入 unsupported/xfail 清单",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 55,
+          "api": "torch_npu.npu_fused_causal_conv1d",
+          "parent_ids": [
+            "4.14"
+          ],
+          "coverage": "4.14",
+          "reference": "未找到",
+          "handling": "首发外或无对等接口，进入 unsupported/xfail 清单",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 68,
+          "api": "torch_npu.npu_mhc_post",
+          "parent_ids": [
+            "4.9",
+            "4.14"
+          ],
+          "coverage": "4.9, 4.14",
+          "reference": "未找到",
+          "handling": "MHC 首发外，默认 unsupported/xfail",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 69,
+          "api": "torch_npu.npu_mhc_pre",
+          "parent_ids": [
+            "4.9",
+            "4.14"
+          ],
+          "coverage": "4.9, 4.14",
+          "reference": "未找到",
+          "handling": "MHC 首发外，默认 unsupported/xfail",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 70,
+          "api": "torch_npu.npu_mhc_sinkhorn",
+          "parent_ids": [
+            "4.9",
+            "4.14"
+          ],
+          "coverage": "4.9, 4.14",
+          "reference": "未找到",
+          "handling": "MHC 首发外，默认 unsupported/xfail",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 88,
+          "api": "torch_npu.npu_prefetch",
+          "parent_ids": [
+            "4.14"
+          ],
+          "coverage": "4.14",
+          "reference": "未找到",
+          "handling": "预取能力，首发是否需要需确认；默认 unsupported/xfail",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 89,
+          "api": "torch_npu.npu_quant_lightning_indexer",
+          "parent_ids": [
+            "4.9",
+            "4.14"
+          ],
+          "coverage": "4.9, 4.14",
+          "reference": "可参考：test_npu_quant_lightning_indexer.py",
+          "handling": "quant + lightning，首发 bf16 外能力默认 xfail",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 96,
+          "api": "torch_npu.npu_top_k_top_p_sample",
+          "parent_ids": [
+            "4.14"
+          ],
+          "coverage": "4.14",
+          "reference": "可参考：test_top_k_top_p_sample.py、test_npu_top_k_top_p.py",
+          "handling": "sampler 类能力，首发是否纳入 MS 侧需确认",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        },
+        {
+          "row": 98,
+          "api": "torch_npu.torch.ops.custom.npu_ai_infra_quant_l...",
+          "parent_ids": [
+            "4.9",
+            "4.14"
+          ],
+          "coverage": "4.9, 4.14",
+          "reference": "相邻：quant/lightning 相关测试",
+          "handling": "omni-ops-master 量化相关条目，默认首发外",
+          "status": "todo",
+          "owner": "",
+          "evidence": [],
+          "notes": ""
+        }
+      ],
+      "child_count": 13,
       "evidence": [],
       "owner": "",
+      "notes": ""
+    }
+  ],
+  "operator_rows": [
+    {
+      "row": 13,
+      "api": "torch.ops.custom._npu_fused_infer_attention_sin...",
+      "parent_ids": [
+        "4.1"
+      ],
+      "coverage": "4.1",
+      "reference": "相邻：test_npu_fused_infer_attention_score_v2.py sink case",
+      "handling": "omni-ops fused/sink 内部变体，归 attention sink golden",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 14,
+      "api": "torch.ops.custom.npu_aggregate_hidden",
+      "parent_ids": [
+        "4.14"
+      ],
+      "coverage": "4.14",
+      "reference": "未找到",
+      "handling": "MOME/AggregateConv 相关能力，首发外或需确认",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 15,
+      "api": "torch.ops.custom.npu_ai_infra_fused_causal_conv1d",
+      "parent_ids": [
+        "4.14"
+      ],
+      "coverage": "4.14",
+      "reference": "未找到",
+      "handling": "causal conv1d 首发外或无对等接口，进入 unsupported/xfail 清单",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 16,
+      "api": "torch.ops.custom.npu_ai_infra_kv_quant_sparse_f...",
+      "parent_ids": [
+        "4.4",
+        "4.9"
+      ],
+      "coverage": "4.4, 4.9",
+      "reference": "可参考：test_npu_kv_quant_sparse_flash_attention.py",
+      "handling": "KV quant sparse flash attention，参考 sparse_flash_attention，量化参数需确认",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 17,
+      "api": "torch.ops.custom.npu_ai_infra_kv_rmsnorm_rope_c...",
+      "parent_ids": [
+        "4.3"
+      ],
+      "coverage": "4.3",
+      "reference": "相邻：test_npu_kv_rms_norm_rope_cache.py",
+      "handling": "KV RMSNorm + RoPE cache ai_infra 变体，需单独 golden",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 18,
+      "api": "torch.ops.custom.npu_ai_infra_manifold_constrai...",
+      "parent_ids": [
+        "4.14"
+      ],
+      "coverage": "4.14",
+      "reference": "未找到",
+      "handling": "manifold 相关首发外能力，进入 unsupported/xfail 清单",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 19,
+      "api": "torch.ops.custom.npu_ai_infra_scatter_block_upd...",
+      "parent_ids": [
+        "4.2"
+      ],
+      "coverage": "4.2",
+      "reference": "未找到",
+      "handling": "scatter block update ai_infra 变体，需 cache 写入 golden",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 20,
+      "api": "torch.ops.custom.npu_ai_infra_sparse_flash_atte...",
+      "parent_ids": [
+        "4.4"
+      ],
+      "coverage": "4.4",
+      "reference": "可参考：test_npu_sparse_flash_attention.py",
+      "handling": "sparse flash attention ai_infra 变体，参数需人工核对",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 21,
+      "api": "torch.ops.custom.npu_fused_infer_attention_sink",
+      "parent_ids": [
+        "4.1"
+      ],
+      "coverage": "4.1",
+      "reference": "相邻：test_npu_fused_infer_attention_score_v2.py sink case",
+      "handling": "以 fused_infer_attention_score 或组合 attention 改写，sink 语义需 golden",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 22,
+      "api": "torch.ops.custom.npu_fused_infer_attention_sink...",
+      "parent_ids": [
+        "4.1"
+      ],
+      "coverage": "4.1",
+      "reference": "相邻：test_npu_fused_infer_attention_score_v2.py sink case",
+      "handling": "out 变体改写为普通返回值",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 23,
+      "api": "torch.ops.custom.npu_lightning_indexer_enhance",
+      "parent_ids": [
+        "4.4"
+      ],
+      "coverage": "4.4",
+      "reference": "相邻：test_npu_lightning_indexer.py",
+      "handling": "参考 mindspore.ops.lightning_indexer，enhance 语义需单独确认",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 24,
+      "api": "torch.ops.custom.npu_manifold_constrained_hyper...",
+      "parent_ids": [
+        "4.14"
+      ],
+      "coverage": "4.14",
+      "reference": "未找到",
+      "handling": "首发外或无对等接口，进入 unsupported/xfail 清单",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 25,
+      "api": "torch.ops.custom.npu_sinkhorn",
+      "parent_ids": [
+        "4.14"
+      ],
+      "coverage": "4.14",
+      "reference": "未找到",
+      "handling": "首发外或无对等接口，进入 unsupported/xfail 清单",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 26,
+      "api": "torch.ops.custom.npu_sparse_flash_attention_enh...",
+      "parent_ids": [
+        "4.4"
+      ],
+      "coverage": "4.4",
+      "reference": "可参考：test_npu_sparse_flash_attention.py",
+      "handling": "参考 mindspore.ops.sparse_flash_attention，需 Pangu sparse metadata golden",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 27,
+      "api": "torch.ops.npu.npu_fused_infer_attention_score",
+      "parent_ids": [
+        "4.1"
+      ],
+      "coverage": "4.1",
+      "reference": "可参考：test_npu_fused_infer_attention_score*.py",
+      "handling": "mindspore.ops.fused_infer_attention_score / speed_fusion_attention，参数和 layout 需核对",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 38,
+      "api": "torch_npu._npu_attention_pioneer",
+      "parent_ids": [
+        "4.1"
+      ],
+      "coverage": "4.1",
+      "reference": "未找到",
+      "handling": "pioneer 路径，需 prefill/decode golden",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 39,
+      "api": "torch_npu._npu_attention_pioneer.out",
+      "parent_ids": [
+        "4.1"
+      ],
+      "coverage": "4.1",
+      "reference": "未找到",
+      "handling": "out 变体改写为普通返回值",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 40,
+      "api": "torch_npu._npu_attention_pioneer_get_max_workspace",
+      "parent_ids": [
+        "4.1"
+      ],
+      "coverage": "4.1",
+      "reference": "未找到",
+      "handling": "workspace 查询接口，按运行时需求确认是否实现或 xfail",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 41,
+      "api": "torch_npu._npu_fused_infer_attention_score_get_...",
+      "parent_ids": [
+        "4.1"
+      ],
+      "coverage": "4.1",
+      "reference": "可参考：test_npu_fused_infer_attention_score*_with_workspace.py",
+      "handling": "fused attention workspace/辅助接口，归 fused_infer_attention_score 看护",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 42,
+      "api": "torch_npu._npu_fused_infer_attention_score_v2_g...",
+      "parent_ids": [
+        "4.1"
+      ],
+      "coverage": "4.1",
+      "reference": "可参考：test_npu_fused_infer_attention_score_v2_with_workspace.py",
+      "handling": "v2 fused attention 辅助接口，归 fused_infer_attention_score 看护",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 43,
+      "api": "torch_npu._npu_fused_infer_attention_score_v2_i...",
+      "parent_ids": [
+        "4.1"
+      ],
+      "coverage": "4.1",
+      "reference": "可参考：test_npu_fused_infer_attention_score_v2.py",
+      "handling": "v2 fused attention 辅助接口，归 fused_infer_attention_score 看护",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 44,
+      "api": "torch_npu._npu_kv_quant_sparse_flash_attention_...",
+      "parent_ids": [
+        "4.4",
+        "4.9"
+      ],
+      "coverage": "4.4, 4.9",
+      "reference": "可参考：test_npu_kv_quant_sparse_flash_attention.py",
+      "handling": "sparse + quant 组合，首发 bf16 外能力默认 xfail",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 45,
+      "api": "torch_npu.npu_add_rms_norm",
+      "parent_ids": [
+        "4.5"
+      ],
+      "coverage": "4.5",
+      "reference": "可参考：test_npu_add_rms_norm*.py",
+      "handling": "mindspore.ops.add_rms_norm",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 46,
+      "api": "torch_npu.npu_apply_rotary_pos_emb",
+      "parent_ids": [
+        "4.5"
+      ],
+      "coverage": "4.5",
+      "reference": "可参考：test_npu_apply_rotary_pos_emb.py、test_atb_rope.py",
+      "handling": "mindspore.ops.rotary_position_embedding，参数语义需人工核对",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 48,
+      "api": "torch_npu.npu_attention_update",
+      "parent_ids": [
+        "4.1",
+        "4.2"
+      ],
+      "coverage": "4.1, 4.2",
+      "reference": "可参考：test_npu_attention_update.py",
+      "handling": "归 attention/KV update 联合看护",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 49,
+      "api": "torch_npu.npu_dequant_swiglu_quant",
+      "parent_ids": [
+        "4.9"
+      ],
+      "coverage": "4.9",
+      "reference": "可参考：test_npu_dequant_swiglu_quant.py",
+      "handling": "mindspore.ops.dequant_swiglu_quant，量化扩展默认 P2",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 52,
+      "api": "torch_npu.npu_dynamic_quant",
+      "parent_ids": [
+        "4.9"
+      ],
+      "coverage": "4.9",
+      "reference": "可参考：test_npu_dynamic_quant*.py",
+      "handling": "mindspore.ops.dynamic_quant_ext，参数不同，默认 P2",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 55,
+      "api": "torch_npu.npu_fused_causal_conv1d",
+      "parent_ids": [
+        "4.14"
+      ],
+      "coverage": "4.14",
+      "reference": "未找到",
+      "handling": "首发外或无对等接口，进入 unsupported/xfail 清单",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 56,
+      "api": "torch_npu.npu_fused_infer_attention_score",
+      "parent_ids": [
+        "4.1"
+      ],
+      "coverage": "4.1",
+      "reference": "可参考：test_npu_fused_infer_attention_score*.py",
+      "handling": "mindspore.ops.fused_infer_attention_score / speed_fusion_attention",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 57,
+      "api": "torch_npu.npu_fused_infer_attention_score.out",
+      "parent_ids": [
+        "4.1"
+      ],
+      "coverage": "4.1",
+      "reference": "可参考：test_npu_fused_infer_attention_score*.py",
+      "handling": "out 变体改写为普通返回值",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 58,
+      "api": "torch_npu.npu_fused_infer_attention_score_v2",
+      "parent_ids": [
+        "4.1"
+      ],
+      "coverage": "4.1",
+      "reference": "可参考：test_npu_fused_infer_attention_score_v2*.py",
+      "handling": "v2 参数和 layout 需核对",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 59,
+      "api": "torch_npu.npu_fused_infer_attention_score_v2.out",
+      "parent_ids": [
+        "4.1"
+      ],
+      "coverage": "4.1",
+      "reference": "可参考：test_npu_fused_infer_attention_score_v2*.py",
+      "handling": "out/v2 变体改写为普通返回值",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 60,
+      "api": "torch_npu.npu_fusion_attention",
+      "parent_ids": [
+        "4.1"
+      ],
+      "coverage": "4.1",
+      "reference": "相邻：test_npu_flash_attention*.py、test_prompt_flash_attention.py",
+      "handling": "mindspore.ops.flash_attention_score，参数和 layout 有差异",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 61,
+      "api": "torch_npu.npu_grouped_matmul",
+      "parent_ids": [
+        "4.6"
+      ],
+      "coverage": "4.6",
+      "reference": "可参考：test_npu_grouped_matmul.py",
+      "handling": "mindspore.ops.grouped_matmul，参数不同，需 Pangu expert golden",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 63,
+      "api": "torch_npu.npu_grouped_matmul_finalize_routing",
+      "parent_ids": [
+        "4.6"
+      ],
+      "coverage": "4.6",
+      "reference": "可参考：test_npu_grouped_matmul_finalize_routing.py",
+      "handling": "无单一对等接口，拆分 grouped matmul + finalize 验证",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 65,
+      "api": "torch_npu.npu_interleave_rope",
+      "parent_ids": [
+        "4.5"
+      ],
+      "coverage": "4.5",
+      "reference": "相邻：test_npu_rotary_mul.py、test_atb_rope.py",
+      "handling": "mindspore.ops.rotary_position_embedding，参数不同",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 66,
+      "api": "torch_npu.npu_kv_rmsnorm_rope_cache",
+      "parent_ids": [
+        "4.3"
+      ],
+      "coverage": "4.3",
+      "reference": "可参考：test_npu_kv_rms_norm_rope_cache.py",
+      "handling": "RMSNorm + RoPE + cache 写入组合验证",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 67,
+      "api": "torch_npu.npu_lightning_indexer",
+      "parent_ids": [
+        "4.4"
+      ],
+      "coverage": "4.4",
+      "reference": "可参考：test_npu_lightning_indexer.py",
+      "handling": "mindspore.ops.lightning_indexer",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 68,
+      "api": "torch_npu.npu_mhc_post",
+      "parent_ids": [
+        "4.9",
+        "4.14"
+      ],
+      "coverage": "4.9, 4.14",
+      "reference": "未找到",
+      "handling": "MHC 首发外，默认 unsupported/xfail",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 69,
+      "api": "torch_npu.npu_mhc_pre",
+      "parent_ids": [
+        "4.9",
+        "4.14"
+      ],
+      "coverage": "4.9, 4.14",
+      "reference": "未找到",
+      "handling": "MHC 首发外，默认 unsupported/xfail",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 70,
+      "api": "torch_npu.npu_mhc_sinkhorn",
+      "parent_ids": [
+        "4.9",
+        "4.14"
+      ],
+      "coverage": "4.9, 4.14",
+      "reference": "未找到",
+      "handling": "MHC 首发外，默认 unsupported/xfail",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 71,
+      "api": "torch_npu.npu_mla_prolog_v3",
+      "parent_ids": [
+        "4.1",
+        "4.4"
+      ],
+      "coverage": "4.1, 4.4",
+      "reference": "可参考：test_mla_prolog_v3.py、test_atb_mla_*",
+      "handling": "mindspore.ops.mla / mla_preprocess 候选，需 MLA golden",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 72,
+      "api": "torch_npu.npu_moe_compute_expert_tokens",
+      "parent_ids": [
+        "4.6"
+      ],
+      "coverage": "4.6",
+      "reference": "可参考：test_npu_moe_compute_tokens.py",
+      "handling": "mindspore.ops.moe_compute_expert_tokens，参数不同",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 74,
+      "api": "torch_npu.npu_moe_distribute_combine_v2",
+      "parent_ids": [
+        "4.7"
+      ],
+      "coverage": "4.7",
+      "reference": "可参考：test_moe_distribute_combine_v2.py、test_moe_distribute_combineA2.py",
+      "handling": "mindspore.ops.moe_distribute_combine，v2 参数需确认",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 75,
+      "api": "torch_npu.npu_moe_distribute_dispatch_v2",
+      "parent_ids": [
+        "4.7"
+      ],
+      "coverage": "4.7",
+      "reference": "可参考：test_moe_distribute_dispatch_v2.py、test_moe_distribute_dispatchA2.py",
+      "handling": "mindspore.ops.moe_distribute_dispatch，v2 参数需确认",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 76,
+      "api": "torch_npu.npu_moe_finalize_routing",
+      "parent_ids": [
+        "4.6"
+      ],
+      "coverage": "4.6",
+      "reference": "可参考：test_npu_moe_finalize_routing_v2.py",
+      "handling": "mindspore.ops.moe_finalize_routing，参数不同",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 78,
+      "api": "torch_npu.npu_moe_gating_top_k",
+      "parent_ids": [
+        "4.6"
+      ],
+      "coverage": "4.6",
+      "reference": "可参考：test_npu_moe_gating_topk.py",
+      "handling": "mindspore.ops.topkrouter，包含 softmax/top-k 语义，参数不同",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 80,
+      "api": "torch_npu.npu_moe_gating_top_k_softmax",
+      "parent_ids": [
+        "4.6"
+      ],
+      "coverage": "4.6",
+      "reference": "可参考：test_npu_moe_gating_top_k_softmax.py",
+      "handling": "mindspore.ops.moe_gating_top_k_softmax，参数不同",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 82,
+      "api": "torch_npu.npu_moe_init_routing",
+      "parent_ids": [
+        "4.6"
+      ],
+      "coverage": "4.6",
+      "reference": "可参考：test_npu_moe_init_routing.py、test_npu_moe_init_routing_v2.py",
+      "handling": "mindspore.ops.moe_init_routing_v2，参数不同",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 84,
+      "api": "torch_npu.npu_moe_init_routing_v2",
+      "parent_ids": [
+        "4.6"
+      ],
+      "coverage": "4.6",
+      "reference": "可参考：test_npu_moe_init_routing_v2.py",
+      "handling": "mindspore.ops.moe_init_routing_v2，参数不同",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 85,
+      "api": "torch_npu.npu_moe_re_routing",
+      "parent_ids": [
+        "4.8"
+      ],
+      "coverage": "4.8",
+      "reference": "只有 fake/meta 或相邻 token permute/unpermute 测试",
+      "handling": "无单一对等接口，按 routing 流程拆分或 xfail",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 87,
+      "api": "torch_npu.npu_mrope",
+      "parent_ids": [
+        "4.5"
+      ],
+      "coverage": "4.5",
+      "reference": "可参考：test_mrope.py",
+      "handling": "mindspore.ops.rotary_position_embedding，多模态 RoPE 语义需人工改写",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 88,
+      "api": "torch_npu.npu_prefetch",
+      "parent_ids": [
+        "4.14"
+      ],
+      "coverage": "4.14",
+      "reference": "未找到",
+      "handling": "预取能力，首发是否需要需确认；默认 unsupported/xfail",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 89,
+      "api": "torch_npu.npu_quant_lightning_indexer",
+      "parent_ids": [
+        "4.9",
+        "4.14"
+      ],
+      "coverage": "4.9, 4.14",
+      "reference": "可参考：test_npu_quant_lightning_indexer.py",
+      "handling": "quant + lightning，首发 bf16 外能力默认 xfail",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 90,
+      "api": "torch_npu.npu_quant_matmul",
+      "parent_ids": [
+        "4.9"
+      ],
+      "coverage": "4.9",
+      "reference": "可参考：test_npu_quant_matmul.py、test_npu_quant_matmul_reduce_sum.py",
+      "handling": "mindspore.ops.quant_matmul，量化 matmul 参数不同",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 91,
+      "api": "torch_npu.npu_rms_norm",
+      "parent_ids": [
+        "4.5"
+      ],
+      "coverage": "4.5",
+      "reference": "可参考：test_npu_rms_norm.py、test_npu_rms_norm_backward.py",
+      "handling": "mindspore.ops.rms_norm",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 92,
+      "api": "torch_npu.npu_rotary_mul",
+      "parent_ids": [
+        "4.5"
+      ],
+      "coverage": "4.5",
+      "reference": "可参考：test_npu_rotary_mul.py、test_npu_rotary_mul_backward.py",
+      "handling": "mindspore.ops.rotary_position_embedding，参数和布局需核对",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 93,
+      "api": "torch_npu.npu_scatter_nd_update_",
+      "parent_ids": [
+        "4.2"
+      ],
+      "coverage": "4.2",
+      "reference": "可参考：test_npu_scatter_nd_update.py",
+      "handling": "mindspore.ops.scatter_nd_update，需处理 inplace 语义",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 94,
+      "api": "torch_npu.npu_scatter_pa_kv_cache",
+      "parent_ids": [
+        "4.2"
+      ],
+      "coverage": "4.2",
+      "reference": "可参考：test_scatter_pa_kv_cache.py",
+      "handling": "mindspore.ops.kv_cache_scatter_update",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 95,
+      "api": "torch_npu.npu_swiglu",
+      "parent_ids": [
+        "4.5"
+      ],
+      "coverage": "4.5",
+      "reference": "可参考：test_npu_swi_glu.py、test_npu_swi_glu_backward.py",
+      "handling": "mindspore.ops.swiglu",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 96,
+      "api": "torch_npu.npu_top_k_top_p_sample",
+      "parent_ids": [
+        "4.14"
+      ],
+      "coverage": "4.14",
+      "reference": "可参考：test_top_k_top_p_sample.py、test_npu_top_k_top_p.py",
+      "handling": "sampler 类能力，首发是否纳入 MS 侧需确认",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 97,
+      "api": "torch_npu.npu_transpose_batchmatmul",
+      "parent_ids": [
+        "4.11"
+      ],
+      "coverage": "4.11",
+      "reference": "可参考：test_npu_transpose_batchmatmul.py",
+      "handling": "mindspore.ops.matmul + transpose 拆分组合",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "row": 98,
+      "api": "torch_npu.torch.ops.custom.npu_ai_infra_quant_l...",
+      "parent_ids": [
+        "4.9",
+        "4.14"
+      ],
+      "coverage": "4.9, 4.14",
+      "reference": "相邻：quant/lightning 相关测试",
+      "handling": "omni-ops-master 量化相关条目，默认首发外",
+      "status": "todo",
+      "owner": "",
+      "evidence": [],
       "notes": ""
     }
   ],

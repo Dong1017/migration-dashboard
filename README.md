@@ -1,6 +1,6 @@
 # Migration Dashboard
 
-跟踪 `migration-analysis-v0.3.md` 中 PanguV2 torch_npu -> MindSpore 迁移 checkbox 的静态看板。
+跟踪 `migration-analysis-v0.3.md` 中 PanguV2 torch_npu -> MindSpore 迁移 checkbox 的静态看板。`ms_custom_ops` 算子部分采用两级结构：`4.x` 父 checkbox 卡片 + 5.3 Row 子算子明细。
 
 ## 结构
 

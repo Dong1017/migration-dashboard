@@ -10,6 +10,8 @@ from pathlib import Path
 
 CHECKBOX_RE = re.compile(r"^\| \[ \] `([^`]+)` \| (P\d) \| (.*?) \|(?: (.*?) \| (\d+) \|)?$", re.M)
 SECTION_RE = re.compile(r"^### E\.(\d+) (.+)$")
+OP_ROW_RE = re.compile(r"^\| (\d+) \| `([^`]+)` \| (.*?) \| (.*?) \| (.*?) \|$")
+CHECKBOX_ID_RE = re.compile(r"`(4\.\d+)`")
 
 
 def classify(item_id: str, title: str) -> tuple[str, str, str]:
@@ -45,7 +47,48 @@ def classify(item_id: str, title: str) -> tuple[str, str, str]:
     return repo, lane, group
 
 
+def strip_md(text: str) -> str:
+    return text.replace("`", "").replace("。", "").strip()
+
+
+def parse_operator_rows(markdown: str) -> list[dict]:
+    rows = []
+    in_ops_table = False
+    for line in markdown.splitlines():
+        if line.startswith("### 5.3 "):
+            in_ops_table = True
+            continue
+        if in_ops_table and line.startswith("### 5.4 "):
+            break
+        if not in_ops_table:
+            continue
+        match = OP_ROW_RE.match(line)
+        if not match:
+            continue
+        row, api, coverage, reference, handling = match.groups()
+        parents = CHECKBOX_ID_RE.findall(coverage)
+        rows.append({
+            "row": int(row),
+            "api": api,
+            "parent_ids": parents,
+            "coverage": ", ".join(parents),
+            "reference": strip_md(reference),
+            "handling": strip_md(handling),
+            "status": "todo",
+            "owner": "",
+            "evidence": [],
+            "notes": "",
+        })
+    return rows
+
+
 def build_data(markdown: str) -> dict:
+    operator_rows = parse_operator_rows(markdown)
+    children_by_parent: dict[str, list[dict]] = {}
+    for row in operator_rows:
+        for parent_id in row["parent_ids"]:
+            children_by_parent.setdefault(parent_id, []).append(row)
+
     items = []
     section = ""
     for line in markdown.splitlines():
@@ -58,6 +101,7 @@ def build_data(markdown: str) -> dict:
             continue
         item_id, priority, title, rows, count = match.groups()
         repo, lane, group = classify(item_id, title)
+        children = sorted(children_by_parent.get(item_id, []), key=lambda child: child["row"])
         items.append({
             "id": item_id,
             "priority": priority,
@@ -69,6 +113,8 @@ def build_data(markdown: str) -> dict:
             "status": "todo",
             "rows": rows or "",
             "item_count": int(count) if count else 1,
+            "children": children,
+            "child_count": len(children),
             "evidence": [],
             "owner": "",
             "notes": "",
@@ -83,12 +129,13 @@ def build_data(markdown: str) -> dict:
         "todo": len(items),
         "blocked": 0,
         "completion_rate": 0,
+        "operator_rows": len(operator_rows),
         "by_priority": dict(by_priority),
         "by_repo": dict(by_repo),
         "generated_at": dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).isoformat(),
-        "source": "migration-analysis-v0.3.md Appendix E",
+        "source": "migration-analysis-v0.3.md Appendix E + Section 5.3",
     }
-    return {"metrics": metrics, "items": items, "history": {"daily": []}}
+    return {"metrics": metrics, "items": items, "operator_rows": operator_rows, "history": {"daily": []}}
 
 
 def main() -> None:
@@ -100,8 +147,10 @@ def main() -> None:
     source = Path(args.source)
     output = Path(args.output)
     data = build_data(source.read_text(encoding="utf-8"))
-    output.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"wrote {len(data['items'])} items to {output}")
+    with output.open("w", encoding="utf-8", newline="\n") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    print(f"wrote {len(data['items'])} items and {len(data['operator_rows'])} operator rows to {output}")
 
 
 if __name__ == "__main__":
