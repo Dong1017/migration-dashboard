@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PanguV2 Migration Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <style>
+    :root { --bg:#f3efe6; --card:#fffef9; --line:#d5ccbb; --text:#1d2120; --muted:#626a68; --accent:#005f73; --good:#2a9d8f; --warn:#ca6702; --bad:#bb3e03; }
+    body { color:var(--text); background:radial-gradient(circle at 5% 5%, #e4f2ef 0%, var(--bg) 38%, #f7f4eb 100%); }
+    .panel { background:var(--card); border:1px solid var(--line); border-radius:18px; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+    .pill { border-radius:999px; padding:2px 10px; font-size:12px; font-weight:700; }
+    .slide-enter-active,.slide-leave-active{transition:transform .2s ease}.slide-enter-from,.slide-leave-to{transform:translateX(100%)}
+    .fade-enter-active,.fade-leave-active{transition:opacity .2s}.fade-enter-from,.fade-leave-to{opacity:0}
+  </style>
+</head>
+<body>
+<div id="app" class="min-h-screen px-4 py-6 md:px-8">
+  <main class="mx-auto max-w-7xl space-y-5">
+    <header class="panel p-6">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <h1 class="text-2xl font-bold md:text-3xl">PanguV2 Migration Acceptance Dashboard</h1>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">基于 <span class="mono">migration-analysis-v0.3.md</span> 附录 E 的 126 个 checkbox，跟踪 torch_npu → MindSpore 迁移验收。</p>
+          <p class="mt-1 text-xs text-[color:var(--muted)]">仓库视角：vllm + omni_npu / omni_models / ms_custom_ops</p>
+        </div>
+        <div class="text-right text-sm text-[color:var(--muted)]">
+          <div>Generated: {{ fmtTime(metrics.generated_at) }}</div>
+          <div>Source: {{ metrics.source || '-' }}</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="grid grid-cols-1 gap-4 md:grid-cols-5">
+      <div class="panel p-4 md:col-span-2">
+        <div class="text-xs font-semibold text-[color:var(--muted)]">总体完成率</div>
+        <div class="mt-2 flex items-end gap-2"><div class="text-3xl font-bold text-[color:var(--accent)]">{{ metrics.completion_rate || 0 }}%</div><div class="text-sm text-[color:var(--muted)]">{{ metrics.done || 0 }}/{{ metrics.total || 0 }}</div></div>
+        <div class="mt-3 h-2 overflow-hidden rounded-full bg-stone-200"><div class="h-full rounded-full bg-[color:var(--accent)]" :style="{width:(metrics.completion_rate || 0)+'%'}"></div></div>
+      </div>
+      <div class="panel p-4"><div class="text-xs font-semibold text-[color:var(--muted)]">P0 Release Gate</div><div class="mt-2 text-2xl font-bold text-[color:var(--bad)]">{{ priorityCount('P0') }}</div><div class="mt-1 text-xs text-[color:var(--muted)]">必须闭环</div></div>
+      <div class="panel p-4"><div class="text-xs font-semibold text-[color:var(--muted)]">P1 Integration</div><div class="mt-2 text-2xl font-bold text-[color:var(--warn)]">{{ priorityCount('P1') }}</div><div class="mt-1 text-xs text-[color:var(--muted)]">首轮集成推荐</div></div>
+      <div class="panel p-4"><div class="text-xs font-semibold text-[color:var(--muted)]">P2 Backlog</div><div class="mt-2 text-2xl font-bold text-sky-700">{{ priorityCount('P2') }}</div><div class="mt-1 text-xs text-[color:var(--muted)]">首发外/xfail</div></div>
+    </section>
+
+    <section class="grid grid-cols-1 gap-4 md:grid-cols-3">
+      <div v-for="repo in repos" :key="repo" class="panel p-4">
+        <div class="text-sm font-semibold">{{ repo }}</div>
+        <div class="mt-2 text-2xl font-bold">{{ repoItems(repo).length }}</div>
+        <div class="mt-2 flex h-2 overflow-hidden rounded-full bg-stone-200">
+          <div class="bg-[color:var(--bad)]" :style="{width:repoPriorityPct(repo,'P0')+'%'}"></div>
+          <div class="bg-[color:var(--warn)]" :style="{width:repoPriorityPct(repo,'P1')+'%'}"></div>
+          <div class="bg-sky-600" :style="{width:repoPriorityPct(repo,'P2')+'%'}"></div>
+        </div>
+        <div class="mt-2 text-xs text-[color:var(--muted)]">P0 {{ repoPriority(repo,'P0') }} / P1 {{ repoPriority(repo,'P1') }} / P2 {{ repoPriority(repo,'P2') }}</div>
+      </div>
+    </section>
+
+    <section class="panel p-4">
+      <div class="flex flex-wrap gap-3">
+        <input v-model.trim="search" class="w-full rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm md:w-80" placeholder="搜索 checkbox / 验收点 / 分组">
+        <select v-model="repoFilter" class="rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm"><option value="all">全部代码仓</option><option v-for="repo in repos" :key="repo" :value="repo">{{ repo }}</option></select>
+        <select v-model="priorityFilter" class="rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm"><option value="all">全部优先级</option><option>P0</option><option>P1</option><option>P2</option></select>
+        <select v-model="statusFilter" class="rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm"><option value="all">全部状态</option><option value="todo">todo</option><option value="in_progress">in_progress</option><option value="done">done</option><option value="blocked">blocked</option></select>
+        <button @click="resetFilters" class="rounded-lg border border-stone-300 px-3 py-2 text-sm hover:bg-stone-100">重置</button>
+        <div class="ml-auto text-sm text-[color:var(--muted)]">显示 {{ filteredItems.length }} / {{ items.length }}</div>
+      </div>
+    </section>
+
+    <section class="grid grid-cols-1 gap-4 lg:grid-cols-4">
+      <div v-for="column in boardColumns" :key="column.key" class="panel p-3">
+        <div class="mb-3 flex items-center justify-between"><div class="font-semibold">{{ column.title }}</div><span class="pill bg-stone-100 text-stone-700">{{ columnItems(column.key).length }}</span></div>
+        <div class="max-h-[42rem] space-y-3 overflow-y-auto pr-1">
+          <article v-for="item in columnItems(column.key)" :key="item.id" class="cursor-pointer rounded-xl border border-stone-200 bg-white p-3 shadow-sm hover:border-stone-400" @click="activeItem=item">
+            <div class="flex items-center justify-between gap-2"><span class="mono text-sm font-bold">{{ item.id }}</span><span :class="priorityClass(item.priority)">{{ item.priority }}</span></div>
+            <div class="mt-2 text-sm font-semibold leading-snug">{{ item.title }}</div>
+            <div class="mt-2 text-xs text-[color:var(--muted)]">{{ item.group }}</div>
+            <div class="mt-2 flex flex-wrap gap-1"><span class="pill bg-stone-100 text-stone-700">{{ item.repo }}</span><span v-if="item.item_count > 1" class="pill bg-indigo-100 text-indigo-700">{{ item.item_count }} rows</span></div>
+          </article>
+          <div v-if="!columnItems(column.key).length" class="rounded-xl border border-dashed border-stone-300 p-6 text-center text-sm text-[color:var(--muted)]">暂无条目</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Transition name="fade"><div v-if="activeItem" class="fixed inset-0 z-20 bg-black/40" @click="activeItem=null"></div></Transition>
+  <Transition name="slide">
+    <aside v-if="activeItem" class="fixed right-0 top-0 z-30 h-full w-full max-w-xl overflow-y-auto bg-[#fefcf5] shadow-2xl">
+      <div class="flex items-center justify-between border-b border-stone-300 px-5 py-4"><div><div class="mono text-lg font-bold">{{ activeItem.id }}</div><div class="text-xs text-[color:var(--muted)]">{{ activeItem.repo }} / {{ activeItem.group }}</div></div><button class="rounded border border-stone-300 px-3 py-1 text-sm" @click="activeItem=null">关闭</button></div>
+      <div class="space-y-4 p-5 text-sm">
+        <section class="panel p-4"><div class="mb-2 font-semibold">验收点</div><p>{{ activeItem.title }}</p></section>
+        <section class="panel p-4"><div class="mb-2 font-semibold">元数据</div><div class="space-y-2 text-xs"><div><b>优先级:</b> {{ activeItem.priority }}</div><div><b>状态:</b> {{ activeItem.status }}</div><div><b>章节:</b> {{ activeItem.section }}</div><div><b>泳道:</b> {{ activeItem.lane }}</div><div v-if="activeItem.rows"><b>对应 5.3 Row:</b> {{ activeItem.rows }}</div><div v-if="activeItem.item_count > 1"><b>逐项数:</b> {{ activeItem.item_count }}</div></div></section>
+        <section class="panel p-4"><div class="mb-2 font-semibold">打勾前证据要求</div><ul class="list-disc space-y-1 pl-5 text-xs text-[color:var(--muted)]"><li>golden 来源和采集命令</li><li>MS actual 运行命令</li><li>dtype、shape、layout、seed、rank/group</li><li>阈值配置和误差统计</li><li>pass/fail/skip/xfail 结论和原因</li></ul></section>
+      </div>
+    </aside>
+  </Transition>
+</div>
+
+<script>
+const { createApp } = Vue;
+createApp({
+  data(){return{metrics:{},items:[],search:'',repoFilter:'all',priorityFilter:'all',statusFilter:'all',activeItem:null,boardColumns:[{key:'todo',title:'Todo'},{key:'in_progress',title:'In Progress'},{key:'blocked',title:'Blocked / XFail'},{key:'done',title:'Done'}]};},
+  computed:{repos(){return [...new Set(this.items.map(i=>i.repo))];},filteredItems(){const q=this.search.toLowerCase();return this.items.filter(i=>{if(this.repoFilter!=='all'&&i.repo!==this.repoFilter)return false;if(this.priorityFilter!=='all'&&i.priority!==this.priorityFilter)return false;if(this.statusFilter!=='all'&&i.status!==this.statusFilter)return false;if(!q)return true;return [i.id,i.title,i.repo,i.group,i.priority,i.section].join(' ').toLowerCase().includes(q);});}},
+  methods:{async loadData(){const res=await fetch('./data.json',{cache:'no-store'});const data=await res.json();this.metrics=data.metrics||{};this.items=data.items||[];},fmtTime(raw){if(!raw)return'-';const dt=new Date(raw);return Number.isNaN(dt.getTime())?raw:dt.toLocaleString('zh-CN',{hour12:false});},priorityCount(p){return (this.metrics.by_priority&&this.metrics.by_priority[p])||0;},repoItems(repo){return this.items.filter(i=>i.repo===repo);},repoPriority(repo,p){return this.repoItems(repo).filter(i=>i.priority===p).length;},repoPriorityPct(repo,p){const total=this.repoItems(repo).length||1;return this.repoPriority(repo,p)*100/total;},columnItems(status){return this.filteredItems.filter(i=>i.status===status);},priorityClass(p){return `pill ${p==='P0'?'bg-rose-100 text-rose-700':p==='P1'?'bg-orange-100 text-orange-700':'bg-sky-100 text-sky-700'}`;},resetFilters(){this.search='';this.repoFilter='all';this.priorityFilter='all';this.statusFilter='all';}},
+  mounted(){this.loadData().catch(err=>alert(String(err)));}
+}).mount('#app');
+</script>
+</body>
+</html>
