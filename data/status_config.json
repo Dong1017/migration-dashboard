@@ -1,0 +1,23 @@
+{
+  "global_admins": ["Dong1017"],
+  "modules": {
+    "vllm_omni_npu": {
+      "label": "vllm_omni_npu",
+      "repo": "vllm + omni_npu",
+      "display_owner": "chuang",
+      "github_users": []
+    },
+    "omni_models": {
+      "label": "omni_models",
+      "repo": "omni_models",
+      "display_owner": "yao",
+      "github_users": ["zhanghuiyao"]
+    },
+    "ms_custom_ops": {
+      "label": "ms_custom_ops",
+      "repo": "ms_custom_ops",
+      "display_owner": "ting",
+      "github_users": ["CaitinZhao"]
+    }
+  }
+}

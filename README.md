@@ -6,9 +6,13 @@
 
 ```text
 migration-dashboard/
-├─ scripts/build_data.py  # 从迁移分析文档生成 data.json
-├─ index.html             # Dashboard 页面
-├─ data.json              # checkbox 数据
+├─ .github/workflows/status-update.yml  # Issue comment 自动更新状态
+├─ data/status/                         # 三个模块的状态 overlay
+├─ data/status_config.json              # 模块 owner 和权限配置
+├─ scripts/apply_status_comment.py      # 解析 /status-update 评论
+├─ scripts/build_data.py                # 从迁移分析文档生成 data.json
+├─ index.html                           # Dashboard 页面
+├─ data.json                            # checkbox 数据
 └─ README.md
 ```
 
@@ -23,5 +27,36 @@ python -m http.server 8000
 ## 更新数据
 
 ```bash
-python scripts/build_data.py --source ../migration-analysis-v0.3.md --output data.json
+python scripts/build_data.py \
+  --source ../migration-analysis-v0.3.md \
+  --output data.json \
+  --status-dir data/status \
+  --config data/status_config.json
 ```
+
+## IssueOps 状态更新
+
+在 issue 评论中使用：
+
+```md
+/status-update
+module: ms_custom_ops
+parent: 4.1
+row: 13
+status: blocked
+reason: sink internal variant has no direct MS API
+next: collect PT golden and mark xfail
+```
+
+或更新父 checkbox：
+
+```md
+/status-update
+module: omni_models
+id: 3.1.1
+status: accepted
+evidence:
+  - pytest tests/models/pangu_v2/test_attention.py -k q_proj
+```
+
+允许状态：`open` / `blocked` / `accepted`。
