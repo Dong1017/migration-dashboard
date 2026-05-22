@@ -237,6 +237,36 @@ def build_data(markdown: str, status_dir: Path = Path("data/status"), config_pat
     }
 
 
+def overlay_summary(status_dir: Path) -> tuple[int, list[str]]:
+    overlay_count = 0
+    blocked_items = []
+    if not status_dir.exists():
+        return overlay_count, blocked_items
+    for path in sorted(status_dir.glob("*.json")):
+        data = read_json(path, {"items": {}, "operator_rows": {}})
+        for section in ("items", "operator_rows"):
+            for item_id, update in data.get(section, {}).items():
+                overlay_count += 1
+                if update.get("status") == "blocked":
+                    blocked_items.append(item_id)
+    return overlay_count, blocked_items
+
+
+def print_summary(data: dict, status_dir: Path) -> None:
+    metrics = data["metrics"]
+    status_counts = Counter(item["status"] for item in data["items"])
+    overlay_count, blocked_items = overlay_summary(status_dir)
+    print(f"total={metrics['total']}")
+    print(f"by_repo={metrics['by_repo']}")
+    print(f"by_priority={metrics['by_priority']}")
+    print(f"by_status={dict(status_counts)}")
+    print(f"operator_rows={metrics['operator_rows']}")
+    print(f"operator_groups={metrics['operator_groups']}")
+    print(f"source={metrics['source']}")
+    print(f"overlay_count={overlay_count}")
+    print(f"blocked_items={blocked_items}")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", default="migration-analysis-v0.4.md")
@@ -252,6 +282,7 @@ def main() -> None:
         json.dump(data, f, ensure_ascii=False, indent=2)
         f.write("\n")
     print(f"wrote {len(data['items'])} items and {len(data['operator_rows'])} operator rows to {output}")
+    print_summary(data, Path(args.status_dir))
 
 
 if __name__ == "__main__":
