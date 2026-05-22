@@ -34,7 +34,9 @@ python scripts/build_data.py \
   --config data/status_config.json
 ```
 
-## IssueOps 状态更新
+## API Audit 口径
+
+API Audit 是独立于 completion metrics 的 API 风险解释层：`458` 是 API usage scan entries，不是 completion backlog；`58` 是 custom/NPU fused candidate rows，不是 58 个新开发算子。API Audit items 可以映射到 tracked items、operator rows 或 groups，但不会进入 `data.json.items`，不计入 170 完成率，也不使用 IssueOps / `data/status` overlay。
 
 在 issue 评论中使用：
 
