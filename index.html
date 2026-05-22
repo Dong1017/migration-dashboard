@@ -39,8 +39,8 @@
     .meta-grid dt { color:var(--muted); font-size:12px; }
     .meta-grid dd { font-size:12px; min-width:0; }
     .code-chip { background:#f7f3ec; border:1px solid var(--line); border-radius:12px; padding:10px; word-break:break-all; }
-    .audit-card { border:1px solid rgba(229,222,212,.9); border-radius:12px; background:rgba(255,255,255,.78); padding:10px; }
-    .audit-note { border-radius:12px; background:#f8f1e8; border:1px solid #ead9c5; color:#80623f; }
+    .audit-card { border:1px solid rgba(229,222,212,.9); border-radius:12px; background:rgba(255,255,255,.78); padding:8px; }
+    .audit-note { border-radius:10px; background:#fbf7f0; border:1px solid #ead9c5; color:#80623f; }
     .slide-enter-active,.slide-leave-active{transition:transform .2s ease}.slide-enter-from,.slide-leave-to{transform:translateX(100%)}
     .fade-enter-active,.fade-leave-active{transition:opacity .2s}.fade-enter-from,.fade-leave-to{opacity:0}
   </style>
@@ -105,27 +105,22 @@
           <span class="scope-badge">Counted: No</span>
         </div>
       </div>
-      <div class="audit-note mt-3 p-3 text-xs leading-relaxed">
-        <div>458 API usage scan entries, not completion backlog.</div>
-        <div>58 custom/NPU fused candidate rows, not 58 new operators.</div>
-        <div>API Audit is risk tracking only; not counted in 170 completion metrics.</div>
+      <div class="audit-note mt-2 px-3 py-2 text-xs leading-snug">Note: 458 API usage scan entries are not completion backlog; 58 candidate rows are not 58 new operators; API Audit is not counted in 170 metrics.</div>
+      <div class="mt-2 flex flex-wrap items-center justify-between gap-2">
+        <button @click="auditExpanded=!auditExpanded" class="rounded-lg border border-[color:var(--line)] px-3 py-1.5 text-xs font-semibold hover:bg-[color:var(--soft)]">{{ auditExpanded ? 'Hide details' : 'Show details' }}</button>
+        <button @click="auditShowAllItems=!auditShowAllItems" class="rounded-lg border border-[color:var(--line)] px-3 py-1.5 text-xs font-semibold hover:bg-[color:var(--soft)]">{{ auditShowAllItems ? 'Collapse' : 'Show all ' + apiAudit.items.length }}</button>
       </div>
-      <div class="mt-3 grid gap-3 xl:grid-cols-[1fr_1.4fr]">
-        <div class="space-y-2">
-          <div v-for="group in auditChipGroups" :key="group.title" class="audit-card">
-            <div class="mb-2 text-[11px] font-semibold uppercase tracking-wide text-[color:var(--muted)]">{{ group.title }}</div>
-            <div class="flex flex-wrap gap-1"><span v-for="entry in group.entries" :key="group.title + entry.key" class="tag bg-stone-100 text-stone-700">{{ entry.key }} {{ entry.count }}</span></div>
-          </div>
-        </div>
-        <div class="grid max-h-72 gap-2 overflow-y-auto pr-1 md:grid-cols-2">
-          <article v-for="item in apiAudit.items" :key="item.id" class="audit-card cursor-pointer hover:border-stone-400" @click="openAuditItem(item)">
-            <div class="flex items-center justify-between gap-2"><span class="mono text-xs font-bold">{{ item.id }}</span><span :class="priorityClass(item.priority)">{{ item.priority }}</span></div>
-            <div class="clamp-2 mt-1 text-[13px] font-semibold leading-snug">{{ item.title }}</div>
-            <div class="mt-2 flex flex-wrap gap-1"><span class="tag bg-[#edf4f7] text-[color:var(--blue)]">{{ item.api_kind }}</span><span v-for="action in item.owner_actions" :key="item.id + action" class="tag bg-[#edf5ef] text-[color:var(--good)]">{{ action }}</span><span :class="statusClass(item.audit_status)">audit {{ item.audit_status }}</span><span class="tag bg-[#eee8f4] text-[color:var(--lavender)]">{{ item.risk_level }}</span></div>
-            <div class="clamp-2 mt-2 text-xs text-[color:var(--muted)]">{{ item.risk }}</div>
-            <div class="mt-2 text-[11px] text-[color:var(--muted)]">Related tracked items: {{ relationPreview(item) }}</div>
-          </article>
-        </div>
+      <div v-if="auditExpanded" class="mt-2 space-y-1.5 text-xs">
+        <div v-for="group in auditChipGroups" :key="group.title" class="flex flex-wrap items-center gap-1.5"><span class="w-24 shrink-0 text-[11px] font-semibold uppercase tracking-wide text-[color:var(--muted)]">{{ group.title }}</span><span v-for="entry in group.entries" :key="group.title + entry.key" class="tag bg-stone-100 text-stone-700">{{ entry.key }} {{ entry.count }}</span></div>
+      </div>
+      <div class="mt-2 grid gap-2 md:grid-cols-2 xl:grid-cols-3">
+        <article v-for="item in visibleAuditItems" :key="item.id" class="audit-card cursor-pointer hover:border-stone-400" @click="openAuditItem(item)">
+          <div class="flex items-center justify-between gap-2"><span class="mono text-xs font-bold">{{ item.id }}</span><span :class="priorityClass(item.priority)">{{ item.priority }}</span></div>
+          <div class="clamp-2 mt-1 text-[13px] font-semibold leading-snug">{{ item.title }}</div>
+          <div class="mt-1.5 flex flex-wrap gap-1"><span class="tag bg-[#edf4f7] text-[color:var(--blue)]">{{ item.api_kind }}</span><span v-for="action in item.owner_actions" :key="item.id + action" class="tag bg-[#edf5ef] text-[color:var(--good)]">{{ action }}</span><span :class="statusClass(item.audit_status)">audit {{ item.audit_status }}</span><span class="tag bg-[#eee8f4] text-[color:var(--lavender)]">{{ item.risk_level }}</span></div>
+          <div class="clamp-2 mt-1.5 text-xs text-[color:var(--muted)]">{{ item.risk }}</div>
+          <div class="mt-1.5 truncate text-[11px] text-[color:var(--muted)]">Related tracked items: {{ relationPreview(item) }}</div>
+        </article>
       </div>
     </section>
 
@@ -262,8 +257,8 @@
 <script>
 const { createApp } = Vue;
 createApp({
-  data(){return{metrics:{},items:[],operatorRows:[],apiAudit:null,search:'',childSearch:'',repoFilter:'all',priorityFilter:'all',statusFilter:'all',activeItem:null,activeAuditItem:null,boardColumns:[{key:'open',title:'Open',color:'#517d99'},{key:'blocked',title:'Blocked / XFail',color:'#b85c5c'},{key:'accepted',title:'Accepted',color:'#3f7d63'}]};},
-  computed:{repos(){return [...new Set(this.items.map(i=>i.repo))];},filteredItems(){const q=this.search.toLowerCase();return this.items.filter(i=>{if(this.repoFilter!=='all'&&i.repo!==this.repoFilter)return false;if(this.priorityFilter!=='all'&&i.priority!==this.priorityFilter)return false;if(this.statusFilter!=='all'&&i.status!==this.statusFilter)return false;if(!q)return true;return [i.id,i.title,i.repo,i.group,i.priority,i.section,i.api,i.parent_id,i.source_label,i.ms_candidate,i.handling].join(' ').toLowerCase().includes(q);});},filteredChildren(){if(!this.activeItem)return[];const q=this.childSearch.toLowerCase();const children=this.activeItem.children||[];if(!q)return children;return children.filter(c=>[c.row,c.api,c.reference,c.handling,c.coverage].join(' ').toLowerCase().includes(q));},auditChipGroups(){if(!this.apiAudit)return[];return[{title:'api_kind',entries:this.auditCounts('api_kind')},{title:'owner_actions',entries:this.auditArrayCounts('owner_actions')},{title:'priority',entries:this.auditCounts('priority')},{title:'audit_status',entries:this.auditCounts('audit_status')},{title:'risk_level',entries:this.auditCounts('risk_level')}];}},
+  data(){return{metrics:{},items:[],operatorRows:[],apiAudit:null,auditExpanded:false,auditShowAllItems:false,search:'',childSearch:'',repoFilter:'all',priorityFilter:'all',statusFilter:'all',activeItem:null,activeAuditItem:null,boardColumns:[{key:'open',title:'Open',color:'#517d99'},{key:'blocked',title:'Blocked / XFail',color:'#b85c5c'},{key:'accepted',title:'Accepted',color:'#3f7d63'}]};},
+  computed:{repos(){return [...new Set(this.items.map(i=>i.repo))];},filteredItems(){const q=this.search.toLowerCase();return this.items.filter(i=>{if(this.repoFilter!=='all'&&i.repo!==this.repoFilter)return false;if(this.priorityFilter!=='all'&&i.priority!==this.priorityFilter)return false;if(this.statusFilter!=='all'&&i.status!==this.statusFilter)return false;if(!q)return true;return [i.id,i.title,i.repo,i.group,i.priority,i.section,i.api,i.parent_id,i.source_label,i.ms_candidate,i.handling].join(' ').toLowerCase().includes(q);});},filteredChildren(){if(!this.activeItem)return[];const q=this.childSearch.toLowerCase();const children=this.activeItem.children||[];if(!q)return children;return children.filter(c=>[c.row,c.api,c.reference,c.handling,c.coverage].join(' ').toLowerCase().includes(q));},visibleAuditItems(){const items=this.apiAudit?.items||[];return this.auditShowAllItems?items:items.slice(0,6);},auditChipGroups(){if(!this.apiAudit)return[];return[{title:'api_kind',entries:this.auditCounts('api_kind')},{title:'owner_actions',entries:this.auditArrayCounts('owner_actions')},{title:'priority',entries:this.auditCounts('priority')},{title:'audit_status',entries:this.auditCounts('audit_status')},{title:'risk_level',entries:this.auditCounts('risk_level')}];}},
   methods:{async loadData(){const res=await fetch('./data.json',{cache:'no-store'});const data=await res.json();this.metrics=data.metrics||{};this.items=data.items||[];this.operatorRows=data.operator_rows||[];try{const auditRes=await fetch('./data/api_audit.json',{cache:'no-store'});this.apiAudit=auditRes.ok?await auditRes.json():null;}catch(_){this.apiAudit=null;}},fmtTime(raw){if(!raw)return'-';const dt=new Date(raw);return Number.isNaN(dt.getTime())?raw:dt.toLocaleString('zh-CN',{hour12:false});},priorityCount(p){return (this.metrics.by_priority&&this.metrics.by_priority[p])||0;},repoItems(repo){return this.items.filter(i=>i.repo===repo);},repoPriority(repo,p){return this.repoItems(repo).filter(i=>i.priority===p).length;},repoPriorityPct(repo,p){const total=this.repoItems(repo).length||1;return this.repoPriority(repo,p)*100/total;},columnItems(status){return this.filteredItems.filter(i=>i.status===status);},auditCounts(key){const counts={};(this.apiAudit?.items||[]).forEach(i=>{const value=i[key]||'unknown';counts[value]=(counts[value]||0)+1;});return Object.entries(counts).map(([key,count])=>({key,count}));},auditArrayCounts(key){const counts={};(this.apiAudit?.items||[]).forEach(i=>(i[key]||['unknown']).forEach(value=>{counts[value]=(counts[value]||0)+1;}));return Object.entries(counts).map(([key,count])=>({key,count}));},formatRelation(values){return values&&values.length?values.join(' / '):'Not mapped yet';},relationPreview(item){const values=[...(item.related_dashboard_items||[]),...(item.related_operator_rows||[])];return values.length?values.join(' / '):'Not mapped yet';},priorityClass(p){return `pill ${p==='P0'?'bg-[#f4dfdc] text-[#99524e]':p==='P1'?'bg-[#f3e4ce] text-[#8a5f19]':'bg-[#e3edf2] text-[#446f88]'}`;},statusClass(s){return `pill ${s==='blocked'?'bg-[#f4dfdc] text-[#99524e]':s==='accepted'?'bg-[#dfeee5] text-[#2f6d52]':s==='xfail'?'bg-[#eee8f4] text-[color:var(--lavender)]':'bg-stone-100 text-stone-600'}`;},resetFilters(){this.search='';this.repoFilter='all';this.priorityFilter='all';this.statusFilter='all';},openItem(item){this.activeItem=item;this.activeAuditItem=null;this.childSearch='';},openAuditItem(item){this.activeAuditItem=item;this.activeItem=null;}},
   mounted(){this.loadData().catch(err=>alert(String(err)));}
 }).mount('#app');
