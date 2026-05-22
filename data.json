@@ -16,7 +16,7 @@
       "omni_models": 34,
       "ms_custom_ops": 14
     },
-    "generated_at": "2026-05-22T10:01:12.032329+08:00",
+    "generated_at": "2026-05-22T10:03:50.208128+08:00",
     "source": "migration-analysis-v0.3.md Appendix E + Section 5.3"
   },
   "items": [
@@ -1945,10 +1945,13 @@
           "coverage": "4.1",
           "reference": "相邻：test_npu_fused_infer_attention_score_v2.py sink case",
           "handling": "omni-ops fused/sink 内部变体，归 attention sink golden",
-          "status": "open",
+          "status": "blocked",
           "owner": "ting",
           "evidence": [],
-          "notes": ""
+          "notes": "",
+          "reason": "IssueOps retry after billing budget check",
+          "next": "verify workflow updates dashboard data",
+          "updated_by": "@Dong1017"
         },
         {
           "row": 21,
@@ -3210,10 +3213,13 @@
       "coverage": "4.1",
       "reference": "相邻：test_npu_fused_infer_attention_score_v2.py sink case",
       "handling": "omni-ops fused/sink 内部变体，归 attention sink golden",
-      "status": "open",
+      "status": "blocked",
       "owner": "ting",
       "evidence": [],
-      "notes": ""
+      "notes": "",
+      "reason": "IssueOps retry after billing budget check",
+      "next": "verify workflow updates dashboard data",
+      "updated_by": "@Dong1017"
     },
     {
       "row": 14,
