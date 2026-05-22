@@ -8,39 +8,85 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
   <style>
     :root {
-      --bg:#f6f3ee;
-      --card:#ffffff;
-      --soft:#faf7f2;
-      --line:#e5ded4;
-      --text:#2f3430;
-      --muted:#7a8078;
-      --accent:#5f7f72;
-      --good:#3f7d63;
-      --warn:#b7791f;
-      --bad:#b85c5c;
-      --blue:#517d99;
-      --lavender:#7c6f99;
+      --bg: #f7f8fb;
+      --bg-soft: #f1f5f9;
+      --card: #ffffff;
+      --card-soft: #f8fafc;
+      --line: #e2e8f0;
+      --line-soft: #edf2f7;
+      --text: #1f2937;
+      --muted: #64748b;
+      --muted-light: #94a3b8;
+      --accent: #0f766e;
+      --accent-soft: #ccfbf1;
+      --blue: #2563eb;
+      --blue-soft: #dbeafe;
+      --indigo: #4f46e5;
+      --indigo-soft: #e0e7ff;
+      --green: #047857;
+      --green-soft: #d1fae5;
+      --amber: #b45309;
+      --amber-soft: #fef3c7;
+      --red: #b91c1c;
+      --red-soft: #fee2e2;
+      --purple: #7c3aed;
+      --purple-soft: #ede9fe;
+      --p0: #ef4444;
+      --p1: #f59e0b;
+      --p2: #0ea5e9;
     }
-    body { color:var(--text); background:linear-gradient(180deg, #f7f4ee 0%, #eee8dd 100%); }
-    .panel { background:rgba(255,255,255,.9); border:1px solid var(--line); border-radius:16px; box-shadow:0 8px 24px rgba(54,45,36,.06); }
-    .compact-panel { background:rgba(255,255,255,.86); border:1px solid var(--line); border-radius:14px; box-shadow:0 6px 18px rgba(54,45,36,.045); }
+    body {
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(20,184,166,.08), transparent 32rem),
+        linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+    }
+    h1,h2,h3 { color:#111827; }
+    .panel,
+    .metric-card,
+    .repo-card,
+    .audit-card,
+    .board-column,
+    .item-card {
+      background:rgba(255,255,255,.92);
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow:0 8px 24px rgba(15,23,42,.06);
+    }
+    .compact-panel { background:rgba(255,255,255,.9); border:1px solid var(--line); border-radius:16px; box-shadow:0 8px 24px rgba(15,23,42,.05); }
     .metric-card { min-height:96px; padding:14px; }
     .repo-card { padding:12px 14px; }
-    .board-column { background:rgba(250,247,242,.76); border:1px solid var(--line); border-radius:16px; box-shadow:0 6px 18px rgba(54,45,36,.04); }
-    .item-card { border:1px solid rgba(229,222,212,.9); border-radius:12px; background:rgba(255,255,255,.92); padding:10px; box-shadow:0 3px 10px rgba(54,45,36,.035); }
-    .item-card:hover { border-color:#cfc4b6; box-shadow:0 6px 16px rgba(54,45,36,.07); }
+    .board-column { background:rgba(248,250,252,.84); }
+    .item-card { padding:10px; transition:border-color .16s ease, box-shadow .16s ease, transform .16s ease; }
+    .item-card:hover,.audit-card:hover { border-color:#cbd5e1; box-shadow:0 10px 28px rgba(15,23,42,.10); transform:translateY(-1px); }
     .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
     .pill,.tag { border-radius:999px; padding:2px 8px; font-size:11px; font-weight:700; line-height:1.35; }
-    .tag { max-width:148px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-    .scope-badge { border-radius:999px; border:1px solid var(--line); background:var(--soft); padding:4px 9px; font-size:11px; font-weight:700; color:var(--muted); }
+    .tag { max-width:148px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; background:#f1f5f9; color:#475569; }
+    .scope-badge { border-radius:999px; border:1px solid var(--line); background:var(--card-soft); padding:4px 9px; font-size:11px; font-weight:700; color:var(--muted); }
     .status-dot { width:8px; height:8px; border-radius:999px; display:inline-block; }
     .clamp-2 { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
     .meta-grid { display:grid; grid-template-columns:minmax(90px, .45fr) 1fr; gap:8px 14px; }
     .meta-grid dt { color:var(--muted); font-size:12px; }
     .meta-grid dd { font-size:12px; min-width:0; }
-    .code-chip { background:#f7f3ec; border:1px solid var(--line); border-radius:12px; padding:10px; word-break:break-all; }
-    .audit-card { border:1px solid rgba(229,222,212,.9); border-radius:12px; background:rgba(255,255,255,.78); padding:8px; }
-    .audit-note { border-radius:10px; background:#fbf7f0; border:1px solid #ead9c5; color:#80623f; }
+    .code-chip { background:var(--card-soft); border:1px solid var(--line); border-radius:12px; padding:10px; word-break:break-all; }
+    .audit-card { padding:8px; transition:border-color .16s ease, box-shadow .16s ease, transform .16s ease; }
+    .audit-note { border-radius:10px; background:var(--card-soft); border:1px solid var(--line); color:var(--muted); }
+    .tag-custom-op { background:var(--blue-soft); color:#1d4ed8; }
+    .tag-op-dev,.tag-test-watch { background:var(--green-soft); color:var(--green); }
+    .tag-bridge-runtime { background:var(--indigo-soft); color:#4338ca; }
+    .tag-model-rewrite { background:var(--purple-soft); color:#6d28d9; }
+    .tag-audit-open { background:#f1f5f9; color:#475569; }
+    .tag-high { background:var(--red-soft); color:var(--red); }
+    .tag-medium { background:var(--amber-soft); color:#92400e; }
+    .priority-p0 { background:var(--red-soft); color:var(--red); }
+    .priority-p1 { background:var(--amber-soft); color:#92400e; }
+    .priority-p2 { background:var(--blue-soft); color:#1d4ed8; }
+    .status-blocked { background:var(--red-soft); color:var(--red); }
+    .status-accepted { background:var(--green-soft); color:var(--green); }
+    .status-xfail { background:var(--purple-soft); color:#6d28d9; }
+    .status-open { background:#f1f5f9; color:#475569; }
+    .drawer { background:#f8fafc; }
+    .input-control { background:white; border-color:var(--line); }
     .slide-enter-active,.slide-leave-active{transition:transform .2s ease}.slide-enter-from,.slide-leave-to{transform:translateX(100%)}
     .fade-enter-active,.fade-leave-active{transition:opacity .2s}.fade-enter-from,.fade-leave-to{opacity:0}
   </style>
@@ -72,20 +118,20 @@
       <div class="panel metric-card">
         <div class="text-xs font-semibold uppercase tracking-wide text-[color:var(--muted)]">Completion</div>
         <div class="mt-1 flex items-end gap-2"><div class="text-3xl font-bold text-[color:var(--accent)]">{{ metrics.completion_rate || 0 }}%</div><div class="pb-1 text-xs text-[color:var(--muted)]">{{ metrics.accepted || 0 }}/{{ metrics.total || 0 }}</div></div>
-        <div class="mt-2 h-1.5 overflow-hidden rounded-full bg-stone-200"><div class="h-full rounded-full bg-[color:var(--accent)]" :style="{width:(metrics.completion_rate || 0)+'%'}"></div></div>
+        <div class="mt-2 h-1.5 overflow-hidden rounded-full bg-[#e5e7eb]"><div class="h-full rounded-full bg-[color:var(--accent)]" :style="{width:(metrics.completion_rate || 0)+'%'}"></div></div>
       </div>
-      <div class="panel metric-card"><div class="text-xs font-semibold uppercase tracking-wide text-[color:var(--muted)]">P0 Gate</div><div class="mt-2 text-3xl font-bold text-[color:var(--bad)]">{{ priorityCount('P0') }}</div><div class="text-xs text-[color:var(--muted)]">release blockers</div></div>
-      <div class="panel metric-card"><div class="text-xs font-semibold uppercase tracking-wide text-[color:var(--muted)]">P1 Integration</div><div class="mt-2 text-3xl font-bold text-[color:var(--warn)]">{{ priorityCount('P1') }}</div><div class="text-xs text-[color:var(--muted)]">first pass</div></div>
+      <div class="panel metric-card"><div class="text-xs font-semibold uppercase tracking-wide text-[color:var(--muted)]">P0 Gate</div><div class="mt-2 text-3xl font-bold text-[color:var(--red)]">{{ priorityCount('P0') }}</div><div class="text-xs text-[color:var(--muted)]">release blockers</div></div>
+      <div class="panel metric-card"><div class="text-xs font-semibold uppercase tracking-wide text-[color:var(--muted)]">P1 Integration</div><div class="mt-2 text-3xl font-bold text-[color:var(--amber)]">{{ priorityCount('P1') }}</div><div class="text-xs text-[color:var(--muted)]">first pass</div></div>
       <div class="panel metric-card"><div class="text-xs font-semibold uppercase tracking-wide text-[color:var(--muted)]">Operator Rows</div><div class="mt-2 text-3xl font-bold text-[color:var(--blue)]">{{ metrics.operator_rows || 0 }}</div><div class="text-xs text-[color:var(--muted)]">Section 5.3</div></div>
     </section>
 
     <section class="grid grid-cols-1 gap-3 md:grid-cols-3">
       <div v-for="repo in repos" :key="repo" class="compact-panel repo-card">
         <div class="flex items-center justify-between gap-3"><div class="truncate text-sm font-semibold">{{ repo }}</div><div class="text-xl font-bold">{{ repoItems(repo).length }}</div></div>
-        <div class="mt-2 flex h-1.5 overflow-hidden rounded-full bg-stone-200">
-          <div class="bg-[color:var(--bad)]" :style="{width:repoPriorityPct(repo,'P0')+'%'}"></div>
-          <div class="bg-[color:var(--warn)]" :style="{width:repoPriorityPct(repo,'P1')+'%'}"></div>
-          <div class="bg-[color:var(--blue)]" :style="{width:repoPriorityPct(repo,'P2')+'%'}"></div>
+        <div class="mt-2 flex h-1.5 overflow-hidden rounded-full bg-[#e5e7eb]">
+          <div class="bg-[color:var(--p0)]" :style="{width:repoPriorityPct(repo,'P0')+'%'}"></div>
+          <div class="bg-[color:var(--p1)]" :style="{width:repoPriorityPct(repo,'P1')+'%'}"></div>
+          <div class="bg-[color:var(--p2)]" :style="{width:repoPriorityPct(repo,'P2')+'%'}"></div>
         </div>
         <div class="mt-2 flex gap-2 text-[11px] text-[color:var(--muted)]"><span>P0 {{ repoPriority(repo,'P0') }}</span><span>P1 {{ repoPriority(repo,'P1') }}</span><span>P2 {{ repoPriority(repo,'P2') }}</span></div>
       </div>
@@ -107,17 +153,17 @@
       </div>
       <div class="audit-note mt-2 px-3 py-2 text-xs leading-snug">Note: 458 API usage scan entries are not completion backlog; 58 candidate rows are not 58 new operators; API Audit is not counted in 170 metrics.</div>
       <div class="mt-2 flex flex-wrap items-center justify-between gap-2">
-        <button @click="auditExpanded=!auditExpanded" class="rounded-lg border border-[color:var(--line)] px-3 py-1.5 text-xs font-semibold hover:bg-[color:var(--soft)]">{{ auditExpanded ? 'Hide details' : 'Show details' }}</button>
-        <button @click="auditShowAllItems=!auditShowAllItems" class="rounded-lg border border-[color:var(--line)] px-3 py-1.5 text-xs font-semibold hover:bg-[color:var(--soft)]">{{ auditShowAllItems ? 'Collapse' : 'Show all ' + apiAudit.items.length }}</button>
+        <button @click="auditExpanded=!auditExpanded" class="rounded-lg border border-[color:var(--line)] px-3 py-1.5 text-xs font-semibold hover:bg-[color:var(--card-soft)]">{{ auditExpanded ? 'Hide details' : 'Show details' }}</button>
+        <button @click="auditShowAllItems=!auditShowAllItems" class="rounded-lg border border-[color:var(--line)] px-3 py-1.5 text-xs font-semibold hover:bg-[color:var(--card-soft)]">{{ auditShowAllItems ? 'Collapse' : 'Show all ' + apiAudit.items.length }}</button>
       </div>
       <div v-if="auditExpanded" class="mt-2 space-y-1.5 text-xs">
-        <div v-for="group in auditChipGroups" :key="group.title" class="flex flex-wrap items-center gap-1.5"><span class="w-24 shrink-0 text-[11px] font-semibold uppercase tracking-wide text-[color:var(--muted)]">{{ group.title }}</span><span v-for="entry in group.entries" :key="group.title + entry.key" class="tag bg-stone-100 text-stone-700">{{ entry.key }} {{ entry.count }}</span></div>
+        <div v-for="group in auditChipGroups" :key="group.title" class="flex flex-wrap items-center gap-1.5"><span class="w-24 shrink-0 text-[11px] font-semibold uppercase tracking-wide text-[color:var(--muted)]">{{ group.title }}</span><span v-for="entry in group.entries" :key="group.title + entry.key" :class="auditChipClass(group.title, entry.key)">{{ entry.key }} {{ entry.count }}</span></div>
       </div>
       <div class="mt-2 grid gap-2 md:grid-cols-2 xl:grid-cols-3">
-        <article v-for="item in visibleAuditItems" :key="item.id" class="audit-card cursor-pointer hover:border-stone-400" @click="openAuditItem(item)">
+        <article v-for="item in visibleAuditItems" :key="item.id" class="audit-card cursor-pointer" @click="openAuditItem(item)">
           <div class="flex items-center justify-between gap-2"><span class="mono text-xs font-bold">{{ item.id }}</span><span :class="priorityClass(item.priority)">{{ item.priority }}</span></div>
           <div class="clamp-2 mt-1 text-[13px] font-semibold leading-snug">{{ item.title }}</div>
-          <div class="mt-1.5 flex flex-wrap gap-1"><span class="tag bg-[#edf4f7] text-[color:var(--blue)]">{{ item.api_kind }}</span><span v-for="action in item.owner_actions" :key="item.id + action" class="tag bg-[#edf5ef] text-[color:var(--good)]">{{ action }}</span><span :class="statusClass(item.audit_status)">audit {{ item.audit_status }}</span><span class="tag bg-[#eee8f4] text-[color:var(--lavender)]">{{ item.risk_level }}</span></div>
+          <div class="mt-1.5 flex flex-wrap gap-1"><span :class="apiKindClass(item.api_kind)">{{ item.api_kind }}</span><span v-for="action in item.owner_actions" :key="item.id + action" :class="ownerActionClass(action)">{{ action }}</span><span :class="statusClass(item.audit_status)">audit {{ item.audit_status }}</span><span :class="riskClass(item.risk_level)">{{ item.risk_level }}</span></div>
           <div class="clamp-2 mt-1.5 text-xs text-[color:var(--muted)]">{{ item.risk }}</div>
           <div class="mt-1.5 truncate text-[11px] text-[color:var(--muted)]">Related tracked items: {{ relationPreview(item) }}</div>
         </article>
@@ -130,7 +176,7 @@
         <select v-model="repoFilter" class="rounded-lg border border-[color:var(--line)] bg-white px-3 py-2 text-sm"><option value="all">全部代码仓</option><option v-for="repo in repos" :key="repo" :value="repo">{{ repo }}</option></select>
         <select v-model="priorityFilter" class="rounded-lg border border-[color:var(--line)] bg-white px-3 py-2 text-sm"><option value="all">全部优先级</option><option>P0</option><option>P1</option><option>P2</option></select>
         <select v-model="statusFilter" class="rounded-lg border border-[color:var(--line)] bg-white px-3 py-2 text-sm"><option value="all">全部状态</option><option value="open">open</option><option value="blocked">blocked</option><option value="accepted">accepted</option></select>
-        <button @click="resetFilters" class="rounded-lg border border-[color:var(--line)] px-3 py-2 text-sm hover:bg-[color:var(--soft)]">重置</button>
+        <button @click="resetFilters" class="rounded-lg border border-[color:var(--line)] px-3 py-2 text-sm hover:bg-[color:var(--card-soft)]">重置</button>
         <div class="ml-auto text-xs font-semibold text-[color:var(--muted)]">显示 {{ filteredItems.length }} / {{ items.length }}</div>
       </div>
     </section>
@@ -139,13 +185,13 @@
       <div v-for="column in boardColumns" :key="column.key" class="board-column p-3">
         <div class="mb-3 flex items-center justify-between border-b border-[color:var(--line)] pb-2">
           <div class="flex items-center gap-2 font-semibold"><span class="status-dot" :style="{background:column.color}"></span>{{ column.title }}</div>
-          <span class="pill bg-white text-stone-700">{{ columnItems(column.key).length }}</span>
+          <span class="pill bg-white text-[#475569]">{{ columnItems(column.key).length }}</span>
         </div>
         <div class="max-h-[calc(100vh-360px)] min-h-[22rem] space-y-2 overflow-y-auto pr-1">
           <article v-for="item in columnItems(column.key)" :key="item.id" class="item-card cursor-pointer" @click="openItem(item)">
             <div class="flex items-center justify-between gap-2"><span class="mono text-xs font-bold text-[color:var(--text)]">{{ item.id }}</span><div class="flex shrink-0 gap-1"><span :class="priorityClass(item.priority)">{{ item.priority }}</span><span :class="statusClass(item.status)">{{ item.status }}</span></div></div>
             <div class="clamp-2 mt-1.5 text-[13px] font-semibold leading-snug">{{ item.title }}</div>
-            <div class="mt-2 flex flex-wrap gap-1"><span class="tag bg-stone-100 text-stone-600">{{ item.repo }}</span><span v-if="item.kind === 'operator_row'" class="tag bg-[#eee8f4] text-[color:var(--lavender)]">{{ item.parent_id }}</span><span v-if="item.owner" class="tag bg-[#edf5ef] text-[color:var(--good)]">{{ item.owner }}</span><span v-if="item.source_label" class="tag bg-[#edf4f7] text-[color:var(--blue)]">{{ item.source_label }}</span></div>
+            <div class="mt-2 flex flex-wrap gap-1"><span class="tag">{{ item.repo }}</span><span v-if="item.kind === 'operator_row'" class="tag tag-model-rewrite">{{ item.parent_id }}</span><span v-if="item.owner" class="tag tag-op-dev">{{ item.owner }}</span><span v-if="item.source_label" class="tag tag-custom-op">{{ item.source_label }}</span></div>
           </article>
           <div v-if="!columnItems(column.key).length" class="rounded-xl border border-dashed border-[color:var(--line)] p-6 text-center text-sm text-[color:var(--muted)]">暂无条目</div>
         </div>
@@ -154,14 +200,14 @@
   </main>
 
   <Transition name="slide">
-    <aside v-if="activeAuditItem" class="fixed right-0 top-0 z-30 h-full w-full max-w-3xl overflow-y-auto bg-[#fdfbf7] shadow-2xl">
+    <aside v-if="activeAuditItem" class="drawer fixed right-0 top-0 z-30 h-full w-full max-w-3xl overflow-y-auto shadow-2xl">
       <div class="border-b border-[color:var(--line)] px-5 py-4">
         <div class="flex items-start justify-between gap-4">
           <div class="min-w-0">
             <div class="flex flex-wrap items-center gap-2"><span class="mono text-lg font-bold">{{ activeAuditItem.id }}</span><span :class="priorityClass(activeAuditItem.priority)">{{ activeAuditItem.priority }}</span><span :class="statusClass(activeAuditItem.audit_status)">audit status: {{ activeAuditItem.audit_status }}</span></div>
             <div class="mt-1 text-xs text-[color:var(--muted)]">API Audit risk tracking only · counted_in_completion=false</div>
           </div>
-          <button class="rounded-lg border border-[color:var(--line)] px-3 py-1.5 text-sm hover:bg-[color:var(--soft)]" @click="activeAuditItem=null">关闭</button>
+          <button class="rounded-lg border border-[color:var(--line)] px-3 py-1.5 text-sm hover:bg-[color:var(--card-soft)]" @click="activeAuditItem=null">关闭</button>
         </div>
       </div>
       <div class="space-y-4 p-5 text-sm">
@@ -170,7 +216,7 @@
           <div class="mb-3 text-xs font-semibold uppercase tracking-wide text-[color:var(--muted)]">Classification</div>
           <dl class="meta-grid">
             <dt>api_kind</dt><dd>{{ activeAuditItem.api_kind }}</dd>
-            <dt>owner_actions</dt><dd><span v-for="action in activeAuditItem.owner_actions" :key="action" class="tag mr-1 bg-[#edf5ef] text-[color:var(--good)]">{{ action }}</span></dd>
+            <dt>owner_actions</dt><dd><span v-for="action in activeAuditItem.owner_actions" :key="action" :class="ownerActionClass(action)">{{ action }}</span></dd>
             <dt>risk_level</dt><dd>{{ activeAuditItem.risk_level }}</dd>
             <dt>audit status</dt><dd>{{ activeAuditItem.audit_status }}</dd>
             <dt>counted</dt><dd>{{ activeAuditItem.counted_in_completion }}</dd>
@@ -200,14 +246,14 @@
 
   <Transition name="fade"><div v-if="activeItem || activeAuditItem" class="fixed inset-0 z-20 bg-black/35" @click="activeItem=null;activeAuditItem=null"></div></Transition>
   <Transition name="slide">
-    <aside v-if="activeItem" class="fixed right-0 top-0 z-30 h-full w-full max-w-3xl overflow-y-auto bg-[#fdfbf7] shadow-2xl">
+    <aside v-if="activeItem" class="drawer fixed right-0 top-0 z-30 h-full w-full max-w-3xl overflow-y-auto shadow-2xl">
       <div class="border-b border-[color:var(--line)] px-5 py-4">
         <div class="flex items-start justify-between gap-4">
           <div class="min-w-0">
             <div class="flex flex-wrap items-center gap-2"><span class="mono text-lg font-bold">{{ activeItem.id }}</span><span :class="priorityClass(activeItem.priority)">{{ activeItem.priority }}</span><span :class="statusClass(activeItem.status)">{{ activeItem.status }}</span></div>
             <div class="mt-1 text-xs text-[color:var(--muted)]">{{ activeItem.repo }} / {{ activeItem.group }}</div>
           </div>
-          <button class="rounded-lg border border-[color:var(--line)] px-3 py-1.5 text-sm hover:bg-[color:var(--soft)]" @click="activeItem=null">关闭</button>
+          <button class="rounded-lg border border-[color:var(--line)] px-3 py-1.5 text-sm hover:bg-[color:var(--card-soft)]" @click="activeItem=null">关闭</button>
         </div>
       </div>
       <div class="space-y-4 p-5 text-sm">
@@ -241,7 +287,7 @@
           <div class="mb-3 flex flex-wrap items-center gap-2"><div class="font-semibold">子算子 Row 展开</div><input v-model.trim="childSearch" class="ml-auto w-full rounded-lg border border-[color:var(--line)] bg-white px-3 py-1.5 text-xs md:w-64" placeholder="搜索 API / reference / 处理口径"></div>
           <div class="space-y-2">
             <article v-for="child in filteredChildren" :key="activeItem.id + '-' + child.row" class="rounded-xl border border-[color:var(--line)] bg-white p-3">
-              <div class="flex flex-wrap items-start justify-between gap-2"><div><span class="tag bg-stone-100 text-stone-700">Row {{ child.row }}</span><span class="ml-2 tag bg-[#eee8f4] text-[color:var(--lavender)]">{{ child.coverage }}</span></div><span :class="statusClass(child.status)">{{ child.status }}</span></div>
+              <div class="flex flex-wrap items-start justify-between gap-2"><div><span class="tag">Row {{ child.row }}</span><span class="ml-2 tag tag-model-rewrite">{{ child.coverage }}</span></div><span :class="statusClass(child.status)">{{ child.status }}</span></div>
               <div class="mono mt-2 break-all text-xs font-semibold">{{ child.api }}</div>
               <div class="mt-3 grid gap-2 text-xs md:grid-cols-2"><div><b>Owner:</b> {{ child.owner || '-' }}</div><div><b>Updated by:</b> {{ child.updated_by || '-' }}</div><div><b>Reference:</b> {{ child.reference || '-' }}</div><div><b>MS 候选 / 处理口径:</b> {{ child.handling || '-' }}</div><div v-if="child.evidence && child.evidence.length" class="md:col-span-2"><b>Evidence:</b> {{ child.evidence.join('; ') }}</div><div v-if="child.reason"><b>Reason:</b> {{ child.reason }}</div><div v-if="child.next"><b>Next:</b> {{ child.next }}</div></div>
             </article>
@@ -257,9 +303,9 @@
 <script>
 const { createApp } = Vue;
 createApp({
-  data(){return{metrics:{},items:[],operatorRows:[],apiAudit:null,auditExpanded:false,auditShowAllItems:false,search:'',childSearch:'',repoFilter:'all',priorityFilter:'all',statusFilter:'all',activeItem:null,activeAuditItem:null,boardColumns:[{key:'open',title:'Open',color:'#517d99'},{key:'blocked',title:'Blocked / XFail',color:'#b85c5c'},{key:'accepted',title:'Accepted',color:'#3f7d63'}]};},
+  data(){return{metrics:{},items:[],operatorRows:[],apiAudit:null,auditExpanded:false,auditShowAllItems:false,search:'',childSearch:'',repoFilter:'all',priorityFilter:'all',statusFilter:'all',activeItem:null,activeAuditItem:null,boardColumns:[{key:'open',title:'Open',color:'#2563eb'},{key:'blocked',title:'Blocked / XFail',color:'#ef4444'},{key:'accepted',title:'Accepted',color:'#047857'}]};},
   computed:{repos(){return [...new Set(this.items.map(i=>i.repo))];},filteredItems(){const q=this.search.toLowerCase();return this.items.filter(i=>{if(this.repoFilter!=='all'&&i.repo!==this.repoFilter)return false;if(this.priorityFilter!=='all'&&i.priority!==this.priorityFilter)return false;if(this.statusFilter!=='all'&&i.status!==this.statusFilter)return false;if(!q)return true;return [i.id,i.title,i.repo,i.group,i.priority,i.section,i.api,i.parent_id,i.source_label,i.ms_candidate,i.handling].join(' ').toLowerCase().includes(q);});},filteredChildren(){if(!this.activeItem)return[];const q=this.childSearch.toLowerCase();const children=this.activeItem.children||[];if(!q)return children;return children.filter(c=>[c.row,c.api,c.reference,c.handling,c.coverage].join(' ').toLowerCase().includes(q));},visibleAuditItems(){const items=this.apiAudit?.items||[];return this.auditShowAllItems?items:items.slice(0,6);},auditChipGroups(){if(!this.apiAudit)return[];return[{title:'api_kind',entries:this.auditCounts('api_kind')},{title:'owner_actions',entries:this.auditArrayCounts('owner_actions')},{title:'priority',entries:this.auditCounts('priority')},{title:'audit_status',entries:this.auditCounts('audit_status')},{title:'risk_level',entries:this.auditCounts('risk_level')}];}},
-  methods:{async loadData(){const res=await fetch('./data.json',{cache:'no-store'});const data=await res.json();this.metrics=data.metrics||{};this.items=data.items||[];this.operatorRows=data.operator_rows||[];try{const auditRes=await fetch('./data/api_audit.json',{cache:'no-store'});this.apiAudit=auditRes.ok?await auditRes.json():null;}catch(_){this.apiAudit=null;}},fmtTime(raw){if(!raw)return'-';const dt=new Date(raw);return Number.isNaN(dt.getTime())?raw:dt.toLocaleString('zh-CN',{hour12:false});},priorityCount(p){return (this.metrics.by_priority&&this.metrics.by_priority[p])||0;},repoItems(repo){return this.items.filter(i=>i.repo===repo);},repoPriority(repo,p){return this.repoItems(repo).filter(i=>i.priority===p).length;},repoPriorityPct(repo,p){const total=this.repoItems(repo).length||1;return this.repoPriority(repo,p)*100/total;},columnItems(status){return this.filteredItems.filter(i=>i.status===status);},auditCounts(key){const counts={};(this.apiAudit?.items||[]).forEach(i=>{const value=i[key]||'unknown';counts[value]=(counts[value]||0)+1;});return Object.entries(counts).map(([key,count])=>({key,count}));},auditArrayCounts(key){const counts={};(this.apiAudit?.items||[]).forEach(i=>(i[key]||['unknown']).forEach(value=>{counts[value]=(counts[value]||0)+1;}));return Object.entries(counts).map(([key,count])=>({key,count}));},formatRelation(values){return values&&values.length?values.join(' / '):'Not mapped yet';},relationPreview(item){const values=[...(item.related_dashboard_items||[]),...(item.related_operator_rows||[])];return values.length?values.join(' / '):'Not mapped yet';},priorityClass(p){return `pill ${p==='P0'?'bg-[#f4dfdc] text-[#99524e]':p==='P1'?'bg-[#f3e4ce] text-[#8a5f19]':'bg-[#e3edf2] text-[#446f88]'}`;},statusClass(s){return `pill ${s==='blocked'?'bg-[#f4dfdc] text-[#99524e]':s==='accepted'?'bg-[#dfeee5] text-[#2f6d52]':s==='xfail'?'bg-[#eee8f4] text-[color:var(--lavender)]':'bg-stone-100 text-stone-600'}`;},resetFilters(){this.search='';this.repoFilter='all';this.priorityFilter='all';this.statusFilter='all';},openItem(item){this.activeItem=item;this.activeAuditItem=null;this.childSearch='';},openAuditItem(item){this.activeAuditItem=item;this.activeItem=null;}},
+  methods:{async loadData(){const res=await fetch('./data.json',{cache:'no-store'});const data=await res.json();this.metrics=data.metrics||{};this.items=data.items||[];this.operatorRows=data.operator_rows||[];try{const auditRes=await fetch('./data/api_audit.json',{cache:'no-store'});this.apiAudit=auditRes.ok?await auditRes.json():null;}catch(_){this.apiAudit=null;}},fmtTime(raw){if(!raw)return'-';const dt=new Date(raw);return Number.isNaN(dt.getTime())?raw:dt.toLocaleString('zh-CN',{hour12:false});},priorityCount(p){return (this.metrics.by_priority&&this.metrics.by_priority[p])||0;},repoItems(repo){return this.items.filter(i=>i.repo===repo);},repoPriority(repo,p){return this.repoItems(repo).filter(i=>i.priority===p).length;},repoPriorityPct(repo,p){const total=this.repoItems(repo).length||1;return this.repoPriority(repo,p)*100/total;},columnItems(status){return this.filteredItems.filter(i=>i.status===status);},auditCounts(key){const counts={};(this.apiAudit?.items||[]).forEach(i=>{const value=i[key]||'unknown';counts[value]=(counts[value]||0)+1;});return Object.entries(counts).map(([key,count])=>({key,count}));},auditArrayCounts(key){const counts={};(this.apiAudit?.items||[]).forEach(i=>(i[key]||['unknown']).forEach(value=>{counts[value]=(counts[value]||0)+1;}));return Object.entries(counts).map(([key,count])=>({key,count}));},formatRelation(values){return values&&values.length?values.join(' / '):'Not mapped yet';},relationPreview(item){const values=[...(item.related_dashboard_items||[]),...(item.related_operator_rows||[])];return values.length?values.join(' / '):'Not mapped yet';},priorityClass(p){return `pill ${p==='P0'?'priority-p0':p==='P1'?'priority-p1':'priority-p2'}`;},statusClass(s){return `pill ${s==='blocked'?'status-blocked':s==='accepted'?'status-accepted':s==='xfail'?'status-xfail':'status-open'}`;},apiKindClass(kind){return `tag ${kind==='custom_op'?'tag-custom-op':kind==='bridge_runtime'?'tag-bridge-runtime':kind==='model_rewrite'?'tag-model-rewrite':''}`;},ownerActionClass(action){return `tag ${action==='op_dev'?'tag-op-dev':action==='test_watch'?'tag-test-watch':''}`;},riskClass(risk){return `tag ${risk==='high'?'tag-high':risk==='medium'?'tag-medium':''}`;},auditChipClass(group,key){if(group==='api_kind')return this.apiKindClass(key);if(group==='owner_actions')return this.ownerActionClass(key);if(group==='priority')return this.priorityClass(key);if(group==='audit_status')return this.statusClass(key);if(group==='risk_level')return this.riskClass(key);return 'tag';},resetFilters(){this.search='';this.repoFilter='all';this.priorityFilter='all';this.statusFilter='all';},openItem(item){this.activeItem=item;this.activeAuditItem=null;this.childSearch='';},openAuditItem(item){this.activeAuditItem=item;this.activeItem=null;}},
   mounted(){this.loadData().catch(err=>alert(String(err)));}
 }).mount('#app');
 </script>
