@@ -1,6 +1,6 @@
 # Migration Dashboard
 
-跟踪 `migration-analysis-v0.3.md` 中 PanguV2 torch_npu -> MindSpore 迁移 checkbox 的静态看板。`ms_custom_ops` 算子部分采用两级结构：`4.x` 父 checkbox 卡片 + 5.3 Row 子算子明细。
+跟踪 `migration-analysis-v0.4.md` 中 PanguV2 torch_npu -> MindSpore 迁移验收项的静态看板。Dashboard 执行口径为 170 个实际跟踪项：78 个 `vllm_omni_npu` checkbox、34 个 `omni_models` checkbox、58 个 `ms_custom_ops` 5.3 Row；`4.1`-`4.14` 仅作为算子折叠分组，不计入完成率。
 
 ## 结构
 
@@ -28,7 +28,7 @@ python -m http.server 8000
 
 ```bash
 python scripts/build_data.py \
-  --source ../migration-analysis-v0.3.md \
+  --source migration-analysis-v0.4.md \
   --output data.json \
   --status-dir data/status \
   --config data/status_config.json

@@ -5,12 +5,12 @@ import argparse
 import datetime as dt
 import json
 import re
-from collections import Counter
+from collections import Counter, defaultdict
 from pathlib import Path
 
 CHECKBOX_RE = re.compile(r"^\| \[ \] `([^`]+)` \| (P\d) \| (.*?) \|(?: (.*?) \| (\d+) \|)?$", re.M)
 SECTION_RE = re.compile(r"^### E\.(\d+) (.+)$")
-OP_ROW_RE = re.compile(r"^\| (\d+) \| `([^`]+)` \| (.*?) \| (.*?) \| (.*?) \|$")
+OP_ROW_RE = re.compile(r"^\| (\d+) \| `([^`]+)` \| (.*?) \| (.*?) \| (.*?) \| (.*?) \|$")
 CHECKBOX_ID_RE = re.compile(r"`(4\.\d+)`")
 STATUS_KEYS = ["status", "owner", "evidence", "reason", "next", "notes", "updated_by"]
 
@@ -89,6 +89,14 @@ def apply_status(target: dict, update: dict | None, default_owner: str = "") -> 
             target[key] = update[key]
 
 
+def best_row_update(overlays: dict, parents: list[str], row: str) -> dict | None:
+    for parent_id in parents:
+        update = overlays["operator_rows"].get(f"{parent_id}#{row}")
+        if update:
+            return update
+    return None
+
+
 def parse_operator_rows(markdown: str, overlays: dict, defaults: dict) -> list[dict]:
     rows = []
     in_ops_table = False
@@ -103,36 +111,42 @@ def parse_operator_rows(markdown: str, overlays: dict, defaults: dict) -> list[d
         match = OP_ROW_RE.match(line)
         if not match:
             continue
-        row, api, coverage, reference, handling = match.groups()
+        row, api, source_label, coverage, ms_candidate, handling = match.groups()
         parents = CHECKBOX_ID_RE.findall(coverage)
+        if not parents:
+            parents = ["4.14"]
+        primary_parent = parents[0]
         child = {
+            "id": f"{primary_parent}#{row}",
             "row": int(row),
             "api": api,
+            "parent_id": primary_parent,
             "parent_ids": parents,
             "coverage": ", ".join(parents),
-            "reference": strip_md(reference),
+            "source_label": strip_md(source_label),
+            "ms_candidate": strip_md(ms_candidate),
+            "reference": strip_md(ms_candidate),
             "handling": strip_md(handling),
+            "priority": "P0",
+            "title": api,
+            "repo": "ms_custom_ops",
+            "section": "ms_custom_ops operator rows",
+            "lane": "Custom Ops/API",
+            "group": primary_parent,
             "status": "todo",
             "owner": "",
             "evidence": [],
             "notes": "",
+            "kind": "operator_row",
         }
-        for parent_id in parents:
-            apply_status(child, overlays["operator_rows"].get(f"{parent_id}#{row}"), defaults.get("ms_custom_ops", ""))
+        apply_status(child, best_row_update(overlays, parents, row), defaults.get("ms_custom_ops", ""))
         rows.append(child)
     return rows
 
 
-def build_data(markdown: str, status_dir: Path = Path("data/status"), config_path: Path = Path("data/status_config.json")) -> dict:
-    overlays = load_status_overlays(status_dir)
-    defaults = module_defaults(config_path)
-    operator_rows = parse_operator_rows(markdown, overlays, defaults)
-    children_by_parent: dict[str, list[dict]] = {}
-    for row in operator_rows:
-        for parent_id in row["parent_ids"]:
-            children_by_parent.setdefault(parent_id, []).append(row)
-
+def parse_checkbox_items(markdown: str, overlays: dict, defaults: dict) -> tuple[list[dict], dict[str, dict]]:
     items = []
+    operator_groups = {}
     section = ""
     for line in markdown.splitlines():
         section_match = SECTION_RE.match(line)
@@ -144,8 +158,7 @@ def build_data(markdown: str, status_dir: Path = Path("data/status"), config_pat
             continue
         item_id, priority, title, rows, count = match.groups()
         repo, lane, group = classify(item_id, title)
-        children = sorted(children_by_parent.get(item_id, []), key=lambda child: child["row"])
-        item = {
+        base = {
             "id": item_id,
             "priority": priority,
             "title": title.replace("。", ""),
@@ -156,15 +169,47 @@ def build_data(markdown: str, status_dir: Path = Path("data/status"), config_pat
             "status": "todo",
             "rows": rows or "",
             "item_count": int(count) if count else 1,
-            "children": children,
-            "child_count": len(children),
             "evidence": [],
             "owner": "",
             "notes": "",
+            "kind": "checkbox",
         }
-        apply_status(item, overlays["items"].get(item_id), defaults.get(repo, ""))
-        items.append(item)
+        if item_id.startswith("4."):
+            operator_groups[item_id] = {**base, "status_counts": {}, "child_ids": []}
+            continue
+        apply_status(base, overlays["items"].get(item_id), defaults.get(repo, ""))
+        items.append(base)
+    return items, operator_groups
 
+
+def attach_operator_groups(operator_rows: list[dict], operator_groups: dict[str, dict]) -> None:
+    children_by_parent: dict[str, list[dict]] = defaultdict(list)
+    for row in operator_rows:
+        for parent_id in row["parent_ids"]:
+            children_by_parent[parent_id].append(row)
+    for group_id, group in operator_groups.items():
+        children = sorted(children_by_parent.get(group_id, []), key=lambda child: child["row"])
+        counts = Counter(child["status"] for child in children)
+        group["children"] = children
+        group["child_ids"] = [child["id"] for child in children]
+        group["child_count"] = len(children)
+        group["status_counts"] = dict(counts)
+        if counts.get("blocked"):
+            group["status"] = "blocked"
+        elif children and counts.get("accepted") == len(children):
+            group["status"] = "accepted"
+        else:
+            group["status"] = "open"
+
+
+def build_data(markdown: str, status_dir: Path = Path("data/status"), config_path: Path = Path("data/status_config.json")) -> dict:
+    overlays = load_status_overlays(status_dir)
+    defaults = module_defaults(config_path)
+    operator_rows = parse_operator_rows(markdown, overlays, defaults)
+    checkbox_items, operator_groups = parse_checkbox_items(markdown, overlays, defaults)
+    attach_operator_groups(operator_rows, operator_groups)
+
+    items = checkbox_items + operator_rows
     status_counts = Counter(item["status"] for item in items)
     by_priority = Counter(item["priority"] for item in items)
     by_repo = Counter(item["repo"] for item in items)
@@ -177,17 +222,24 @@ def build_data(markdown: str, status_dir: Path = Path("data/status"), config_pat
         "blocked": status_counts.get("blocked", 0),
         "completion_rate": round(accepted * 100 / total, 1) if total else 0,
         "operator_rows": len(operator_rows),
+        "operator_groups": len(operator_groups),
         "by_priority": dict(by_priority),
         "by_repo": dict(by_repo),
         "generated_at": dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).isoformat(),
-        "source": "migration-analysis-v0.3.md Appendix E + Section 5.3",
+        "source": "migration-analysis-v0.4.md Appendix E + Section 5.3",
     }
-    return {"metrics": metrics, "items": items, "operator_rows": operator_rows, "history": {"daily": []}}
+    return {
+        "metrics": metrics,
+        "items": items,
+        "operator_rows": operator_rows,
+        "operator_groups": operator_groups,
+        "history": {"daily": []},
+    }
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--source", default="../migration-analysis-v0.3.md")
+    parser.add_argument("--source", default="migration-analysis-v0.4.md")
     parser.add_argument("--output", default="data.json")
     parser.add_argument("--status-dir", default="data/status")
     parser.add_argument("--config", default="data/status_config.json")
