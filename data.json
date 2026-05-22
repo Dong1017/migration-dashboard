@@ -2,8 +2,8 @@
   "metrics": {
     "total": 170,
     "accepted": 0,
-    "open": 170,
-    "blocked": 0,
+    "open": 169,
+    "blocked": 1,
     "completion_rate": 0.0,
     "operator_rows": 58,
     "operator_groups": 14,
@@ -17,7 +17,7 @@
       "omni_models": 34,
       "ms_custom_ops": 58
     },
-    "generated_at": "2026-05-22T11:50:04.794850+08:00",
+    "generated_at": "2026-05-22T12:43:57.106180+08:00",
     "source": "migration-analysis-v0.4.md Appendix E + Section 5.3"
   },
   "items": [
@@ -1832,11 +1832,14 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.1",
-      "status": "open",
+      "status": "blocked",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "reason": "IssueOps retry after billing budget check",
+      "next": "verify workflow updates dashboard data",
+      "updated_by": "@Dong1017"
     },
     {
       "id": "4.14#14",
@@ -3293,11 +3296,14 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.1",
-      "status": "open",
+      "status": "blocked",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "reason": "IssueOps retry after billing budget check",
+      "next": "verify workflow updates dashboard data",
+      "updated_by": "@Dong1017"
     },
     {
       "id": "4.14#14",
@@ -4743,7 +4749,7 @@
       "section": "ms_custom_ops",
       "lane": "Custom Ops/API",
       "group": "Attention fused/sink",
-      "status": "open",
+      "status": "blocked",
       "rows": "13, 21, 38, 40, 41, 42, 43, 48, 56, 58, 60, 71",
       "item_count": 12,
       "evidence": [],
@@ -4751,7 +4757,8 @@
       "notes": "",
       "kind": "checkbox",
       "status_counts": {
-        "open": 12
+        "blocked": 1,
+        "open": 11
       },
       "child_ids": [
         "4.1#13",
@@ -4787,11 +4794,14 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.1",
-          "status": "open",
+          "status": "blocked",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "reason": "IssueOps retry after billing budget check",
+          "next": "verify workflow updates dashboard data",
+          "updated_by": "@Dong1017"
         },
         {
           "id": "4.1#21",
