@@ -60,9 +60,24 @@
     .item-card { padding:10px; transition:border-color .16s ease, box-shadow .16s ease, transform .16s ease; }
     .item-card:hover,.audit-card:hover { border-color:#cbd5e1; box-shadow:0 10px 28px rgba(15,23,42,.10); transform:translateY(-1px); }
     .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
-    .pill,.tag { border-radius:999px; padding:2px 8px; font-size:11px; font-weight:700; line-height:1.35; }
+    .pill,.tag { border-radius:999px; padding:2px 8px; font-size:11px; font-weight:600; line-height:1.35; }
     .tag { max-width:148px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; background:#f1f5f9; color:#475569; }
-    .scope-badge { border-radius:999px; border:1px solid var(--line); background:var(--card-soft); padding:4px 9px; font-size:11px; font-weight:700; color:var(--muted); }
+    .metric-global { position:relative; overflow:hidden; border-left:4px solid var(--accent); box-shadow:0 12px 30px rgba(15,118,110,.10); }
+    .metric-global::before { content:""; position:absolute; inset:0 0 auto; height:3px; background:linear-gradient(90deg, var(--accent), rgba(14,165,233,.72), transparent); }
+    .metric-gate { position:relative; overflow:hidden; border-top:3px solid var(--p0); background:linear-gradient(135deg, rgba(254,226,226,.62), rgba(255,255,255,.92) 42%); }
+    .metric-gate::after { content:"release gate"; position:absolute; right:12px; top:10px; border:1px solid rgba(185,28,28,.18); border-radius:999px; background:rgba(255,255,255,.72); color:var(--red); padding:2px 7px; font-size:10px; font-weight:700; letter-spacing:.02em; text-transform:uppercase; }
+    .audit-panel { border-left:3px solid var(--accent); }
+    .counted-badge { border-color:rgba(15,118,110,.35); background:rgba(204,251,241,.42); color:var(--accent); box-shadow:inset 0 0 0 1px rgba(255,255,255,.6); }
+    .audit-id { display:inline-flex; align-items:center; border:1px solid var(--line); border-radius:999px; background:#f8fafc; padding:2px 7px; color:#334155; }
+    .board-column-open { border-top:3px solid var(--blue); }
+    .board-column-blocked { border-top:3px solid var(--p0); }
+    .board-column-accepted { border-top:3px solid var(--green); }
+    .board-header { position:sticky; top:0; z-index:1; margin:-12px -12px 12px; padding:12px 12px 8px; border-radius:16px 16px 0 0; background:rgba(255,255,255,.72); backdrop-filter:blur(10px); }
+    .drawer-header { position:sticky; top:0; z-index:2; background:rgba(248,250,252,.94); backdrop-filter:blur(12px); }
+    .hero-card { border-left:4px solid var(--accent); box-shadow:0 10px 26px rgba(15,23,42,.07); }
+    .drawer-badge-row { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
+    .drawer-pill { font-size:12px; padding:3px 9px; }
+    .scope-badge { border-radius:999px; border:1px solid var(--line); background:var(--card-soft); padding:4px 9px; font-size:11px; font-weight:600; color:var(--muted); }
     .status-dot { width:8px; height:8px; border-radius:999px; display:inline-block; }
     .clamp-2 { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
     .meta-grid { display:grid; grid-template-columns:minmax(90px, .45fr) 1fr; gap:8px 14px; }
@@ -115,12 +130,12 @@
     </header>
 
     <section class="grid grid-cols-1 gap-3 md:grid-cols-4">
-      <div class="panel metric-card">
+      <div class="panel metric-card metric-global">
         <div class="text-xs font-semibold uppercase tracking-wide text-[color:var(--muted)]">Completion</div>
         <div class="mt-1 flex items-end gap-2"><div class="text-3xl font-bold text-[color:var(--accent)]">{{ metrics.completion_rate || 0 }}%</div><div class="pb-1 text-xs text-[color:var(--muted)]">{{ metrics.accepted || 0 }}/{{ metrics.total || 0 }}</div></div>
         <div class="mt-2 h-1.5 overflow-hidden rounded-full bg-[#e5e7eb]"><div class="h-full rounded-full bg-[color:var(--accent)]" :style="{width:(metrics.completion_rate || 0)+'%'}"></div></div>
       </div>
-      <div class="panel metric-card"><div class="text-xs font-semibold uppercase tracking-wide text-[color:var(--muted)]">P0 Gate</div><div class="mt-2 text-3xl font-bold text-[color:var(--red)]">{{ priorityCount('P0') }}</div><div class="text-xs text-[color:var(--muted)]">release blockers</div></div>
+      <div class="panel metric-card metric-gate"><div class="text-xs font-semibold uppercase tracking-wide text-[color:var(--muted)]">P0 Gate</div><div class="mt-2 text-3xl font-bold text-[color:var(--red)]">{{ priorityCount('P0') }}</div><div class="text-xs text-[color:var(--muted)]">release blockers</div></div>
       <div class="panel metric-card"><div class="text-xs font-semibold uppercase tracking-wide text-[color:var(--muted)]">P1 Integration</div><div class="mt-2 text-3xl font-bold text-[color:var(--amber)]">{{ priorityCount('P1') }}</div><div class="text-xs text-[color:var(--muted)]">first pass</div></div>
       <div class="panel metric-card"><div class="text-xs font-semibold uppercase tracking-wide text-[color:var(--muted)]">Operator Rows</div><div class="mt-2 text-3xl font-bold text-[color:var(--blue)]">{{ metrics.operator_rows || 0 }}</div><div class="text-xs text-[color:var(--muted)]">Section 5.3</div></div>
     </section>
@@ -137,7 +152,7 @@
       </div>
     </section>
 
-    <section v-if="apiAudit" class="compact-panel p-3">
+    <section v-if="apiAudit" class="compact-panel audit-panel p-3">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <div>
           <div class="text-sm font-bold">API Audit</div>
@@ -148,7 +163,7 @@
           <span class="scope-badge">Custom/NPU Candidate {{ apiAudit.summary.custom_op_candidate_rows }}</span>
           <span class="scope-badge">Excluded {{ apiAudit.summary.excluded_rows }}</span>
           <span class="scope-badge">Main Items {{ apiAudit.summary.main_dashboard_items }}</span>
-          <span class="scope-badge">Counted: No</span>
+          <span class="scope-badge counted-badge">Counted: No</span>
         </div>
       </div>
       <div class="audit-note mt-2 px-3 py-2 text-xs leading-snug">Note: 458 API usage scan entries are not completion backlog; 58 candidate rows are not 58 new operators; API Audit is not counted in 170 metrics.</div>
@@ -161,7 +176,7 @@
       </div>
       <div class="mt-2 grid gap-2 md:grid-cols-2 xl:grid-cols-3">
         <article v-for="item in visibleAuditItems" :key="item.id" class="audit-card cursor-pointer" @click="openAuditItem(item)">
-          <div class="flex items-center justify-between gap-2"><span class="mono text-xs font-bold">{{ item.id }}</span><span :class="priorityClass(item.priority)">{{ item.priority }}</span></div>
+          <div class="flex items-center justify-between gap-2"><span class="mono audit-id text-xs font-bold">{{ item.id }}</span><span :class="priorityClass(item.priority)">{{ item.priority }}</span></div>
           <div class="clamp-2 mt-1 text-[13px] font-semibold leading-snug">{{ item.title }}</div>
           <div class="mt-1.5 flex flex-wrap gap-1"><span :class="apiKindClass(item.api_kind)">{{ item.api_kind }}</span><span v-for="action in item.owner_actions" :key="item.id + action" :class="ownerActionClass(action)">{{ action }}</span><span :class="statusClass(item.audit_status)">audit {{ item.audit_status }}</span><span :class="riskClass(item.risk_level)">{{ item.risk_level }}</span></div>
           <div class="clamp-2 mt-1.5 text-xs text-[color:var(--muted)]">{{ item.risk }}</div>
@@ -182,8 +197,8 @@
     </section>
 
     <section class="grid grid-cols-1 gap-3 xl:grid-cols-3">
-      <div v-for="column in boardColumns" :key="column.key" class="board-column p-3">
-        <div class="mb-3 flex items-center justify-between border-b border-[color:var(--line)] pb-2">
+      <div v-for="column in boardColumns" :key="column.key" :class="['board-column p-3', 'board-column-' + column.key]">
+        <div class="board-header mb-3 flex items-center justify-between border-b border-[color:var(--line)] pb-2">
           <div class="flex items-center gap-2 font-semibold"><span class="status-dot" :style="{background:column.color}"></span>{{ column.title }}</div>
           <span class="pill bg-white text-[#475569]">{{ columnItems(column.key).length }}</span>
         </div>
@@ -201,7 +216,7 @@
 
   <Transition name="slide">
     <aside v-if="activeAuditItem" class="drawer fixed right-0 top-0 z-30 h-full w-full max-w-3xl overflow-y-auto shadow-2xl">
-      <div class="border-b border-[color:var(--line)] px-5 py-4">
+      <div class="drawer-header border-b border-[color:var(--line)] px-5 py-4">
         <div class="flex items-start justify-between gap-4">
           <div class="min-w-0">
             <div class="flex flex-wrap items-center gap-2"><span class="mono text-lg font-bold">{{ activeAuditItem.id }}</span><span :class="priorityClass(activeAuditItem.priority)">{{ activeAuditItem.priority }}</span><span :class="statusClass(activeAuditItem.audit_status)">audit status: {{ activeAuditItem.audit_status }}</span></div>
@@ -211,7 +226,7 @@
         </div>
       </div>
       <div class="space-y-4 p-5 text-sm">
-        <section class="panel p-4"><div class="mb-2 text-xs font-semibold uppercase tracking-wide text-[color:var(--muted)]">Audit Item</div><p class="text-base font-semibold leading-relaxed">{{ activeAuditItem.title }}</p></section>
+        <section class="panel hero-card p-4"><div class="mb-2 text-xs font-semibold uppercase tracking-wide text-[color:var(--muted)]">Audit Item</div><p class="text-base font-semibold leading-relaxed">{{ activeAuditItem.title }}</p><div class="drawer-badge-row"><span class="pill drawer-pill priority-p0">{{ activeAuditItem.priority }}</span><span :class="statusClass(activeAuditItem.audit_status) + ' drawer-pill'">audit {{ activeAuditItem.audit_status }}</span><span class="pill drawer-pill counted-badge">counted_in_completion=false</span><span :class="riskClass(activeAuditItem.risk_level) + ' drawer-pill'">{{ activeAuditItem.risk_level }}</span></div></section>
         <section class="panel p-4">
           <div class="mb-3 text-xs font-semibold uppercase tracking-wide text-[color:var(--muted)]">Classification</div>
           <dl class="meta-grid">
@@ -247,7 +262,7 @@
   <Transition name="fade"><div v-if="activeItem || activeAuditItem" class="fixed inset-0 z-20 bg-black/35" @click="activeItem=null;activeAuditItem=null"></div></Transition>
   <Transition name="slide">
     <aside v-if="activeItem" class="drawer fixed right-0 top-0 z-30 h-full w-full max-w-3xl overflow-y-auto shadow-2xl">
-      <div class="border-b border-[color:var(--line)] px-5 py-4">
+      <div class="drawer-header border-b border-[color:var(--line)] px-5 py-4">
         <div class="flex items-start justify-between gap-4">
           <div class="min-w-0">
             <div class="flex flex-wrap items-center gap-2"><span class="mono text-lg font-bold">{{ activeItem.id }}</span><span :class="priorityClass(activeItem.priority)">{{ activeItem.priority }}</span><span :class="statusClass(activeItem.status)">{{ activeItem.status }}</span></div>
@@ -257,7 +272,7 @@
         </div>
       </div>
       <div class="space-y-4 p-5 text-sm">
-        <section class="panel p-4"><div class="mb-2 text-xs font-semibold uppercase tracking-wide text-[color:var(--muted)]">验收点</div><p class="text-base font-semibold leading-relaxed">{{ activeItem.title }}</p></section>
+        <section class="panel hero-card p-4"><div class="mb-2 text-xs font-semibold uppercase tracking-wide text-[color:var(--muted)]">验收点</div><p class="text-base font-semibold leading-relaxed">{{ activeItem.title }}</p><div class="drawer-badge-row"><span :class="priorityClass(activeItem.priority) + ' drawer-pill'">{{ activeItem.priority }}</span><span :class="statusClass(activeItem.status) + ' drawer-pill'">{{ activeItem.status }}</span><span v-if="activeItem.owner" class="pill drawer-pill tag-op-dev">{{ activeItem.owner }}</span><span class="pill drawer-pill status-open">counted_in_completion=true</span></div></section>
         <section class="panel p-4">
           <div class="mb-3 text-xs font-semibold uppercase tracking-wide text-[color:var(--muted)]">Metadata</div>
           <dl class="meta-grid">
