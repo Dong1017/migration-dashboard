@@ -1,7 +1,7 @@
 {
   "summary": {
     "counted_in_completion": false,
-    "source": "acceptance/cases and acceptance/artifacts",
+    "source": "manual snapshot from OP-RMSNORM-001 remote result",
     "total_cases": 1,
     "migration_evidence_pass": 1,
     "seed_scope": "verified evidence cases only"
@@ -18,9 +18,15 @@
       "evidence_grade": "migration_evidence",
       "golden_source_kind": "torch_npu_runtime",
       "actual_source_kind": "mindspore_runtime",
+      "torch_api": "torch_npu.npu_rms_norm",
+      "ms_api": "mindspore.ops.rms_norm",
+      "api_mapping": "torch_npu.npu_rms_norm -> mindspore.ops.rms_norm",
+      "result_source": "remote artifact result snapshot",
+      "remote_path": "/home/xinwen/pangu_workspace/val_gate/migration-dashboard/acceptance/artifacts/OP-RMSNORM-001/result.json",
       "scope": "fp32 [2,16,128], seed=0, single-rank",
       "counted_in_completion": false,
       "summary": "torch_npu.npu_rms_norm and mindspore.ops.rms_norm matched on the minimal artifact loop.",
+      "note": "This evidence does not imply custom-op development completion or full RMSNorm coverage.",
       "metrics": {
         "finite_check": "pass",
         "max_abs_error": 0.0,

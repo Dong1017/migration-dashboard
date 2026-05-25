@@ -6,7 +6,7 @@ Final OP case pass requires all of the following:
 
 1. torch_npu/PT golden artifacts;
 2. MindSpore actual artifacts;
-3. required metadata: `dtype`, `shape`, `layout`, `seed`, `rank`, `environment`;
+3. required metadata: `dtype`, `shape`, `layout`, `seed`, `tensor_rank`, `distributed.rank`, `distributed.world_size`, `distributed.group`, `environment`, `version`, `golden_source_kind`, `actual_source_kind`;
 4. `compare_outputs.py` result satisfying the case threshold.
 
 Do not mark an OP case as `pass` based only on reference docs, MindSpore API tests, or a manual NumPy fallback. Do not treat the fake bridge contract as a real bridge pass.

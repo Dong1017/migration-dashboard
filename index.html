@@ -194,7 +194,7 @@
         <div class="flex flex-wrap gap-2 text-xs">
           <span class="scope-badge">Cases {{ acceptanceEvidence.summary.total_cases }}</span>
           <span class="scope-badge">Migration Evidence Pass {{ acceptanceEvidence.summary.migration_evidence_pass }}</span>
-          <span class="scope-badge">{{ acceptanceEvidence.summary.source }}</span>
+          <span class="scope-badge">Source: remote snapshot</span>
           <span class="scope-badge counted-badge">Counted: No</span>
         </div>
       </div>
@@ -206,6 +206,8 @@
           <div class="mt-1.5 flex flex-wrap gap-1"><span class="tag tag-op-dev">{{ item.evidence_grade }}</span><span class="tag tag-custom-op">API equivalence</span><span class="pill counted-badge">counted=false</span></div>
           <div class="mt-2 code-chip mono text-xs">torch_npu.npu_rms_norm → mindspore.ops.rms_norm</div>
           <div class="mt-1.5 text-xs text-[color:var(--muted)]">{{ item.scope }}</div>
+          <div class="mt-1.5 text-[11px] text-[color:var(--muted)]">{{ item.result_source }} · {{ item.artifact }}</div>
+          <div class="mt-1 text-[11px] text-[color:var(--muted)]">{{ item.note }}</div>
           <div class="mt-1.5 text-[11px] text-[color:var(--muted)]">max_abs_error={{ item.metrics.max_abs_error }} · max_rel_error={{ item.metrics.max_rel_error }} · pass_ratio={{ item.metrics.pass_ratio }}</div>
         </article>
       </div>

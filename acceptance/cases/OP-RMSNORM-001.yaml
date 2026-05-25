@@ -56,8 +56,14 @@ evidence:
     - shape
     - layout
     - seed
-    - rank
+    - tensor_rank
+    - distributed.rank
+    - distributed.world_size
+    - distributed.group
     - environment
+    - version
+    - golden_source_kind
+    - actual_source_kind
 
 result:
   artifact: "acceptance/artifacts/OP-RMSNORM-001/result.json"
