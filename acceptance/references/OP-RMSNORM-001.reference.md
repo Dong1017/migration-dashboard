@@ -2,15 +2,17 @@
 
 ## Case purpose
 
-`OP-RMSNORM-001` covers RMSNorm basic operator numeric equivalence.
+`OP-RMSNORM-001` covers RMSNorm API numeric equivalence as an API audit/watch case.
 
-It represents the ordinary custom-operator evidence chain:
+It validates this API behavior path:
 
 ```text
-torch_npu.npu_rms_norm / PT reference
+torch_npu.npu_rms_norm
 vs
-mindspore.ops.rms_norm / ms_custom_ops candidate
+mindspore.ops.rms_norm
 ```
+
+This case validates the evidence pipeline and one minimal fp32 API equivalence path. It is not a custom-op development gate and does not prove `ms_custom_ops` RMSNorm integration.
 
 ## Reference sources
 
@@ -55,10 +57,12 @@ PyTorch and MindSpore references are semantic references. They do not prove the 
 
 Final `pass` requires:
 
-1. torch_npu/PT golden artifacts;
-2. MindSpore actual artifacts;
-3. required metadata for dtype, shape, layout, seed, rank, and environment;
+1. torch_npu golden artifacts;
+2. MindSpore API actual artifacts;
+3. required metadata for dtype, shape, layout, seed, tensor rank, distributed rank, and environment;
 4. `compare_outputs.py` result satisfying the case threshold.
+
+A `migration_evidence` result for this case means API equivalence/watch evidence only. It does not mean custom-op acceptance is complete.
 
 NumPy or manual RMSNorm may be used only as a debug fallback. It is not final golden evidence.
 

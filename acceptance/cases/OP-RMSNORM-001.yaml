@@ -1,7 +1,9 @@
 case_id: OP-RMSNORM-001
-title: "RMSNorm numeric equivalence evidence contract"
-scope: "Basic custom operator numerical equivalence for RMSNorm. This contract does not prove NPU validation until golden and actual artifacts are collected."
-repo_target: "ms_custom_ops"
+title: "RMSNorm API numeric equivalence evidence contract"
+scope: "API equivalence/watch case for torch_npu.npu_rms_norm -> mindspore.ops.rms_norm. This validates the evidence pipeline and API behavior equivalence for one minimal fp32 case; it is not a custom-op development gate."
+repo_target: "api_audit"
+watch_type: "api_equivalence"
+custom_op_required: false
 priority: P0
 status: open
 

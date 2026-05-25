@@ -51,6 +51,10 @@ def test_rmsnorm_case_schema_is_complete():
     case = load_simple_yaml(CASE_PATH)
     assert REQUIRED_FIELDS <= set(case)
     assert case["case_id"] == "OP-RMSNORM-001"
+    assert case["repo_target"] == "api_audit"
+    assert case["watch_type"] == "api_equivalence"
+    assert case["custom_op_required"] is False
+    assert "mindspore.ops.rms_norm" in case["apis"]["actual"]
     assert {entry["dtype"] for entry in case["inputs"]} == {"fp32", "bf16"}
     assert [1, 1, 128] in [entry["shape"] for entry in case["inputs"]]
     validate_case(case)
