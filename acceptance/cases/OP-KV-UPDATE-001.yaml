@@ -1,0 +1,71 @@
+case_id: OP-KV-UPDATE-001
+title: "KV cache inplace update side-effect evidence contract"
+scope: "KV/cache update side-effect semantics: inplace visibility, alias/view propagation, unchanged positions, duplicate index behavior, and empty update behavior. This contract does not prove NPU validation until golden and actual artifacts are collected."
+repo_target: "ms_custom_ops"
+priority: P0
+status: open
+
+apis:
+  golden:
+    - "torch_npu.npu_scatter_nd_update_"
+  candidates:
+    - "torch_npu.npu_scatter_pa_kv_cache"
+    - "mindspore.ops.kv_cache_scatter_update"
+
+scenarios:
+  - normal_update
+  - duplicate_index
+  - empty_update
+
+semantic_checks:
+  - cache_after
+  - alias_view_after
+  - changed_positions
+  - unchanged_positions
+  - empty_update
+  - duplicate_index_behavior_from_pt_golden
+
+golden:
+  source: "torch_npu.npu_scatter_nd_update_ PT golden side-effect artifacts"
+  command: "TBD: collect PT golden cache_before / indices / updates / cache_after / alias_view_after"
+  artifact_dir: "acceptance/artifacts/OP-KV-UPDATE-001/golden"
+
+actual:
+  source: "MindSpore KV/cache update candidate actual side-effect artifacts"
+  command: "TBD: collect MindSpore actual cache_after / alias_view_after"
+  artifact_dir: "acceptance/artifacts/OP-KV-UPDATE-001/actual"
+
+compare:
+  command: "python acceptance/tools/compare_outputs.py --case acceptance/cases/OP-KV-UPDATE-001.yaml"
+  metrics:
+    - finite_check
+    - max_abs_error
+    - max_rel_error
+    - pass_ratio
+  threshold:
+    fp32:
+      atol: 1.0e-5
+      rtol: 1.0e-5
+      pass_ratio: 0.9999
+    bf16:
+      atol: 2.0e-2
+      rtol: 2.0e-2
+      pass_ratio: 0.999
+
+evidence:
+  required_fields:
+    - dtype
+    - shape
+    - layout
+    - seed
+    - rank
+    - environment
+
+result:
+  artifact: "acceptance/artifacts/OP-KV-UPDATE-001/result.json"
+  allowed_status:
+    - pass
+    - fail
+    - blocked
+    - not_run
+    - xfail

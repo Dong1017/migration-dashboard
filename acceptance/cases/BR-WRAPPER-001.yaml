@@ -1,0 +1,77 @@
+case_id: BR-WRAPPER-001
+title: "Bridge wrapper context and exception restore contract"
+scope: "Bridge wrapper control-flow contract for PT tensor to MS tensor conversion, forward_context swap/restore, distributed swap/restore, before/after hooks, MS model forward, output conversion, exception restore, and compute_logits path. This skeleton can run with fake objects and does not require real NPU."
+repo_target: "vllm + omni_npu"
+priority: P0
+status: open
+
+contract_paths:
+  - success_path
+  - exception_restore
+  - compute_logits
+
+expected_flow:
+  success_path:
+    - pt_to_ms_converter
+    - forward_context_swap
+    - distributed_swap
+    - before_ms_forward
+    - ms_model_forward
+    - after_ms_forward
+    - ms_to_pt_converter
+    - forward_context_restore
+    - distributed_restore
+  exception_path:
+    - exception_re_raised
+    - forward_context_restore
+    - distributed_restore
+    - next_call_not_polluted
+  compute_logits_path:
+    - compute_logits_independent_path
+    - output_converted
+    - wrapper_state_not_polluted
+
+golden:
+  source: "fake bridge wrapper contract objects"
+  command: "python -m pytest acceptance/tests/bridge/test_ms_bridge_wrapper_contract.py -q"
+  artifact_dir: "acceptance/artifacts/BR-WRAPPER-001/logs"
+
+actual:
+  source: "real MSBridgeWrapper when available; fake contract wrapper until real bridge is wired"
+  command: "python -m pytest acceptance/tests/bridge/test_ms_bridge_wrapper_contract.py -q"
+  artifact_dir: "acceptance/artifacts/BR-WRAPPER-001/logs"
+
+compare:
+  command: "python -m pytest acceptance/tests/bridge/test_ms_bridge_wrapper_contract.py -q"
+  metrics:
+    - finite_check
+    - max_abs_error
+    - max_rel_error
+    - pass_ratio
+  threshold:
+    fp32:
+      atol: 1.0e-5
+      rtol: 1.0e-5
+      pass_ratio: 0.9999
+    bf16:
+      atol: 2.0e-2
+      rtol: 2.0e-2
+      pass_ratio: 0.999
+
+evidence:
+  required_fields:
+    - dtype
+    - shape
+    - layout
+    - seed
+    - rank
+    - environment
+
+result:
+  artifact: "acceptance/artifacts/BR-WRAPPER-001/result.json"
+  allowed_status:
+    - pass
+    - fail
+    - blocked
+    - not_run
+    - xfail
