@@ -1,0 +1,33 @@
+{
+  "summary": {
+    "counted_in_completion": false,
+    "source": "acceptance/cases and acceptance/artifacts",
+    "total_cases": 1,
+    "migration_evidence_pass": 1,
+    "seed_scope": "verified evidence cases only"
+  },
+  "items": [
+    {
+      "case_id": "OP-RMSNORM-001",
+      "title": "RMSNorm API numeric equivalence",
+      "watch_type": "api_equivalence",
+      "repo_target": "api_audit",
+      "custom_op_required": false,
+      "status": "pass",
+      "stage": "compare",
+      "evidence_grade": "migration_evidence",
+      "golden_source_kind": "torch_npu_runtime",
+      "actual_source_kind": "mindspore_runtime",
+      "scope": "fp32 [2,16,128], seed=0, single-rank",
+      "counted_in_completion": false,
+      "summary": "torch_npu.npu_rms_norm and mindspore.ops.rms_norm matched on the minimal artifact loop.",
+      "metrics": {
+        "finite_check": "pass",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "pass_ratio": 1.0
+      },
+      "artifact": "acceptance/artifacts/OP-RMSNORM-001/result.json"
+    }
+  ]
+}
