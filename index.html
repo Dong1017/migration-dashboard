@@ -113,7 +113,7 @@
       <div class="flex flex-wrap items-start justify-between gap-4">
         <div class="min-w-0">
           <h1 class="text-xl font-bold tracking-tight md:text-2xl">PanguV2 Migration Acceptance Dashboard</h1>
-          <p class="mt-1 text-sm text-[color:var(--muted)]">torch_npu → MindSpore 迁移验收看板，基于 <span class="mono">migration-analysis-v0.4.md</span>。</p>
+          <p class="mt-1 text-sm text-[color:var(--muted)]">torch_npu → MindSpore 迁移验收看板，基于 <span class="mono">migration-analysis-v0.5.md</span>。</p>
         </div>
         <div class="shrink-0 text-left text-xs leading-5 text-[color:var(--muted)] md:text-right">
           <div>Generated: {{ fmtTime(metrics.generated_at) }}</div>
@@ -121,10 +121,10 @@
         </div>
       </div>
       <div class="mt-3 flex flex-wrap gap-2">
-        <span class="scope-badge">170 tracked items</span>
+        <span class="scope-badge">173 tracked items</span>
         <span class="scope-badge">78 vllm+omni_npu</span>
         <span class="scope-badge">34 omni_models</span>
-        <span class="scope-badge">58 operator rows</span>
+        <span class="scope-badge">61 operator rows</span>
         <span class="scope-badge">4.1-4.14 are groups only</span>
       </div>
     </header>
@@ -166,7 +166,7 @@
           <span class="scope-badge counted-badge">Counted: No</span>
         </div>
       </div>
-      <div class="audit-note mt-2 px-3 py-2 text-xs leading-snug">Note: 458 API usage scan entries are not completion backlog; 58 candidate rows are not 58 new operators; API Audit is not counted in 170 metrics.</div>
+      <div class="audit-note mt-2 px-3 py-2 text-xs leading-snug">Note: 458 API usage scan entries are not completion backlog; 61 candidate rows are not 61 new operators; API Audit is not counted in 173 metrics.</div>
       <div class="mt-2 flex flex-wrap items-center justify-between gap-2">
         <button @click="auditExpanded=!auditExpanded" class="rounded-lg border border-[color:var(--line)] px-3 py-1.5 text-xs font-semibold hover:bg-[color:var(--card-soft)]">{{ auditExpanded ? 'Hide details' : 'Show details' }}</button>
         <button @click="auditShowAllItems=!auditShowAllItems" class="rounded-lg border border-[color:var(--line)] px-3 py-1.5 text-xs font-semibold hover:bg-[color:var(--card-soft)]">{{ auditShowAllItems ? 'Collapse' : 'Show all ' + apiAudit.items.length }}</button>
@@ -198,7 +198,7 @@
           <span class="scope-badge counted-badge">Counted: No</span>
         </div>
       </div>
-      <div class="audit-note mt-2 px-3 py-2 text-xs leading-snug">Not counted in 170 completion metrics. Evidence status is separate from IssueOps board status.</div>
+      <div class="audit-note mt-2 px-3 py-2 text-xs leading-snug">Not counted in 173 completion metrics. Evidence status is separate from IssueOps board status.</div>
       <div class="mt-2 grid gap-2 md:grid-cols-2 xl:grid-cols-3">
         <article v-for="item in acceptanceEvidence.items" :key="item.case_id" class="audit-card">
           <div class="flex items-center justify-between gap-2"><span class="mono audit-id text-xs font-bold">{{ item.case_id }}</span><span class="pill status-accepted">{{ item.status.toUpperCase() }}</span></div>

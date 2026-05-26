@@ -13,6 +13,7 @@ SECTION_RE = re.compile(r"^### E\.(\d+) (.+)$")
 OP_ROW_RE = re.compile(r"^\| (\d+) \| `([^`]+)` \| (.*?) \| (.*?) \| (.*?) \| (.*?) \|$")
 CHECKBOX_ID_RE = re.compile(r"`(4\.\d+)`")
 STATUS_KEYS = ["status", "owner", "evidence", "reason", "next", "notes", "updated_by"]
+SOURCE_NAME = "migration-analysis-v0.5.md"
 
 
 def classify(item_id: str, title: str) -> tuple[str, str, str]:
@@ -226,7 +227,7 @@ def build_data(markdown: str, status_dir: Path = Path("data/status"), config_pat
         "by_priority": dict(by_priority),
         "by_repo": dict(by_repo),
         "generated_at": dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).isoformat(),
-        "source": "migration-analysis-v0.4.md Appendix E + Section 5.3",
+        "source": f"{SOURCE_NAME} Appendix E + Section 5.3",
     }
     return {
         "metrics": metrics,
@@ -269,7 +270,7 @@ def print_summary(data: dict, status_dir: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--source", default="migration-analysis-v0.4.md")
+    parser.add_argument("--source", default=SOURCE_NAME)
     parser.add_argument("--output", default="data.json")
     parser.add_argument("--status-dir", default="data/status")
     parser.add_argument("--config", default="data/status_config.json")

@@ -1,13 +1,13 @@
 {
   "summary": {
     "api_usage_points": 458,
-    "custom_op_candidate_rows": 58,
+    "custom_op_candidate_rows": 61,
     "excluded_rows": 18,
-    "main_dashboard_items": 170,
+    "main_dashboard_items": 173,
     "seed_items": 20,
     "seed_scope": "high-risk representative items only, not full 458 list",
     "counted_in_completion": false,
-    "source": "op-analysis-updated-annotated-scoped.csv / migration-analysis-v0.4.md"
+    "source": "op-analysis-updated-annotated-scoped.csv / migration-analysis-v0.5.md"
   },
   "items": [
     {
@@ -42,7 +42,7 @@
       "watch_action": "Confirm sink semantics, workspace requirement, golden output, and xfail reason if no equivalent exists.",
       "counted_in_completion": false,
       "related_dashboard_items": [],
-      "related_operator_rows": ["4.1#13", "4.1#21"],
+      "related_operator_rows": ["4.1#21", "4.1#505"],
       "related_groups": ["4.1"],
       "relation_note": "Maps to ms_custom_ops attention sink operator rows; audit status is separate from row completion status."
     },

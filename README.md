@@ -1,6 +1,6 @@
 # Migration Dashboard
 
-跟踪 `migration-analysis-v0.4.md` 中 PanguV2 torch_npu -> MindSpore 迁移验收项的静态看板。Dashboard 执行口径为 170 个实际跟踪项：78 个 `vllm_omni_npu` checkbox、34 个 `omni_models` checkbox、58 个 `ms_custom_ops` 5.3 Row；`4.1`-`4.14` 仅作为算子折叠分组，不计入完成率。
+跟踪 `migration-analysis-v0.5.md` 中 PanguV2 torch_npu -> MindSpore 迁移验收项的静态看板。Dashboard 执行口径为 173 个实际跟踪项：78 个 `vllm_omni_npu` checkbox、34 个 `omni_models` checkbox、61 个 `ms_custom_ops` 5.3 Row；`4.1`-`4.14` 仅作为算子折叠分组，不计入完成率。
 
 ## 结构
 
@@ -28,7 +28,7 @@ python -m http.server 8000
 
 ```bash
 python scripts/build_data.py \
-  --source migration-analysis-v0.4.md \
+  --source migration-analysis-v0.5.md \
   --output data.json \
   --status-dir data/status \
   --config data/status_config.json
@@ -36,7 +36,7 @@ python scripts/build_data.py \
 
 ## API Audit 口径
 
-API Audit 是独立于 completion metrics 的 API 风险解释层：`458` 是 API usage scan entries，不是 completion backlog；`58` 是 custom/NPU fused candidate rows，不是 58 个新开发算子。API Audit items 可以映射到 tracked items、operator rows 或 groups，但不会进入 `data.json.items`，不计入 170 完成率，也不使用 IssueOps / `data/status` overlay。
+API Audit 是独立于 completion metrics 的 API 风险解释层：`458` 是 API usage scan entries，不是 completion backlog；`61` 是 custom/NPU fused candidate rows，不是 61 个新开发算子。API Audit items 可以映射到 tracked items、operator rows 或 groups，但不会进入 `data.json.items`，不计入 173 完成率，也不使用 IssueOps / `data/status` overlay。
 
 在 issue 评论中使用：
 

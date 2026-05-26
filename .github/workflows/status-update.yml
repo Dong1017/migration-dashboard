@@ -26,7 +26,7 @@ jobs:
             --status-dir data/status \
             --result status_update_result.json
           python scripts/build_data.py \
-            --source migration-analysis-v0.4.md \
+            --source migration-analysis-v0.5.md \
             --output data.json \
             --status-dir data/status \
             --config data/status_config.json
