@@ -29,7 +29,11 @@ source_tests:
   - run_worker -> initialize_local_world_group()
   - run_worker -> _create_group_from_tp_size_or_ranks()
   - layer config loop
-  last_run: null
+  last_run:
+    environment: real dependencies; nothing mocked
+    evidence_root: /home/xinwen/pangu_workspace/val_gate/evidence_adaptor
+    log: runtime/pytest_runtime_results.log
+    result: 45 passed, 15 skipped
 reference_sources:
 - ms-hybrid-adaptor/tests/ut/distributed/test_distributed.py
 copied_reference_tests:

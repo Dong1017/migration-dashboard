@@ -27,7 +27,11 @@ source_tests:
   test_file: tests/ut/distributed/test_distributed.py
   test_functions:
   - run_worker -> compare adaptor/vllm world_size/rank getters
-  last_run: null
+  last_run:
+    environment: real dependencies; nothing mocked
+    evidence_root: /home/xinwen/pangu_workspace/val_gate/evidence_adaptor
+    log: runtime/pytest_runtime_results.log
+    result: 45 passed, 15 skipped
 reference_sources:
 - ms-hybrid-adaptor/tests/ut/distributed/test_distributed.py
 copied_reference_tests:

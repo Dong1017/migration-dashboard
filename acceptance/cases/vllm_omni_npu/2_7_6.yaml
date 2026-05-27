@@ -28,7 +28,11 @@ source_tests:
   test_functions:
   - run_worker -> init_distributed_environment(backend="hccl")
   - initialize_local_world_group("hccl")
-  last_run: null
+  last_run:
+    environment: real dependencies; nothing mocked
+    evidence_root: /home/xinwen/pangu_workspace/val_gate/evidence_adaptor
+    log: runtime/pytest_runtime_results.log
+    result: 45 passed, 15 skipped
 reference_sources:
 - ms-hybrid-adaptor/tests/ut/distributed/test_distributed.py
 - omni-npu/tests/integration/distributed/test_communicator.py

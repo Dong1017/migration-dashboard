@@ -1,10 +1,10 @@
 {
   "metrics": {
     "total": 173,
-    "accepted": 0,
-    "open": 173,
-    "blocked": 0,
-    "completion_rate": 0.0,
+    "accepted": 48,
+    "open": 0,
+    "blocked": 30,
+    "completion_rate": 61.5,
     "operator_rows": 61,
     "operator_groups": 14,
     "by_priority": {
@@ -17,7 +17,7 @@
       "omni_models": 34,
       "ms_custom_ops": 61
     },
-    "generated_at": "2026-05-26T11:12:25.247710+08:00",
+    "generated_at": "2026-05-27T15:35:46.218284",
     "source": "migration-analysis-v0.5.md Appendix E + Section 5.3"
   },
   "items": [
@@ -29,10 +29,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "DLPack tensor conversion",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "24 passed",
+          "log": "tensor_convert/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -45,10 +53,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "DLPack tensor conversion",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "24 passed",
+          "log": "tensor_convert/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -61,10 +77,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "DLPack tensor conversion",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "24 passed",
+          "log": "tensor_convert/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -77,10 +101,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "DLPack tensor conversion",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "24 passed",
+          "log": "tensor_convert/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -93,10 +125,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "DLPack tensor conversion",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "24 passed",
+          "log": "tensor_convert/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -109,10 +149,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "DLPack tensor conversion",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "24 passed",
+          "log": "tensor_convert/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -125,10 +173,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "DLPack tensor conversion",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "24 passed",
+          "log": "tensor_convert/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -141,10 +197,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "DLPack tensor conversion",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "24 passed",
+          "log": "tensor_convert/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -157,10 +221,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "forward_context proxy",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "26 passed",
+          "log": "forward_context/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -173,10 +245,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "forward_context proxy",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "26 passed",
+          "log": "forward_context/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -189,10 +269,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "forward_context proxy",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "26 passed",
+          "log": "forward_context/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -205,12 +293,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "forward_context proxy",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -221,10 +309,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "forward_context proxy",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "26 passed",
+          "log": "forward_context/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -237,10 +333,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "KV cache adapter",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "21 passed",
+          "log": "kv_adapter/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -253,10 +357,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "KV cache adapter",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "21 passed",
+          "log": "kv_adapter/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -269,10 +381,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "KV cache adapter",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "21 passed",
+          "log": "kv_adapter/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -285,10 +405,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "KV cache adapter",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "21 passed",
+          "log": "kv_adapter/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -301,12 +429,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "KV cache adapter",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -317,12 +445,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "KV cache adapter",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -333,10 +461,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "MSBridgeWrapper",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "12 passed",
+          "log": "bridge_wrapper/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -349,10 +485,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "MSBridgeWrapper",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "12 passed",
+          "log": "bridge_wrapper/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -365,10 +509,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "MSBridgeWrapper",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "12 passed",
+          "log": "bridge_wrapper/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -381,10 +533,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "MSBridgeWrapper",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "8 passed",
+          "log": "sync_memory/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -397,10 +557,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "MSBridgeWrapper",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "12 passed",
+          "log": "plugin/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -413,10 +581,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "MSBridgeWrapper",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "12 passed",
+          "log": "plugin/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -429,10 +605,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "ACL Event & memory",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "1 passed",
+          "log": "sync_memory/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -445,10 +629,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "ACL Event & memory",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "1 passed",
+          "log": "sync_memory/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -461,10 +653,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "ACL Event & memory",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "1 passed",
+          "log": "sync_memory/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -477,10 +677,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "ACL Event & memory",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "13 passed",
+          "log": "sync_memory/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -493,10 +701,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "ACL Event & memory",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "13 passed",
+          "log": "sync_memory/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -509,10 +725,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "ACL Event & memory",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "13 passed",
+          "log": "sync_memory/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -525,10 +749,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "MS comm groups",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "45 passed, 15 skipped",
+          "log": "runtime/pytest_runtime_results.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -541,10 +773,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "MS comm groups",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "45 passed, 15 skipped",
+          "log": "runtime/pytest_runtime_results.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -557,10 +797,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "MS comm groups",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "45 passed, 15 skipped",
+          "log": "runtime/pytest_runtime_results.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -573,10 +821,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "MS comm groups",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "45 passed, 15 skipped",
+          "log": "runtime/pytest_runtime_results.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -589,10 +845,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "MS comm groups",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "45 passed, 15 skipped",
+          "log": "runtime/pytest_runtime_results.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -605,10 +869,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "MS comm groups",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "45 passed, 15 skipped",
+          "log": "runtime/pytest_runtime_results.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -621,10 +893,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "MS comm groups",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "45 passed, 15 skipped",
+          "log": "runtime/pytest_runtime_results.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -637,10 +917,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "MS comm groups",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "45 passed, 15 skipped",
+          "log": "runtime/pytest_runtime_results.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -653,10 +941,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "MS comm groups",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "45 passed, 15 skipped",
+          "log": "runtime/pytest_runtime_results.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -669,10 +965,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "MS comm groups",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "45 passed, 15 skipped",
+          "log": "runtime/pytest_runtime_results.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -685,10 +989,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "MS comm groups",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "45 passed, 15 skipped",
+          "log": "runtime/pytest_runtime_results.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -701,10 +1013,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "HCCL smoke",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "45 passed, 15 skipped",
+          "log": "runtime/pytest_runtime_results.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -717,10 +1037,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "HCCL smoke",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "45 passed, 15 skipped",
+          "log": "runtime/pytest_runtime_results.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -733,10 +1061,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "HCCL smoke",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "45 passed, 15 skipped",
+          "log": "runtime/pytest_runtime_results.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -749,10 +1085,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "HCCL smoke",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "45 passed, 15 skipped",
+          "log": "runtime/pytest_runtime_results.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -765,12 +1109,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "HCCL smoke",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -781,10 +1125,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "HCCL smoke",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "45 passed, 15 skipped",
+          "log": "runtime/pytest_runtime_results.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -797,12 +1149,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "Engine regression",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -813,12 +1165,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "Engine regression",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -829,12 +1181,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "Engine regression",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -845,12 +1197,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "Engine regression",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -861,12 +1213,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "Engine regression",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -877,12 +1229,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "Engine regression",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -893,12 +1245,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "Engine regression",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -909,12 +1261,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "Engine regression",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -925,12 +1277,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "Engine regression",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -941,12 +1293,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "Engine regression",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -957,12 +1309,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "Engine regression",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -973,12 +1325,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "Engine regression",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -989,12 +1341,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "Engine regression",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -1005,12 +1357,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "Engine regression",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -1021,12 +1373,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "Engine regression",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -1037,12 +1389,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "Engine regression",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -1053,12 +1405,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "Engine regression",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -1069,12 +1421,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "Engine regression",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -1085,12 +1437,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "E2E & gates",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -1101,10 +1453,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "E2E & gates",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "12 passed",
+          "log": "bridge_wrapper/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -1117,10 +1477,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "E2E & gates",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "12 passed",
+          "log": "plugin/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -1133,10 +1501,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "E2E & gates",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "12 passed",
+          "log": "plugin/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -1149,12 +1525,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "E2E & gates",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -1165,12 +1541,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "E2E & gates",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -1181,12 +1557,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "E2E & gates",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -1197,12 +1573,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "E2E & gates",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -1213,12 +1589,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "E2E & gates",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -1229,10 +1605,18 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "E2E & gates",
-      "status": "open",
+      "status": "accepted",
       "rows": "",
       "item_count": 1,
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "test_run",
+          "source": "ms-hybrid-adaptor",
+          "result": "12 passed",
+          "log": "plugin/pytest_after_fix.log",
+          "environment": "real dependencies; nothing mocked"
+        }
+      ],
       "owner": "chuang",
       "notes": "",
       "kind": "checkbox"
@@ -1245,12 +1629,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "E2E & gates",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
@@ -1261,12 +1645,12 @@
       "section": "vllm + omni_npu",
       "lane": "Bridge/Engine/Serving",
       "group": "E2E & gates",
-      "status": "open",
+      "status": "blocked",
       "rows": "",
       "item_count": 1,
       "evidence": [],
       "owner": "chuang",
-      "notes": "",
+      "notes": "Gap: no test coverage available (placeholder)",
       "kind": "checkbox"
     },
     {
