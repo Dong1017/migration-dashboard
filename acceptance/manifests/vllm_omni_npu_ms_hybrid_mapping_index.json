@@ -1,0 +1,861 @@
+{
+  "repo_target": "vllm + omni_npu",
+  "total_cases": 78,
+  "source": "vllm_omni_npu_ms_hybrid_test_mapping_v0.csv",
+  "generated_at": "2026-05-27T10:50:00+00:00",
+  "policy": {
+    "case_files_are_contracts": true,
+    "raw_evidence_lives_on_server": true,
+    "dashboard_status_updates_require_review": true,
+    "unit_contract_pass_not_auto_accepted": true
+  },
+  "coverage_summary": {
+    "direct": 19,
+    "partial": 29,
+    "gap": 30
+  },
+  "cases": [
+    {
+      "case_id": "VLLM-OMNI-NPU-2-1-1",
+      "dashboard_item_id": "2.1.1",
+      "title": "tensor_torch2ms 基础路径",
+      "coverage_level": "direct",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_tensor_convert.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-1-2",
+      "dashboard_item_id": "2.1.2",
+      "title": "tensor_ms2torch 基础路径",
+      "coverage_level": "direct",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_tensor_convert.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-1-3",
+      "dashboard_item_id": "2.1.3",
+      "title": "非连续 tensor safe 转换",
+      "coverage_level": "direct",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_tensor_convert.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-1-4",
+      "dashboard_item_id": "2.1.4",
+      "title": "dict 嵌套递归转换",
+      "coverage_level": "direct",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_tensor_convert.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-1-5",
+      "dashboard_item_id": "2.1.5",
+      "title": "list/tuple 嵌套递归转换",
+      "coverage_level": "direct",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_tensor_convert.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-1-6",
+      "dashboard_item_id": "2.1.6",
+      "title": "None/int/bool 透传",
+      "coverage_level": "direct",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_tensor_convert.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-1-7",
+      "dashboard_item_id": "2.1.7",
+      "title": "NPU 物理内存共享验证",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_tensor_convert.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-1-8",
+      "dashboard_item_id": "2.1.8",
+      "title": "空 tensor / 零维 tensor 边界",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_tensor_convert.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-2-1",
+      "dashboard_item_id": "2.2.1",
+      "title": "`_MsMetaProxy` 惰性转换",
+      "coverage_level": "direct",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_forward_context_proxy.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-2-2",
+      "dashboard_item_id": "2.2.2",
+      "title": "`_AttnMetadataProxy` 多层代理",
+      "coverage_level": "direct",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_forward_context_proxy.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-2-3",
+      "dashboard_item_id": "2.2.3",
+      "title": "block table / slot mapping 代理",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_forward_context_proxy.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-2-4",
+      "dashboard_item_id": "2.2.4",
+      "title": "causal mask 管理",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": []
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-2-5",
+      "dashboard_item_id": "2.2.5",
+      "title": "forward_context swap/restore",
+      "coverage_level": "direct",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_forward_context_proxy.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-3-1",
+      "dashboard_item_id": "2.3.1",
+      "title": "`MSAttentionAdapter.__setattr__` 拦截",
+      "coverage_level": "direct",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_ms_attention_adapter.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-3-2",
+      "dashboard_item_id": "2.3.2",
+      "title": "`MSAttentionAdapter.kv_cache` property",
+      "coverage_level": "direct",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_ms_attention_adapter.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-3-3",
+      "dashboard_item_id": "2.3.3",
+      "title": "`invalidate_ms_views`",
+      "coverage_level": "direct",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_ms_attention_adapter.py",
+        "tests/test_memory.py",
+        "tests/test_bridge_plugin.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-3-4",
+      "dashboard_item_id": "2.3.4",
+      "title": "static_forward_context 替换",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_ms_attention_adapter.py",
+        "tests/test_bridge_plugin.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-3-5",
+      "dashboard_item_id": "2.3.5",
+      "title": "chunked prefill 代理",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": []
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-3-6",
+      "dashboard_item_id": "2.3.6",
+      "title": "RDMA pull 后 MS KV view 可见，decode 前等待策略可控",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": []
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-4-1",
+      "dashboard_item_id": "2.4.1",
+      "title": "`MSBridgeWrapper.__call__` 完整编排",
+      "coverage_level": "direct",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_ms_bridge_wrapper.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-4-2",
+      "dashboard_item_id": "2.4.2",
+      "title": "`compute_logits` 独立路径",
+      "coverage_level": "direct",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_ms_bridge_wrapper.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-4-3",
+      "dashboard_item_id": "2.4.3",
+      "title": "finally 恢复保证",
+      "coverage_level": "direct",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_ms_bridge_wrapper.py",
+        "tests/test_forward_context_proxy.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-4-4",
+      "dashboard_item_id": "2.4.4",
+      "title": "profile / dummy_run",
+      "coverage_level": "direct",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_profile.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-4-5",
+      "dashboard_item_id": "2.4.5",
+      "title": "插件注入和 `ms_hybrid_models` 开关矩阵",
+      "coverage_level": "direct",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_bridge_plugin.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-4-6",
+      "dashboard_item_id": "2.4.6",
+      "title": "pynative 下 `capture_model` / ACLGraph gate",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_bridge_plugin.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-5-1",
+      "dashboard_item_id": "2.5.1",
+      "title": "ACL Event PT->MS 同步",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_bidirectional_sync.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-5-2",
+      "dashboard_item_id": "2.5.2",
+      "title": "ACL Event MS->PT 同步",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_bidirectional_sync.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-5-3",
+      "dashboard_item_id": "2.5.3",
+      "title": "Event 生命周期管理",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_bidirectional_sync.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-5-4",
+      "dashboard_item_id": "2.5.4",
+      "title": "双端 empty_cache",
+      "coverage_level": "direct",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_memory.py",
+        "tests/test_profile.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-5-5",
+      "dashboard_item_id": "2.5.5",
+      "title": "MS 模型 sleep/wake",
+      "coverage_level": "direct",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_memory.py",
+        "tests/test_bridge_plugin.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-5-6",
+      "dashboard_item_id": "2.5.6",
+      "title": "OOM / 异常后恢复",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_memory.py",
+        "tests/test_profile.py",
+        "tests/test_ms_bridge_wrapper.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-6-1",
+      "dashboard_item_id": "2.6.1",
+      "title": "HCCL 句柄提取",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/ut/distributed/test_distributed.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-6-10",
+      "dashboard_item_id": "2.6.10",
+      "title": "DP 异步组配置和 group name 一致性",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/ut/distributed/test_distributed.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-6-11",
+      "dashboard_item_id": "2.6.11",
+      "title": "layer group 创建数量、耗时和资源释放",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/ut/distributed/test_distributed.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-6-2",
+      "dashboard_item_id": "2.6.2",
+      "title": "标准组创建",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/ut/distributed/test_distributed.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-6-3",
+      "dashboard_item_id": "2.6.3",
+      "title": "扩展组创建",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/ut/distributed/test_distributed.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-6-4",
+      "dashboard_item_id": "2.6.4",
+      "title": "`_MsGroupProxy.all_reduce`",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/ut/distributed/test_distributed.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-6-5",
+      "dashboard_item_id": "2.6.5",
+      "title": "`_MsGroupProxy.all_gather`",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/ut/distributed/test_distributed.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-6-6",
+      "dashboard_item_id": "2.6.6",
+      "title": "`_MsGroupProxy.reduce_scatter`",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/ut/distributed/test_distributed.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-6-7",
+      "dashboard_item_id": "2.6.7",
+      "title": "distributed swap 机制",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/ut/distributed/test_distributed.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-6-8",
+      "dashboard_item_id": "2.6.8",
+      "title": "swap 恢复后框架代码不受影响",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/ut/distributed/test_distributed.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-6-9",
+      "dashboard_item_id": "2.6.9",
+      "title": "MS scheduler 生命周期和异常退出清理",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/ut/distributed/test_distributed.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-7-1",
+      "dashboard_item_id": "2.7.1",
+      "title": "MindSpore Ascend 设备可用性",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/ut/distributed/test_distributed.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-7-2",
+      "dashboard_item_id": "2.7.2",
+      "title": "Ascend tensor 创建",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/ut/distributed/test_distributed.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-7-3",
+      "dashboard_item_id": "2.7.3",
+      "title": "HCCL all_reduce",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/ut/distributed/test_distributed.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-7-4",
+      "dashboard_item_id": "2.7.4",
+      "title": "HCCL all_gather",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/ut/distributed/test_distributed.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-7-5",
+      "dashboard_item_id": "2.7.5",
+      "title": "点对点 send/recv",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": []
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-7-6",
+      "dashboard_item_id": "2.7.6",
+      "title": "HCCL backend 可用",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/ut/distributed/test_distributed.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-8-1",
+      "dashboard_item_id": "2.8.1",
+      "title": "MLA 后端正确性",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "待补/外部 vLLM regression suite"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-8-10",
+      "dashboard_item_id": "2.8.10",
+      "title": "LLM engine",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "待补/外部 vLLM regression suite"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-8-11",
+      "dashboard_item_id": "2.8.11",
+      "title": "OpenAI API 兼容性",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "待补/外部 vLLM regression suite"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-8-12",
+      "dashboard_item_id": "2.8.12",
+      "title": "LLM 入口点",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "待补/外部 vLLM regression suite"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-8-13",
+      "dashboard_item_id": "2.8.13",
+      "title": "Async LLM",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "待补/外部 vLLM regression suite"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-8-14",
+      "dashboard_item_id": "2.8.14",
+      "title": "Output processor",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "待补/外部 vLLM regression suite"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-8-15",
+      "dashboard_item_id": "2.8.15",
+      "title": "Parallel sampling",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "待补/外部 vLLM regression suite"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-8-16",
+      "dashboard_item_id": "2.8.16",
+      "title": "Engine args",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "待补/外部 vLLM regression suite"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-8-17",
+      "dashboard_item_id": "2.8.17",
+      "title": "Async scheduler",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "待补/外部 vLLM regression suite"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-8-18",
+      "dashboard_item_id": "2.8.18",
+      "title": "KV sharing",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "待补/外部 vLLM regression suite"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-8-2",
+      "dashboard_item_id": "2.8.2",
+      "title": "Sparse MLA",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "待补/外部 vLLM regression suite"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-8-3",
+      "dashboard_item_id": "2.8.3",
+      "title": "Scheduler 基本功能",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "待补/外部 vLLM regression suite"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-8-4",
+      "dashboard_item_id": "2.8.4",
+      "title": "Prefix caching",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "待补/外部 vLLM regression suite"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-8-5",
+      "dashboard_item_id": "2.8.5",
+      "title": "KV cache 工具函数",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "待补/外部 vLLM regression suite"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-8-6",
+      "dashboard_item_id": "2.8.6",
+      "title": "Async scheduling E2E",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "待补/外部 vLLM regression suite"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-8-7",
+      "dashboard_item_id": "2.8.7",
+      "title": "Speculative decode",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "待补/外部 vLLM regression suite"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-8-8",
+      "dashboard_item_id": "2.8.8",
+      "title": "Context length",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "待补/外部 vLLM regression suite"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-8-9",
+      "dashboard_item_id": "2.8.9",
+      "title": "Engine core",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "待补/外部 vLLM regression suite"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-9-1",
+      "dashboard_item_id": "2.9.1",
+      "title": "单卡 bridge E2E prefill+decode",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": []
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-9-10",
+      "dashboard_item_id": "2.9.10",
+      "title": "NPUWorker/NPUModelRunner patch 生效可观测",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_bridge_plugin.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-9-11",
+      "dashboard_item_id": "2.9.11",
+      "title": "PD KV transfer 状态和错误码可观测",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": []
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-9-12",
+      "dashboard_item_id": "2.9.12",
+      "title": "RDMA decode implicit timing 风险验证",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": []
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-9-2",
+      "dashboard_item_id": "2.9.2",
+      "title": "`compute_logits` + sampler E2E",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_ms_bridge_wrapper.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-9-3",
+      "dashboard_item_id": "2.9.3",
+      "title": "禁用 bridge 回退 PT",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_bridge_plugin.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-9-4",
+      "dashboard_item_id": "2.9.4",
+      "title": "bridge 初始化失败回退或 fail-fast",
+      "coverage_level": "partial",
+      "evidence_level": "real_deps_unit_contract_pass",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": [
+        "tests/test_bridge_plugin.py"
+      ]
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-9-5",
+      "dashboard_item_id": "2.9.5",
+      "title": "OpenAI API smoke",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": []
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-9-6",
+      "dashboard_item_id": "2.9.6",
+      "title": "TP>1 全栈 E2E",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": []
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-9-7",
+      "dashboard_item_id": "2.9.7",
+      "title": "PD 分离 smoke",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": []
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-9-8",
+      "dashboard_item_id": "2.9.8",
+      "title": "安全分析与 unsupported 能力清单",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": []
+    },
+    {
+      "case_id": "VLLM-OMNI-NPU-2-9-9",
+      "dashboard_item_id": "2.9.9",
+      "title": "health/models/chat 覆盖 505B 最小 serving 配置",
+      "coverage_level": "gap",
+      "evidence_level": "placeholder",
+      "source_component": "ms-hybrid-adaptor",
+      "source_test_files": []
+    }
+  ]
+}

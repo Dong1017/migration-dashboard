@@ -1,0 +1,89 @@
+case_id: VLLM-OMNI-NPU-2-1-8
+dashboard_item_id: 2.1.8
+title: 空 tensor / 零维 tensor 边界
+repo_target: vllm + omni_npu
+source_component: ms-hybrid-adaptor
+lane: Bridge/Engine/Serving
+group: DLPack tensor conversion
+priority: P0
+status: open
+watch_type: bridge_tensor_conversion
+case_type: unit_contract_or_runtime_smoke
+material_status: partial_source_test_available
+validation_status: case_contract_defined
+coverage_level: partial
+evidence_level: real_deps_unit_contract_pass
+counted_in_completion: false
+dashboard_status_effect: evidence_only_not_auto_accepted
+summary: PT↔MS tensor conversion, recursive structures, scalar passthrough, and boundary
+  tensor handling.
+source_checkbox:
+  document: migration-analysis-v0.3.md Appendix E / dashboard data.json
+  checkbox_id: 2.1.8
+  checkbox_title: 空 tensor / 零维 tensor 边界
+source_tests:
+- repo: ms-hybrid-adaptor
+  repo_path: /home/xinwen/pangu_workspace/ms-hybrid-adaptor
+  test_file: tests/test_tensor_convert.py
+  test_functions:
+  - TestConvertMS2TorchRecursive.test_empty_list
+  - TestConvertMS2TorchRecursive.test_empty_dict
+  last_run:
+    environment: real dependencies; nothing mocked
+    evidence_root: /home/xinwen/pangu_workspace/val_gate/evidence_adaptor
+    log: tensor_convert/pytest_after_fix.log
+    result: 24 passed
+reference_sources:
+- ms-hybrid-adaptor/tests/test_tensor_convert.py
+copied_reference_tests:
+- acceptance/reference_tests/ms_hybrid_adaptor_copy/tests/
+suggested_test:
+  file: tests/bridge/test_dlpack.py
+  command: pytest tests/bridge/test_dlpack.py -q
+  remote_workdir: /home/xinwen/pangu_workspace/val_gate/<target-repo>
+evidence_storage:
+  server_root: /home/xinwen/pangu_workspace/val_gate/evidence/vllm_omni_npu/2.1.8
+  repo_snapshot_policy: store case contract in dashboard repo; store raw evidence
+    on validation server; later sync result.json summary back to dashboard repo/status
+    overlay
+  counted_in_completion: only after dashboard item status is accepted via evidence
+    review, not by case-file presence
+required_evidence:
+  metadata:
+  - case_id
+  - dashboard_item_id
+  - dtype/shape/layout if tensor case
+  - seed if deterministic
+  - rank/world_size/group if distributed
+  - environment
+  - versions
+  - commit hashes
+  artifacts:
+  - logs
+  - result.json
+  - stdout/stderr
+  - optional golden/actual tensors when numerical compare is required
+  result_schema:
+  - status
+  - stage
+  - evidence_level
+  - reason
+  - next
+  - updated_at
+acceptance_gate:
+  current_result_can_support: unit_contract_evidence
+  accepted_requires:
+  - item-level review
+  - runtime_smoke_pass if the dashboard item requires real NPU/runtime behavior
+gap_or_next:
+- 缺 empty tensor / zero-dim tensor 的 PT↔MS 明确测试函数。
+status_rules:
+  pass: only with matching evidence level and result.json from server run
+  blocked: dependency, runtime, missing adapter, missing model, or unsupported feature
+    prevents execution
+  not_run: test not executed yet or remote environment unavailable
+  fail: test executed and assertion/runtime correctness failed
+  xfail: known unsupported or out-of-scope behavior with documented reason
+notes:
+- Do not auto-update data.json status from this case.
+placeholder: false
