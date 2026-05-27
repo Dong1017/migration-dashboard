@@ -4,7 +4,7 @@
     "accepted": 48,
     "open": 0,
     "blocked": 30,
-    "completion_rate": 61.5,
+    "completion_rate": 27.7,
     "operator_rows": 61,
     "operator_groups": 14,
     "by_priority": {
@@ -18,7 +18,30 @@
       "ms_custom_ops": 61
     },
     "generated_at": "2026-05-27T15:35:46.218284",
-    "source": "migration-analysis-v0.5.md Appendix E + Section 5.3"
+    "source": "migration-analysis-v0.5.md Appendix E + Section 5.3",
+    "by_repo_detail": {
+      "vllm + omni_npu": {
+        "total": 78,
+        "accepted": 48,
+        "blocked": 30,
+        "open": 0,
+        "completion_rate": 61.5
+      },
+      "omni_models": {
+        "total": 34,
+        "accepted": 0,
+        "blocked": 0,
+        "open": 34,
+        "completion_rate": 0.0
+      },
+      "ms_custom_ops": {
+        "total": 61,
+        "accepted": 0,
+        "blocked": 0,
+        "open": 61,
+        "completion_rate": 0.0
+      }
+    }
   },
   "items": [
     {
