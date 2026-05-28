@@ -1,0 +1,23 @@
+{
+  "artifact": "acceptance/artifacts/OP-AI-INFRA-SCATTER-BLOCK-UPDATE-001/result.json",
+  "case_id": "OP-AI-INFRA-SCATTER-BLOCK-UPDATE-001",
+  "custom_op_required": true,
+  "evidence_grade": "tool_contract_only",
+  "generation_mode": "manual-from-metadata",
+  "metrics": {
+    "finite_check": "",
+    "max_abs_error": null,
+    "max_rel_error": null,
+    "pass_ratio": null
+  },
+  "next": "Collect torch_npu/PT golden artifacts and MindSpore actual artifacts, then rerun compare_outputs.py.",
+  "operator_dir": "019_npu_ai_infra_scatter_block_update",
+  "reason": "Missing golden or actual .npz artifacts.",
+  "reference_status": "missing",
+  "repo_target": "ms_custom_ops",
+  "row": 19,
+  "stage": "compare",
+  "status": "not_run",
+  "torch_api": "torch.ops.custom.npu_ai_infra_scatter_block_update_",
+  "watch_type": "custom_op_acceptance"
+}

@@ -1,0 +1,20 @@
+{
+  "artifact": "acceptance/artifacts/OP-ATTENTION-UPDATE-001/result.json",
+  "case_id": "OP-ATTENTION-UPDATE-001",
+  "custom_op_required": true,
+  "evidence_grade": "provisional_reference",
+  "generation_mode": "direct-copy-reference",
+  "metrics": {
+    "pytest_passed": 1
+  },
+  "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared.",
+  "operator_dir": "048_npu_attention_update",
+  "reason": "ms_ops tests/operators/aclnn/test_npu_attention_update_op.py completed successfully on the refreshed remote ms_ops checkout.",
+  "reference_status": "skipped",
+  "repo_target": "ms_custom_ops",
+  "row": 48,
+  "stage": "ms_ops_pytest",
+  "status": "pass",
+  "torch_api": "torch_npu.npu_attention_update",
+  "watch_type": "custom_op_acceptance"
+}

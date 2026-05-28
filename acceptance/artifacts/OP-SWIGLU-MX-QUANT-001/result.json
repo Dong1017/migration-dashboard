@@ -1,0 +1,24 @@
+{
+  "artifact": "acceptance/artifacts/OP-SWIGLU-MX-QUANT-001/result.json",
+  "case_id": "OP-SWIGLU-MX-QUANT-001",
+  "custom_op_required": true,
+  "evidence_grade": "provisional_reference",
+  "generation_mode": "manual-from-metadata",
+  "metrics": {
+    "batch_duration_seconds": 127.51,
+    "batch_pytest_passed": 2,
+    "pytest_failed": 12,
+    "pytest_file": "tests/operators/aclnn/test_npu_swiglu_mx_quant_op.py",
+    "pytest_skipped": 1
+  },
+  "next": "Fix npu_swiglu_mx_quant output tensor construction or runtime launch so returned y/mxscale tensors are defined, then rerun pytest and dashboard artifact collection.",
+  "operator_dir": "503_npu_swiglu_mx_quant",
+  "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_swiglu_mx_quant_op.py fails 12 tests. The returned tensors are undefined; shape/dtype/asnumpy access raises MindSpore RuntimeError: Failure info [The Tensor is not defined] from pynative custom tensor.cc:146.",
+  "reference_status": "missing",
+  "repo_target": "ms_custom_ops",
+  "row": 503,
+  "stage": "ms_ops_pytest",
+  "status": "fail",
+  "torch_api": "torch_npu.npu_swiglu_mx_quant",
+  "watch_type": "custom_op_acceptance"
+}

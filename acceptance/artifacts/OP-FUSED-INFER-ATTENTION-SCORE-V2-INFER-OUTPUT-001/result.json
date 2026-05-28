@@ -1,0 +1,21 @@
+{
+  "artifact": "acceptance/artifacts/OP-FUSED-INFER-ATTENTION-SCORE-V2-INFER-OUTPUT-001/result.json",
+  "case_id": "OP-FUSED-INFER-ATTENTION-SCORE-V2-INFER-OUTPUT-001",
+  "custom_op_required": true,
+  "evidence_grade": "tool_contract_only",
+  "generation_mode": "direct-copy-reference",
+  "metrics": {
+    "missing_direct_test_file": 1,
+    "related_workspace_pytest_passed": 8
+  },
+  "next": "Add or locate a direct infer-output ms_ops test, or collect dashboard golden/actual artifacts for OP-FUSED-INFER-ATTENTION-SCORE-V2-INFER-OUTPUT-001 before marking this case pass.",
+  "operator_dir": "043_npu_fused_infer_attention_score_v2_infer_output",
+  "reason": "The refreshed remote ms_ops checkout has no direct pytest file for _npu_fused_infer_attention_score_v2_infer_output. The available test_npu_fused_infer_attention_score_v2_get_max_workspace_op.py validates a different workspace-query helper path and cannot be used as pass evidence for the infer-output operator.",
+  "reference_status": "skipped",
+  "repo_target": "ms_custom_ops",
+  "row": 43,
+  "stage": "ms_ops_pytest_probe",
+  "status": "not_run",
+  "torch_api": "torch_npu._npu_fused_infer_attention_score_v2_infer_output",
+  "watch_type": "custom_op_acceptance"
+}

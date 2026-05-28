@@ -1,0 +1,20 @@
+{
+  "artifact": "acceptance/artifacts/OP-FUSED-INFER-ATTENTION-SCORE-V2-001/result.json",
+  "case_id": "OP-FUSED-INFER-ATTENTION-SCORE-V2-001",
+  "custom_op_required": true,
+  "evidence_grade": "tool_contract_only",
+  "generation_mode": "direct-copy-reference",
+  "metrics": {
+    "pytest_collect_errors": 1
+  },
+  "next": "Convert optional int-array arguments before pairing with transpose flags, or pass std::optional<std::vector<int64_t>> / std::pair<std::vector<int64_t>, bool> in a form supported by MindSpore ConvertType, then rerun pytest and dashboard artifact collection.",
+  "operator_dir": "058_npu_fused_infer_attention_score_v2",
+  "reason": "Running ms_ops tests/operators/aclnn/test_npu_fused_infer_attention_score_v2_op.py fails during collection/build. npu_fused_infer_attention_score_v2_op.cpp:76 passes std::pair<std::optional<std::vector<int64_t>>, bool> into MindSpore ConvertTypes, but op_api_convert.h has no ConvertType overload for that type.",
+  "reference_status": "skipped",
+  "repo_target": "ms_custom_ops",
+  "row": 58,
+  "stage": "ms_ops_pytest",
+  "status": "blocked",
+  "torch_api": "torch_npu.npu_fused_infer_attention_score_v2",
+  "watch_type": "custom_op_acceptance"
+}

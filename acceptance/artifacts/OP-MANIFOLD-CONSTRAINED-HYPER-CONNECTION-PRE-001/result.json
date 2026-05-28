@@ -1,0 +1,23 @@
+{
+  "artifact": "acceptance/artifacts/OP-MANIFOLD-CONSTRAINED-HYPER-CONNECTION-PRE-001/result.json",
+  "case_id": "OP-MANIFOLD-CONSTRAINED-HYPER-CONNECTION-PRE-001",
+  "custom_op_required": true,
+  "evidence_grade": "provisional_reference",
+  "generation_mode": "manual-from-metadata",
+  "metrics": {
+    "duration_seconds": 21.18,
+    "pytest_file": "tests/operators/aclnn/test_npu_mhc_pre_op.py",
+    "pytest_passed": 1,
+    "pytest_skipped": 1
+  },
+  "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+  "operator_dir": "024_npu_manifold_constrained_hyper_connection_pre",
+  "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_mhc_pre_op.py completed successfully: 1 passed and 1 skipped.",
+  "reference_status": "missing",
+  "repo_target": "ms_custom_ops",
+  "row": 24,
+  "stage": "ms_ops_pytest",
+  "status": "pass",
+  "torch_api": "torch.ops.custom.npu_manifold_constrained_hyper_connection_pre",
+  "watch_type": "custom_op_acceptance"
+}

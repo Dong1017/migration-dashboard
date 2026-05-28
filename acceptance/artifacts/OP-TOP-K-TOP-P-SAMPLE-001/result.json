@@ -1,0 +1,23 @@
+{
+  "artifact": "acceptance/artifacts/OP-TOP-K-TOP-P-SAMPLE-001/result.json",
+  "case_id": "OP-TOP-K-TOP-P-SAMPLE-001",
+  "custom_op_required": true,
+  "evidence_grade": "provisional_reference",
+  "generation_mode": "direct-copy-reference",
+  "metrics": {
+    "batch_duration_seconds": 168.99,
+    "batch_pytest_passed": 5,
+    "batch_pytest_skipped": 4,
+    "pytest_file": "tests/operators/aclnn/test_npu_top_k_top_p_sample_op.py"
+  },
+  "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+  "operator_dir": "096_npu_top_k_top_p_sample",
+  "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_top_k_top_p_sample_op.py completed successfully in the routing/sampling batch; aggregate batch result was 5 passed and 4 skipped.",
+  "reference_status": "skipped",
+  "repo_target": "ms_custom_ops",
+  "row": 96,
+  "stage": "ms_ops_pytest",
+  "status": "pass",
+  "torch_api": "torch_npu.npu_top_k_top_p_sample",
+  "watch_type": "custom_op_acceptance"
+}

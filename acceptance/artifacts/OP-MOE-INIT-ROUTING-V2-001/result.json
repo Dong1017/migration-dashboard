@@ -1,0 +1,20 @@
+{
+  "artifact": "acceptance/artifacts/OP-MOE-INIT-ROUTING-V2-001/result.json",
+  "case_id": "OP-MOE-INIT-ROUTING-V2-001",
+  "custom_op_required": true,
+  "evidence_grade": "tool_contract_only",
+  "generation_mode": "direct-copy-reference",
+  "metrics": {
+    "pytest_collect_errors": 1
+  },
+  "next": "Fix npu_moe_init_routing_v2_op.cpp launch argument conversion for optional IntArray/vector parameters, then rerun pytest and dashboard artifact collection.",
+  "operator_dir": "084_npu_moe_init_routing_v2",
+  "reason": "After refreshing ms_ops, rerunning tests/operators/aclnn/test_npu_moe_init_routing_v2_op.py still fails during collection while building npu_moe_init_routing_v2_op.cpp. The compile error is reached from npu_moe_init_routing_v2_op.cpp:199 during MindSpore ConvertTypes instantiation for optional tensor/vector arguments.",
+  "reference_status": "direct",
+  "repo_target": "ms_custom_ops",
+  "row": 84,
+  "stage": "ms_ops_pytest_rerun",
+  "status": "blocked",
+  "torch_api": "torch_npu.npu_moe_init_routing_v2",
+  "watch_type": "custom_op_acceptance"
+}

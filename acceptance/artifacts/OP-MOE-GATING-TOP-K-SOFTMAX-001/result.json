@@ -1,0 +1,20 @@
+{
+  "artifact": "acceptance/artifacts/OP-MOE-GATING-TOP-K-SOFTMAX-001/result.json",
+  "case_id": "OP-MOE-GATING-TOP-K-SOFTMAX-001",
+  "custom_op_required": true,
+  "evidence_grade": "provisional_reference",
+  "generation_mode": "direct-copy-reference",
+  "metrics": {
+    "pytest_passed": 5
+  },
+  "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+  "operator_dir": "080_npu_moe_gating_top_k_softmax",
+  "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_gating_top_k_softmax_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+  "reference_status": "direct",
+  "repo_target": "ms_custom_ops",
+  "row": 80,
+  "stage": "ms_ops_pytest_rerun",
+  "status": "pass",
+  "torch_api": "torch_npu.npu_moe_gating_top_k_softmax",
+  "watch_type": "custom_op_acceptance"
+}

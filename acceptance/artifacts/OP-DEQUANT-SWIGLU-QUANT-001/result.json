@@ -1,0 +1,25 @@
+{
+  "artifact": "acceptance/artifacts/OP-DEQUANT-SWIGLU-QUANT-001/result.json",
+  "case_id": "OP-DEQUANT-SWIGLU-QUANT-001",
+  "custom_op_required": true,
+  "evidence_grade": "provisional_reference",
+  "generation_mode": "direct-copy-reference",
+  "metrics": {
+    "batch_duration_seconds": 379.93,
+    "batch_pytest_collected": 34,
+    "batch_pytest_passed": 25,
+    "batch_pytest_skipped": 9,
+    "pytest_collected_in_file": 3,
+    "pytest_file": "tests/operators/aclnn/test_npu_dequant_swiglu_quant_op.py"
+  },
+  "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+  "operator_dir": "049_npu_dequant_swiglu_quant",
+  "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_dequant_swiglu_quant_op.py completed in the quant/matmul batch; aggregate batch result was 25 passed and 9 skipped across 34 collected tests.",
+  "reference_status": "skipped",
+  "repo_target": "ms_custom_ops",
+  "row": 49,
+  "stage": "ms_ops_pytest",
+  "status": "pass",
+  "torch_api": "torch_npu.npu_dequant_swiglu_quant",
+  "watch_type": "custom_op_acceptance"
+}

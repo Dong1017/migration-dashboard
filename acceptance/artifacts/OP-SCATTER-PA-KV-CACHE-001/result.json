@@ -1,0 +1,20 @@
+{
+  "artifact": "acceptance/artifacts/OP-SCATTER-PA-KV-CACHE-001/result.json",
+  "case_id": "OP-SCATTER-PA-KV-CACHE-001",
+  "custom_op_required": true,
+  "evidence_grade": "provisional_reference",
+  "generation_mode": "direct-copy-reference",
+  "metrics": {
+    "pytest_passed": 4
+  },
+  "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared.",
+  "operator_dir": "094_npu_scatter_pa_kv_cache",
+  "reason": "ms_ops tests/operators/aclnn/test_npu_scatter_pa_kv_cache_op.py completed successfully on the refreshed remote ms_ops checkout.",
+  "reference_status": "skipped",
+  "repo_target": "ms_custom_ops",
+  "row": 94,
+  "stage": "ms_ops_pytest",
+  "status": "pass",
+  "torch_api": "torch_npu.npu_scatter_pa_kv_cache",
+  "watch_type": "custom_op_acceptance"
+}

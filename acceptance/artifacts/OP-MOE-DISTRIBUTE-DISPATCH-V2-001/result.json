@@ -1,0 +1,20 @@
+{
+  "artifact": "acceptance/artifacts/OP-MOE-DISTRIBUTE-DISPATCH-V2-001/result.json",
+  "case_id": "OP-MOE-DISTRIBUTE-DISPATCH-V2-001",
+  "custom_op_required": true,
+  "evidence_grade": "provisional_reference",
+  "generation_mode": "direct-copy-reference",
+  "metrics": {
+    "pytest_passed": 3
+  },
+  "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+  "operator_dir": "075_npu_moe_distribute_dispatch_v2",
+  "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_distribute_dispatch_v2_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+  "reference_status": "skipped",
+  "repo_target": "ms_custom_ops",
+  "row": 75,
+  "stage": "ms_ops_pytest_rerun",
+  "status": "pass",
+  "torch_api": "torch_npu.npu_moe_distribute_dispatch_v2",
+  "watch_type": "custom_op_acceptance"
+}

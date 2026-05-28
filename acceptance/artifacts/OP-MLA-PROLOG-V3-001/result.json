@@ -1,0 +1,24 @@
+{
+  "artifact": "acceptance/artifacts/OP-MLA-PROLOG-V3-001/result.json",
+  "case_id": "OP-MLA-PROLOG-V3-001",
+  "custom_op_required": true,
+  "evidence_grade": "tool_contract_only",
+  "generation_mode": "direct-copy-reference",
+  "metrics": {
+    "batch_duration_seconds": 37.28,
+    "batch_pytest_failed": 2,
+    "pytest_failed": 1,
+    "pytest_file": "tests/operators/aclnn/test_npu_mla_prolog_v3_op.py",
+    "pytest_passed_in_batch": 3
+  },
+  "next": "Fix npu_mla_prolog_v3 test/operator input layout and optional argument set to match CANN supported signatures, then rerun pytest and dashboard artifact collection.",
+  "operator_dir": "071_npu_mla_prolog_v3",
+  "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_mla_prolog_v3_op.py still fails: 1 failed and 1 passed in the stale-case rerun. test_default_bf16_output_shapes fails at Tensor.asnumpy() because aclnnMlaPrologV3WeightNzGetWorkspaceSize rejects INT8/ND weights/cache; CANN supported signatures require FRACTAL_NZ weights and matching optional inputs.",
+  "reference_status": "skipped",
+  "repo_target": "ms_custom_ops",
+  "row": 71,
+  "stage": "ms_ops_pytest_rerun",
+  "status": "blocked",
+  "torch_api": "torch_npu.npu_mla_prolog_v3",
+  "watch_type": "custom_op_acceptance"
+}

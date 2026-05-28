@@ -1,0 +1,20 @@
+{
+  "artifact": "acceptance/artifacts/OP-QUANT-LIGHTNING-INDEXER-001/result.json",
+  "case_id": "OP-QUANT-LIGHTNING-INDEXER-001",
+  "custom_op_required": true,
+  "evidence_grade": "provisional_reference",
+  "generation_mode": "direct-copy-reference",
+  "metrics": {
+    "pytest_passed": 2
+  },
+  "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared.",
+  "operator_dir": "089_npu_quant_lightning_indexer",
+  "reason": "ms_ops tests/operators/aclnn/test_npu_quant_lightning_indexer_op.py completed successfully on the refreshed remote ms_ops checkout.",
+  "reference_status": "skipped",
+  "repo_target": "ms_custom_ops",
+  "row": 89,
+  "stage": "ms_ops_pytest",
+  "status": "pass",
+  "torch_api": "torch_npu.npu_quant_lightning_indexer",
+  "watch_type": "custom_op_acceptance"
+}

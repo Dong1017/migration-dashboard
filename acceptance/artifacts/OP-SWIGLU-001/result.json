@@ -1,0 +1,23 @@
+{
+  "artifact": "acceptance/artifacts/OP-SWIGLU-001/result.json",
+  "case_id": "OP-SWIGLU-001",
+  "custom_op_required": true,
+  "evidence_grade": "provisional_reference",
+  "generation_mode": "direct-copy-reference",
+  "metrics": {
+    "batch_duration_seconds": 37.28,
+    "batch_pytest_failed": 2,
+    "batch_pytest_passed": 3,
+    "pytest_file": "tests/operators/aclnn/test_npu_swiglu_op.py"
+  },
+  "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are refreshed and compared for this operator.",
+  "operator_dir": "095_npu_swiglu",
+  "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_swiglu_op.py completed in the stale-case rerun; the rerun batch had 3 passed and 2 failed from other operators.",
+  "reference_status": "direct",
+  "repo_target": "ms_custom_ops",
+  "row": 95,
+  "stage": "ms_ops_pytest_rerun",
+  "status": "pass",
+  "torch_api": "torch_npu.npu_swiglu",
+  "watch_type": "custom_op_acceptance"
+}

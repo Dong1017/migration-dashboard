@@ -1,0 +1,23 @@
+{
+  "artifact": "acceptance/artifacts/OP-AGGREGATE-HIDDEN-001/result.json",
+  "case_id": "OP-AGGREGATE-HIDDEN-001",
+  "custom_op_required": true,
+  "evidence_grade": "tool_contract_only",
+  "generation_mode": "manual-from-metadata",
+  "metrics": {
+    "finite_check": "",
+    "max_abs_error": null,
+    "max_rel_error": null,
+    "pass_ratio": null
+  },
+  "next": "Collect torch_npu/PT golden artifacts and MindSpore actual artifacts, then rerun compare_outputs.py.",
+  "operator_dir": "014_npu_aggregate_hidden",
+  "reason": "Missing golden or actual .npz artifacts.",
+  "reference_status": "missing",
+  "repo_target": "ms_custom_ops",
+  "row": 14,
+  "stage": "compare",
+  "status": "not_run",
+  "torch_api": "torch.ops.custom.npu_aggregate_hidden",
+  "watch_type": "custom_op_acceptance"
+}

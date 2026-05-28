@@ -1,10 +1,10 @@
 {
   "metrics": {
     "total": 173,
-    "accepted": 48,
-    "open": 0,
-    "blocked": 30,
-    "completion_rate": 27.7,
+    "accepted": 88,
+    "open": 47,
+    "blocked": 38,
+    "completion_rate": 50.9,
     "operator_rows": 61,
     "operator_groups": 14,
     "by_priority": {
@@ -17,15 +17,13 @@
       "omni_models": 34,
       "ms_custom_ops": 61
     },
-    "generated_at": "2026-05-27T15:35:46.218284",
-    "source": "migration-analysis-v0.5.md Appendix E + Section 5.3",
     "by_repo_detail": {
-      "vllm + omni_npu": {
-        "total": 78,
-        "accepted": 48,
-        "blocked": 30,
-        "open": 0,
-        "completion_rate": 61.5
+      "ms_custom_ops": {
+        "total": 61,
+        "accepted": 40,
+        "blocked": 8,
+        "open": 13,
+        "completion_rate": 65.6
       },
       "omni_models": {
         "total": 34,
@@ -34,14 +32,16 @@
         "open": 34,
         "completion_rate": 0.0
       },
-      "ms_custom_ops": {
-        "total": 61,
-        "accepted": 0,
-        "blocked": 0,
-        "open": 61,
-        "completion_rate": 0.0
+      "vllm + omni_npu": {
+        "total": 78,
+        "accepted": 48,
+        "blocked": 30,
+        "open": 0,
+        "completion_rate": 61.5
       }
-    }
+    },
+    "generated_at": "2026-05-28T10:19:02.033043+08:00",
+    "source": "migration-analysis-v0.5.md Appendix E + Section 5.3"
   },
   "items": [
     {
@@ -2243,7 +2243,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-AGGREGATE-HIDDEN-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "compare",
+      "reason": "Missing golden or actual .npz artifacts.",
+      "next": "Collect torch_npu/PT golden artifacts and MindSpore actual artifacts, then rerun compare_outputs.py.",
+      "artifact": "acceptance/artifacts/OP-AGGREGATE-HIDDEN-001/result.json"
     },
     {
       "id": "4.14#15",
@@ -2264,11 +2271,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.14",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-AI-INFRA-FUSED-CAUSAL-CONV1D-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_fused_causal_conv1d_op.py completed successfully in the remaining infra batch; aggregate batch result was 5 passed and 4 skipped.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-AI-INFRA-FUSED-CAUSAL-CONV1D-001/result.json"
     },
     {
       "id": "4.4#16",
@@ -2294,7 +2308,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-AI-INFRA-KV-QUANT-SPARSE-FALSH-ATTENTION-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_probe",
+      "reason": "No direct pytest or implementation mapping was found in the refreshed remote ms_ops checkout under tests/ or custom_ops for this attention/cache case.",
+      "next": "Locate or add an ms_ops implementation/test mapping, or collect dashboard golden/actual artifacts from the preserved ops_gate reference before marking this case pass.",
+      "artifact": "acceptance/artifacts/OP-AI-INFRA-KV-QUANT-SPARSE-FALSH-ATTENTION-001/result.json"
     },
     {
       "id": "4.3#17",
@@ -2319,7 +2340,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-AI-INFRA-KV-RMSNORM-ROPE-CACHE-V2-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_probe",
+      "reason": "No direct pytest or implementation mapping was found in the refreshed remote ms_ops checkout under tests/ or custom_ops for this attention/cache case.",
+      "next": "Locate or add an ms_ops implementation/test mapping, or collect dashboard golden/actual artifacts from the preserved ops_gate reference before marking this case pass.",
+      "artifact": "acceptance/artifacts/OP-AI-INFRA-KV-RMSNORM-ROPE-CACHE-V2-001/result.json"
     },
     {
       "id": "4.14#18",
@@ -2340,11 +2368,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.14",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-AI-INFRA-MANIFOLD-CONSTRAINED-HYPER-CONNECTION-POST-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_mhc_post_op.py completed successfully in the remaining infra batch; aggregate batch result was 5 passed and 4 skipped.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-AI-INFRA-MANIFOLD-CONSTRAINED-HYPER-CONNECTION-POST-001/result.json"
     },
     {
       "id": "4.2#19",
@@ -2369,7 +2404,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-AI-INFRA-SCATTER-BLOCK-UPDATE-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "compare",
+      "reason": "Missing golden or actual .npz artifacts.",
+      "next": "Collect torch_npu/PT golden artifacts and MindSpore actual artifacts, then rerun compare_outputs.py.",
+      "artifact": "acceptance/artifacts/OP-AI-INFRA-SCATTER-BLOCK-UPDATE-001/result.json"
     },
     {
       "id": "4.4#20",
@@ -2394,7 +2436,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-AI-INFRA-SPARSE-FLASH-ATTENTION-PIONEER-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_probe",
+      "reason": "No direct pytest or implementation mapping was found in the refreshed remote ms_ops checkout under tests/ or custom_ops for this attention/cache case.",
+      "next": "Locate or add an ms_ops implementation/test mapping, or collect dashboard golden/actual artifacts from the preserved ops_gate reference before marking this case pass.",
+      "artifact": "acceptance/artifacts/OP-AI-INFRA-SPARSE-FLASH-ATTENTION-PIONEER-001/result.json"
     },
     {
       "id": "4.1#21",
@@ -2419,7 +2468,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-FUSED-INFER-ATTENTION-SINK-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_probe",
+      "reason": "No direct pytest or implementation mapping was found in the refreshed remote ms_ops checkout under tests/ or custom_ops for this attention/cache case.",
+      "next": "Locate or add an ms_ops implementation/test mapping, or collect dashboard golden/actual artifacts from the preserved ops_gate reference before marking this case pass.",
+      "artifact": "acceptance/artifacts/OP-FUSED-INFER-ATTENTION-SINK-001/result.json"
     },
     {
       "id": "4.4#23",
@@ -2444,7 +2500,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-LIGHTNING-INDEXER-ENHANCE-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "compare",
+      "reason": "Missing golden or actual .npz artifacts.",
+      "next": "Collect torch_npu/PT golden artifacts and MindSpore actual artifacts, then rerun compare_outputs.py.",
+      "artifact": "acceptance/artifacts/OP-LIGHTNING-INDEXER-ENHANCE-001/result.json"
     },
     {
       "id": "4.14#24",
@@ -2465,11 +2528,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.14",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MANIFOLD-CONSTRAINED-HYPER-CONNECTION-PRE-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_mhc_pre_op.py completed successfully: 1 passed and 1 skipped.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-MANIFOLD-CONSTRAINED-HYPER-CONNECTION-PRE-001/result.json"
     },
     {
       "id": "4.14#25",
@@ -2490,11 +2560,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.14",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-SINKHORN-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_mhc_sinkhorn_op.py completed successfully in the remaining infra batch; aggregate batch result was 5 passed and 4 skipped.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-SINKHORN-001/result.json"
     },
     {
       "id": "4.4#26",
@@ -2519,7 +2596,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-SPARSE-FLASH-ATTENTION-ENHANCE-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_probe",
+      "reason": "After latest ms_ops git pull, no direct pytest file tests/operators/aclnn/test_npu_sparse_flash_attention_enhance_op.py exists in the remote ms_ops checkout.",
+      "next": "Add or locate a direct ms_ops pytest for this operator, then rerun and collect dashboard golden/actual artifacts.",
+      "artifact": "acceptance/artifacts/OP-SPARSE-FLASH-ATTENTION-ENHANCE-001/result.json"
     },
     {
       "id": "4.1#38",
@@ -2540,11 +2624,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.1",
-      "status": "open",
+      "status": "blocked",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-ATTENTION-PIONEER-001",
+      "acceptance_status": "blocked",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, rerunning tests/operators/aclnn/test_npu_attention_pioneer_op.py still fails during collection/build. _npu_attention_pioneer_op.cpp:64/72 passes std::pair<std::optional<std::vector<int64_t>>, bool> into MindSpore ConvertTypes, but op_api_convert.h has no ConvertType overload for that type.",
+      "next": "Convert optional int-array arguments before wrapping with the transpose flag, or pass std::optional<std::vector<int64_t>> / std::pair<std::vector<int64_t>, bool> in a form supported by MindSpore ConvertType, then rerun pytest and dashboard artifact collection.",
+      "artifact": "acceptance/artifacts/OP-ATTENTION-PIONEER-001/result.json"
     },
     {
       "id": "4.1#43",
@@ -2569,7 +2660,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-FUSED-INFER-ATTENTION-SCORE-V2-INFER-OUTPUT-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_probe",
+      "reason": "The refreshed remote ms_ops checkout has no direct pytest file for _npu_fused_infer_attention_score_v2_infer_output. The available test_npu_fused_infer_attention_score_v2_get_max_workspace_op.py validates a different workspace-query helper path and cannot be used as pass evidence for the infer-output operator.",
+      "next": "Add or locate a direct infer-output ms_ops test, or collect dashboard golden/actual artifacts for OP-FUSED-INFER-ATTENTION-SCORE-V2-INFER-OUTPUT-001 before marking this case pass.",
+      "artifact": "acceptance/artifacts/OP-FUSED-INFER-ATTENTION-SCORE-V2-INFER-OUTPUT-001/result.json"
     },
     {
       "id": "4.4#44",
@@ -2595,7 +2693,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-KV-QUANT-SPARSE-FLASH-ATTENTION-PIONEER-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_probe",
+      "reason": "No direct pytest or implementation mapping was found in the refreshed remote ms_ops checkout under tests/ or custom_ops for this attention/cache case.",
+      "next": "Locate or add an ms_ops implementation/test mapping, or collect dashboard golden/actual artifacts from the preserved ops_gate reference before marking this case pass.",
+      "artifact": "acceptance/artifacts/OP-KV-QUANT-SPARSE-FLASH-ATTENTION-PIONEER-001/result.json"
     },
     {
       "id": "4.5#45",
@@ -2616,11 +2721,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.5",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-ADD-RMSNORM-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_add_rms_norm_op.py completed successfully in the rope/norm batch; aggregate batch result was 13 passed.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-ADD-RMSNORM-001/result.json"
     },
     {
       "id": "4.5#46",
@@ -2641,11 +2753,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.5",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-APPLY-ROTARY-POS-EMB-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_apply_rotary_pos_emb_op.py completed successfully in the rope/norm batch; aggregate batch result was 13 passed.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-APPLY-ROTARY-POS-EMB-001/result.json"
     },
     {
       "id": "4.1#48",
@@ -2667,11 +2786,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.1",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-ATTENTION-UPDATE-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "ms_ops tests/operators/aclnn/test_npu_attention_update_op.py completed successfully on the refreshed remote ms_ops checkout.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared.",
+      "artifact": "acceptance/artifacts/OP-ATTENTION-UPDATE-001/result.json"
     },
     {
       "id": "4.9#49",
@@ -2692,11 +2818,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.9",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-DEQUANT-SWIGLU-QUANT-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_dequant_swiglu_quant_op.py completed in the quant/matmul batch; aggregate batch result was 25 passed and 9 skipped across 34 collected tests.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-DEQUANT-SWIGLU-QUANT-001/result.json"
     },
     {
       "id": "4.9#52",
@@ -2717,11 +2850,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.9",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-DYNAMIC-QUANT-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_dynamic_quant_op.py completed in the quant/matmul batch; aggregate batch result was 25 passed and 9 skipped across 34 collected tests.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-DYNAMIC-QUANT-001/result.json"
     },
     {
       "id": "4.14#55",
@@ -2742,11 +2882,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.14",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-FUSED-CAUSAL-CONV1D-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "ms_ops tests/operators/aclnn/test_npu_fused_causal_conv1d_op.py completed successfully on the refreshed remote ms_ops checkout.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared.",
+      "artifact": "acceptance/artifacts/OP-FUSED-CAUSAL-CONV1D-001/result.json"
     },
     {
       "id": "4.1#56",
@@ -2767,11 +2914,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.1",
-      "status": "open",
+      "status": "blocked",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-FUSED-INFER-ATTENTION-SCORE-001",
+      "acceptance_status": "blocked",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest",
+      "reason": "Running ms_ops tests/operators/aclnn/test_npu_fused_infer_attention_score_op.py fails during collection/build. npu_fused_infer_attention_score_op.cpp:301/308 passes std::pair<std::optional<std::vector<int64_t>>, bool> into MindSpore ConvertTypes, but op_api_convert.h has no ConvertType overload for that type.",
+      "next": "Convert optional int-array arguments before pairing with transpose flags, or pass std::optional<std::vector<int64_t>> / std::pair<std::vector<int64_t>, bool> in a form supported by MindSpore ConvertType, then rerun pytest and dashboard artifact collection.",
+      "artifact": "acceptance/artifacts/OP-FUSED-INFER-ATTENTION-SCORE-001/result.json"
     },
     {
       "id": "4.1#58",
@@ -2792,11 +2946,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.1",
-      "status": "open",
+      "status": "blocked",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-FUSED-INFER-ATTENTION-SCORE-V2-001",
+      "acceptance_status": "blocked",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest",
+      "reason": "Running ms_ops tests/operators/aclnn/test_npu_fused_infer_attention_score_v2_op.py fails during collection/build. npu_fused_infer_attention_score_v2_op.cpp:76 passes std::pair<std::optional<std::vector<int64_t>>, bool> into MindSpore ConvertTypes, but op_api_convert.h has no ConvertType overload for that type.",
+      "next": "Convert optional int-array arguments before pairing with transpose flags, or pass std::optional<std::vector<int64_t>> / std::pair<std::vector<int64_t>, bool> in a form supported by MindSpore ConvertType, then rerun pytest and dashboard artifact collection.",
+      "artifact": "acceptance/artifacts/OP-FUSED-INFER-ATTENTION-SCORE-V2-001/result.json"
     },
     {
       "id": "4.1#60",
@@ -2817,11 +2978,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.1",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-FUSION-ATTENTION-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "ms_ops tests/operators/aclnn/test_npu_fusion_attention_op.py completed successfully on the refreshed remote ms_ops checkout.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared.",
+      "artifact": "acceptance/artifacts/OP-FUSION-ATTENTION-001/result.json"
     },
     {
       "id": "4.6#61",
@@ -2842,11 +3010,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.6",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-GROUPED-MATMUL-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_grouped_matmul_op.py completed in the quant/matmul batch; aggregate batch result was 25 passed and 9 skipped across 34 collected tests.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-GROUPED-MATMUL-001/result.json"
     },
     {
       "id": "4.6#63",
@@ -2867,11 +3042,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.6",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-GROUPED-MATMUL-FINALIZE-ROUTING-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_grouped_matmul_finalize_routing_op.py completed in the quant/matmul batch; aggregate batch result was 25 passed and 9 skipped across 34 collected tests.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-GROUPED-MATMUL-FINALIZE-ROUTING-001/result.json"
     },
     {
       "id": "4.5#65",
@@ -2892,11 +3074,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.5",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-INTERLEAVE-ROPE-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_interleave_rope_op.py completed successfully in the rope/norm batch; aggregate batch result was 13 passed.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-INTERLEAVE-ROPE-001/result.json"
     },
     {
       "id": "4.3#66",
@@ -2917,11 +3106,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.3",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-KV-RMSNORM-ROPE-CACHE-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "ms_ops tests/operators/aclnn/test_npu_kv_rmsnorm_rope_cache_op.py reported 8 passed on the refreshed remote ms_ops checkout; the process also logged an Ascend lazy async copy/device error during exit, so this remains provisional reference evidence.",
+      "next": "Rerun with blocking/device diagnostics if the post-exit Ascend async copy error must be resolved before dashboard golden/actual collection.",
+      "artifact": "acceptance/artifacts/OP-KV-RMSNORM-ROPE-CACHE-001/result.json"
     },
     {
       "id": "4.4#67",
@@ -2942,11 +3138,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.4",
-      "status": "open",
+      "status": "blocked",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-LIGHTNING-INDEXER-001",
+      "acceptance_status": "fail",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_lightning_indexer_op.py still fails: MindSpore output matches expected and torch_out, but torch_npu torch_values shape is (1, 2, 1, 16) while the test expects an empty shape (0,).",
+      "next": "Clarify whether torch_npu now returns non-empty values for this scenario or the test expectation should be updated; then rerun pytest and collect dashboard golden/actual artifacts.",
+      "artifact": "acceptance/artifacts/OP-LIGHTNING-INDEXER-001/result.json"
     },
     {
       "id": "4.9#68",
@@ -2968,11 +3171,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.9",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MHC-POST-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_mhc_post_op.py completed with 1 passed and 1 skipped case(s). Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+      "next": "Review skipped pytest scenarios if coverage is required, then regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+      "artifact": "acceptance/artifacts/OP-MHC-POST-001/result.json"
     },
     {
       "id": "4.9#69",
@@ -2994,11 +3204,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.9",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MHC-PRE-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_mhc_pre_op.py completed with 1 passed and 1 skipped case(s). Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+      "next": "Review skipped pytest scenarios if coverage is required, then regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+      "artifact": "acceptance/artifacts/OP-MHC-PRE-001/result.json"
     },
     {
       "id": "4.9#70",
@@ -3020,11 +3237,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.9",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MHC-SINKHORN-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_mhc_sinkhorn_op.py completed with 1 passed and 2 skipped case(s). Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+      "next": "Review skipped pytest scenarios if coverage is required, then regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+      "artifact": "acceptance/artifacts/OP-MHC-SINKHORN-001/result.json"
     },
     {
       "id": "4.1#71",
@@ -3046,11 +3270,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.1",
-      "status": "open",
+      "status": "blocked",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MLA-PROLOG-V3-001",
+      "acceptance_status": "blocked",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_mla_prolog_v3_op.py still fails: 1 failed and 1 passed in the stale-case rerun. test_default_bf16_output_shapes fails at Tensor.asnumpy() because aclnnMlaPrologV3WeightNzGetWorkspaceSize rejects INT8/ND weights/cache; CANN supported signatures require FRACTAL_NZ weights and matching optional inputs.",
+      "next": "Fix npu_mla_prolog_v3 test/operator input layout and optional argument set to match CANN supported signatures, then rerun pytest and dashboard artifact collection.",
+      "artifact": "acceptance/artifacts/OP-MLA-PROLOG-V3-001/result.json"
     },
     {
       "id": "4.6#72",
@@ -3071,11 +3302,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.6",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MOE-COMPUTE-EXPERT-TOKENS-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_compute_expert_tokens_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+      "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+      "artifact": "acceptance/artifacts/OP-MOE-COMPUTE-EXPERT-TOKENS-001/result.json"
     },
     {
       "id": "4.7#74",
@@ -3096,11 +3334,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.7",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MOE-DISTRIBUTE-COMBINE-V2-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_distribute_combine_v2_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+      "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+      "artifact": "acceptance/artifacts/OP-MOE-DISTRIBUTE-COMBINE-V2-001/result.json"
     },
     {
       "id": "4.7#75",
@@ -3121,11 +3366,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.7",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MOE-DISTRIBUTE-DISPATCH-V2-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_distribute_dispatch_v2_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+      "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+      "artifact": "acceptance/artifacts/OP-MOE-DISTRIBUTE-DISPATCH-V2-001/result.json"
     },
     {
       "id": "4.6#76",
@@ -3146,11 +3398,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.6",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MOE-FINALIZE-ROUTING-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_finalize_routing_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+      "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+      "artifact": "acceptance/artifacts/OP-MOE-FINALIZE-ROUTING-001/result.json"
     },
     {
       "id": "4.6#78",
@@ -3171,11 +3430,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.6",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MOE-GATING-TOP-K-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_gating_top_k_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+      "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+      "artifact": "acceptance/artifacts/OP-MOE-GATING-TOP-K-001/result.json"
     },
     {
       "id": "4.6#80",
@@ -3196,11 +3462,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.6",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MOE-GATING-TOP-K-SOFTMAX-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_gating_top_k_softmax_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+      "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+      "artifact": "acceptance/artifacts/OP-MOE-GATING-TOP-K-SOFTMAX-001/result.json"
     },
     {
       "id": "4.6#82",
@@ -3221,11 +3494,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.6",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MOE-INIT-ROUTING-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_init_routing_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+      "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+      "artifact": "acceptance/artifacts/OP-MOE-INIT-ROUTING-001/result.json"
     },
     {
       "id": "4.6#84",
@@ -3246,11 +3526,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.6",
-      "status": "open",
+      "status": "blocked",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MOE-INIT-ROUTING-V2-001",
+      "acceptance_status": "blocked",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, rerunning tests/operators/aclnn/test_npu_moe_init_routing_v2_op.py still fails during collection while building npu_moe_init_routing_v2_op.cpp. The compile error is reached from npu_moe_init_routing_v2_op.cpp:199 during MindSpore ConvertTypes instantiation for optional tensor/vector arguments.",
+      "next": "Fix npu_moe_init_routing_v2_op.cpp launch argument conversion for optional IntArray/vector parameters, then rerun pytest and dashboard artifact collection.",
+      "artifact": "acceptance/artifacts/OP-MOE-INIT-ROUTING-V2-001/result.json"
     },
     {
       "id": "4.8#85",
@@ -3271,11 +3558,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.8",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MOE-RE-ROUTING-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_re_routing_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+      "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+      "artifact": "acceptance/artifacts/OP-MOE-RE-ROUTING-001/result.json"
     },
     {
       "id": "4.5#87",
@@ -3296,11 +3590,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.5",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MROPE-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_mrope_op.py completed successfully in the rope/norm batch; aggregate batch result was 13 passed.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-MROPE-001/result.json"
     },
     {
       "id": "4.14#88",
@@ -3321,11 +3622,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.14",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-PREFETCH-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_prefetch_op.py completed successfully in the routing/sampling batch; aggregate batch result was 5 passed and 4 skipped.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-PREFETCH-001/result.json"
     },
     {
       "id": "4.9#89",
@@ -3347,11 +3655,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.9",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-QUANT-LIGHTNING-INDEXER-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "ms_ops tests/operators/aclnn/test_npu_quant_lightning_indexer_op.py completed successfully on the refreshed remote ms_ops checkout.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared.",
+      "artifact": "acceptance/artifacts/OP-QUANT-LIGHTNING-INDEXER-001/result.json"
     },
     {
       "id": "4.9#90",
@@ -3372,11 +3687,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.9",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-QUANT-MATMUL-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_quant_matmul_op.py completed in the quant/matmul batch; aggregate batch result was 25 passed and 9 skipped across 34 collected tests.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-QUANT-MATMUL-001/result.json"
     },
     {
       "id": "4.5#91",
@@ -3397,11 +3719,16 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.5",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-RMSNORM-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "migration_evidence",
+      "stage": "compare",
+      "artifact": "acceptance/artifacts/OP-RMSNORM-001/result.json"
     },
     {
       "id": "4.5#92",
@@ -3422,11 +3749,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.5",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-ROTARY-MUL-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_rotary_mul_op.py completed successfully in the rope/norm batch; aggregate batch result was 13 passed.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-ROTARY-MUL-001/result.json"
     },
     {
       "id": "4.2#93",
@@ -3447,11 +3781,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.2",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-SCATTER-ND-UPDATE-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_scatter_nd_update_op.py completed in the scatter/infra batch; aggregate batch result was 2 passed, 1 skipped, and 12 failed from npu_swiglu_mx_quant tests.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-SCATTER-ND-UPDATE-001/result.json"
     },
     {
       "id": "4.2#94",
@@ -3472,11 +3813,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.2",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-SCATTER-PA-KV-CACHE-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "ms_ops tests/operators/aclnn/test_npu_scatter_pa_kv_cache_op.py completed successfully on the refreshed remote ms_ops checkout.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared.",
+      "artifact": "acceptance/artifacts/OP-SCATTER-PA-KV-CACHE-001/result.json"
     },
     {
       "id": "4.5#95",
@@ -3497,11 +3845,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.5",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-SWIGLU-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_swiglu_op.py completed in the stale-case rerun; the rerun batch had 3 passed and 2 failed from other operators.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are refreshed and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-SWIGLU-001/result.json"
     },
     {
       "id": "4.14#96",
@@ -3522,11 +3877,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.14",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-TOP-K-TOP-P-SAMPLE-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_top_k_top_p_sample_op.py completed successfully in the routing/sampling batch; aggregate batch result was 5 passed and 4 skipped.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-TOP-K-TOP-P-SAMPLE-001/result.json"
     },
     {
       "id": "4.11#97",
@@ -3547,11 +3909,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.11",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-TRANSPOSE-BATCHMATMUL-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_transpose_batchmatmul_op.py completed in the quant/matmul batch; aggregate batch result was 25 passed and 9 skipped across 34 collected tests.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-TRANSPOSE-BATCHMATMUL-001/result.json"
     },
     {
       "id": "4.9#98",
@@ -3573,11 +3942,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.9",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-AI-INFRA-QUANT-LIGHTNING-INDEXER-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_quant_lightning_indexer_op.py completed successfully in the remaining infra batch; aggregate batch result was 5 passed and 4 skipped.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-AI-INFRA-QUANT-LIGHTNING-INDEXER-001/result.json"
     },
     {
       "id": "4.1#99",
@@ -3598,11 +3974,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.1",
-      "status": "open",
+      "status": "blocked",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-FLASH-ATTENTION-UNPAD-001",
+      "acceptance_status": "blocked",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest",
+      "reason": "ms_ops tests/operators/aclnn/test_npu_flash_attention_unpad_op.py fails during collection/build. _npu_flash_attention_unpad_op.cpp references ATB symbols unavailable in the current environment: atb::infer, HashOpParam<...>, and ms::pynative::RunAtbOp.",
+      "next": "Align the ATB/MindSpore custom-op integration or environment headers/libraries, then rerun pytest and dashboard artifact collection.",
+      "artifact": "acceptance/artifacts/OP-FLASH-ATTENTION-UNPAD-001/result.json"
     },
     {
       "id": "4.14#100",
@@ -3623,11 +4006,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.14",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-RECURRENT-GATED-DELTA-RULE-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_recurrent_gated_delta_rule_op.py completed successfully in the routing/sampling batch; aggregate batch result was 5 passed and 4 skipped.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-RECURRENT-GATED-DELTA-RULE-001/result.json"
     },
     {
       "id": "4.5#101",
@@ -3649,11 +4039,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.5",
-      "status": "open",
+      "status": "blocked",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-SWIGLU-MX-QUANT-001",
+      "acceptance_status": "fail",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_swiglu_mx_quant_op.py fails 12 tests. The returned tensors are undefined; shape/dtype/asnumpy access raises MindSpore RuntimeError: Failure info [The Tensor is not defined] from pynative custom tensor.cc:146.",
+      "next": "Fix npu_swiglu_mx_quant output tensor construction or runtime launch so returned y/mxscale tensors are defined, then rerun pytest and dashboard artifact collection.",
+      "artifact": "acceptance/artifacts/OP-SWIGLU-MX-QUANT-001/result.json"
     },
     {
       "id": "4.9#102",
@@ -3674,11 +4071,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.9",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-TRANS-QUANT-PARAM-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_trans_quant_param_op.py completed in the quant/matmul batch; aggregate batch result was 25 passed and 9 skipped across 34 collected tests.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-TRANS-QUANT-PARAM-001/result.json"
     },
     {
       "id": "4.1#505",
@@ -3703,7 +4107,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-FUSED-INFER-ATTENTION-SINK-METADATA-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_probe",
+      "reason": "No direct pytest or implementation mapping was found in the refreshed remote ms_ops checkout under tests/ or custom_ops for this attention/cache case.",
+      "next": "Locate or add an ms_ops implementation/test mapping, or collect dashboard golden/actual artifacts from the preserved ops_gate reference before marking this case pass.",
+      "artifact": "acceptance/artifacts/OP-FUSED-INFER-ATTENTION-SINK-METADATA-001/result.json"
     },
     {
       "id": "4.14#506",
@@ -3728,7 +4139,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-CHUNK-GATED-DELTA-RULE-RECURRENCE-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_probe",
+      "reason": "After latest ms_ops git pull, no direct pytest file tests/operators/aclnn/test_npu_chunk_gated_delta_rule_recurrence_op.py exists in the remote ms_ops checkout.",
+      "next": "Add or locate a direct ms_ops pytest for this operator, then rerun and collect dashboard golden/actual artifacts.",
+      "artifact": "acceptance/artifacts/OP-CHUNK-GATED-DELTA-RULE-RECURRENCE-001/result.json"
     },
     {
       "id": "4.14#507",
@@ -3753,7 +4171,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-LOWER-TRIANGULAR-INVERSE-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_probe",
+      "reason": "After latest ms_ops git pull, no direct pytest file tests/operators/aclnn/test_npu_lower_triangular_inverse_op.py exists in the remote ms_ops checkout.",
+      "next": "Add or locate a direct ms_ops pytest for npu_lower_triangular_inverse, then rerun and collect dashboard golden/actual artifacts.",
+      "artifact": "acceptance/artifacts/OP-LOWER-TRIANGULAR-INVERSE-001/result.json"
     }
   ],
   "operator_rows": [
@@ -3780,7 +4205,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-AGGREGATE-HIDDEN-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "compare",
+      "reason": "Missing golden or actual .npz artifacts.",
+      "next": "Collect torch_npu/PT golden artifacts and MindSpore actual artifacts, then rerun compare_outputs.py.",
+      "artifact": "acceptance/artifacts/OP-AGGREGATE-HIDDEN-001/result.json"
     },
     {
       "id": "4.14#15",
@@ -3801,11 +4233,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.14",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-AI-INFRA-FUSED-CAUSAL-CONV1D-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_fused_causal_conv1d_op.py completed successfully in the remaining infra batch; aggregate batch result was 5 passed and 4 skipped.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-AI-INFRA-FUSED-CAUSAL-CONV1D-001/result.json"
     },
     {
       "id": "4.4#16",
@@ -3831,7 +4270,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-AI-INFRA-KV-QUANT-SPARSE-FALSH-ATTENTION-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_probe",
+      "reason": "No direct pytest or implementation mapping was found in the refreshed remote ms_ops checkout under tests/ or custom_ops for this attention/cache case.",
+      "next": "Locate or add an ms_ops implementation/test mapping, or collect dashboard golden/actual artifacts from the preserved ops_gate reference before marking this case pass.",
+      "artifact": "acceptance/artifacts/OP-AI-INFRA-KV-QUANT-SPARSE-FALSH-ATTENTION-001/result.json"
     },
     {
       "id": "4.3#17",
@@ -3856,7 +4302,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-AI-INFRA-KV-RMSNORM-ROPE-CACHE-V2-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_probe",
+      "reason": "No direct pytest or implementation mapping was found in the refreshed remote ms_ops checkout under tests/ or custom_ops for this attention/cache case.",
+      "next": "Locate or add an ms_ops implementation/test mapping, or collect dashboard golden/actual artifacts from the preserved ops_gate reference before marking this case pass.",
+      "artifact": "acceptance/artifacts/OP-AI-INFRA-KV-RMSNORM-ROPE-CACHE-V2-001/result.json"
     },
     {
       "id": "4.14#18",
@@ -3877,11 +4330,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.14",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-AI-INFRA-MANIFOLD-CONSTRAINED-HYPER-CONNECTION-POST-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_mhc_post_op.py completed successfully in the remaining infra batch; aggregate batch result was 5 passed and 4 skipped.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-AI-INFRA-MANIFOLD-CONSTRAINED-HYPER-CONNECTION-POST-001/result.json"
     },
     {
       "id": "4.2#19",
@@ -3906,7 +4366,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-AI-INFRA-SCATTER-BLOCK-UPDATE-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "compare",
+      "reason": "Missing golden or actual .npz artifacts.",
+      "next": "Collect torch_npu/PT golden artifacts and MindSpore actual artifacts, then rerun compare_outputs.py.",
+      "artifact": "acceptance/artifacts/OP-AI-INFRA-SCATTER-BLOCK-UPDATE-001/result.json"
     },
     {
       "id": "4.4#20",
@@ -3931,7 +4398,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-AI-INFRA-SPARSE-FLASH-ATTENTION-PIONEER-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_probe",
+      "reason": "No direct pytest or implementation mapping was found in the refreshed remote ms_ops checkout under tests/ or custom_ops for this attention/cache case.",
+      "next": "Locate or add an ms_ops implementation/test mapping, or collect dashboard golden/actual artifacts from the preserved ops_gate reference before marking this case pass.",
+      "artifact": "acceptance/artifacts/OP-AI-INFRA-SPARSE-FLASH-ATTENTION-PIONEER-001/result.json"
     },
     {
       "id": "4.1#21",
@@ -3956,7 +4430,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-FUSED-INFER-ATTENTION-SINK-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_probe",
+      "reason": "No direct pytest or implementation mapping was found in the refreshed remote ms_ops checkout under tests/ or custom_ops for this attention/cache case.",
+      "next": "Locate or add an ms_ops implementation/test mapping, or collect dashboard golden/actual artifacts from the preserved ops_gate reference before marking this case pass.",
+      "artifact": "acceptance/artifacts/OP-FUSED-INFER-ATTENTION-SINK-001/result.json"
     },
     {
       "id": "4.4#23",
@@ -3981,7 +4462,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-LIGHTNING-INDEXER-ENHANCE-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "compare",
+      "reason": "Missing golden or actual .npz artifacts.",
+      "next": "Collect torch_npu/PT golden artifacts and MindSpore actual artifacts, then rerun compare_outputs.py.",
+      "artifact": "acceptance/artifacts/OP-LIGHTNING-INDEXER-ENHANCE-001/result.json"
     },
     {
       "id": "4.14#24",
@@ -4002,11 +4490,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.14",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MANIFOLD-CONSTRAINED-HYPER-CONNECTION-PRE-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_mhc_pre_op.py completed successfully: 1 passed and 1 skipped.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-MANIFOLD-CONSTRAINED-HYPER-CONNECTION-PRE-001/result.json"
     },
     {
       "id": "4.14#25",
@@ -4027,11 +4522,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.14",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-SINKHORN-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_mhc_sinkhorn_op.py completed successfully in the remaining infra batch; aggregate batch result was 5 passed and 4 skipped.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-SINKHORN-001/result.json"
     },
     {
       "id": "4.4#26",
@@ -4056,7 +4558,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-SPARSE-FLASH-ATTENTION-ENHANCE-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_probe",
+      "reason": "After latest ms_ops git pull, no direct pytest file tests/operators/aclnn/test_npu_sparse_flash_attention_enhance_op.py exists in the remote ms_ops checkout.",
+      "next": "Add or locate a direct ms_ops pytest for this operator, then rerun and collect dashboard golden/actual artifacts.",
+      "artifact": "acceptance/artifacts/OP-SPARSE-FLASH-ATTENTION-ENHANCE-001/result.json"
     },
     {
       "id": "4.1#38",
@@ -4077,11 +4586,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.1",
-      "status": "open",
+      "status": "blocked",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-ATTENTION-PIONEER-001",
+      "acceptance_status": "blocked",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, rerunning tests/operators/aclnn/test_npu_attention_pioneer_op.py still fails during collection/build. _npu_attention_pioneer_op.cpp:64/72 passes std::pair<std::optional<std::vector<int64_t>>, bool> into MindSpore ConvertTypes, but op_api_convert.h has no ConvertType overload for that type.",
+      "next": "Convert optional int-array arguments before wrapping with the transpose flag, or pass std::optional<std::vector<int64_t>> / std::pair<std::vector<int64_t>, bool> in a form supported by MindSpore ConvertType, then rerun pytest and dashboard artifact collection.",
+      "artifact": "acceptance/artifacts/OP-ATTENTION-PIONEER-001/result.json"
     },
     {
       "id": "4.1#43",
@@ -4106,7 +4622,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-FUSED-INFER-ATTENTION-SCORE-V2-INFER-OUTPUT-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_probe",
+      "reason": "The refreshed remote ms_ops checkout has no direct pytest file for _npu_fused_infer_attention_score_v2_infer_output. The available test_npu_fused_infer_attention_score_v2_get_max_workspace_op.py validates a different workspace-query helper path and cannot be used as pass evidence for the infer-output operator.",
+      "next": "Add or locate a direct infer-output ms_ops test, or collect dashboard golden/actual artifacts for OP-FUSED-INFER-ATTENTION-SCORE-V2-INFER-OUTPUT-001 before marking this case pass.",
+      "artifact": "acceptance/artifacts/OP-FUSED-INFER-ATTENTION-SCORE-V2-INFER-OUTPUT-001/result.json"
     },
     {
       "id": "4.4#44",
@@ -4132,7 +4655,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-KV-QUANT-SPARSE-FLASH-ATTENTION-PIONEER-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_probe",
+      "reason": "No direct pytest or implementation mapping was found in the refreshed remote ms_ops checkout under tests/ or custom_ops for this attention/cache case.",
+      "next": "Locate or add an ms_ops implementation/test mapping, or collect dashboard golden/actual artifacts from the preserved ops_gate reference before marking this case pass.",
+      "artifact": "acceptance/artifacts/OP-KV-QUANT-SPARSE-FLASH-ATTENTION-PIONEER-001/result.json"
     },
     {
       "id": "4.5#45",
@@ -4153,11 +4683,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.5",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-ADD-RMSNORM-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_add_rms_norm_op.py completed successfully in the rope/norm batch; aggregate batch result was 13 passed.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-ADD-RMSNORM-001/result.json"
     },
     {
       "id": "4.5#46",
@@ -4178,11 +4715,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.5",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-APPLY-ROTARY-POS-EMB-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_apply_rotary_pos_emb_op.py completed successfully in the rope/norm batch; aggregate batch result was 13 passed.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-APPLY-ROTARY-POS-EMB-001/result.json"
     },
     {
       "id": "4.1#48",
@@ -4204,11 +4748,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.1",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-ATTENTION-UPDATE-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "ms_ops tests/operators/aclnn/test_npu_attention_update_op.py completed successfully on the refreshed remote ms_ops checkout.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared.",
+      "artifact": "acceptance/artifacts/OP-ATTENTION-UPDATE-001/result.json"
     },
     {
       "id": "4.9#49",
@@ -4229,11 +4780,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.9",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-DEQUANT-SWIGLU-QUANT-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_dequant_swiglu_quant_op.py completed in the quant/matmul batch; aggregate batch result was 25 passed and 9 skipped across 34 collected tests.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-DEQUANT-SWIGLU-QUANT-001/result.json"
     },
     {
       "id": "4.9#52",
@@ -4254,11 +4812,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.9",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-DYNAMIC-QUANT-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_dynamic_quant_op.py completed in the quant/matmul batch; aggregate batch result was 25 passed and 9 skipped across 34 collected tests.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-DYNAMIC-QUANT-001/result.json"
     },
     {
       "id": "4.14#55",
@@ -4279,11 +4844,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.14",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-FUSED-CAUSAL-CONV1D-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "ms_ops tests/operators/aclnn/test_npu_fused_causal_conv1d_op.py completed successfully on the refreshed remote ms_ops checkout.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared.",
+      "artifact": "acceptance/artifacts/OP-FUSED-CAUSAL-CONV1D-001/result.json"
     },
     {
       "id": "4.1#56",
@@ -4304,11 +4876,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.1",
-      "status": "open",
+      "status": "blocked",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-FUSED-INFER-ATTENTION-SCORE-001",
+      "acceptance_status": "blocked",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest",
+      "reason": "Running ms_ops tests/operators/aclnn/test_npu_fused_infer_attention_score_op.py fails during collection/build. npu_fused_infer_attention_score_op.cpp:301/308 passes std::pair<std::optional<std::vector<int64_t>>, bool> into MindSpore ConvertTypes, but op_api_convert.h has no ConvertType overload for that type.",
+      "next": "Convert optional int-array arguments before pairing with transpose flags, or pass std::optional<std::vector<int64_t>> / std::pair<std::vector<int64_t>, bool> in a form supported by MindSpore ConvertType, then rerun pytest and dashboard artifact collection.",
+      "artifact": "acceptance/artifacts/OP-FUSED-INFER-ATTENTION-SCORE-001/result.json"
     },
     {
       "id": "4.1#58",
@@ -4329,11 +4908,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.1",
-      "status": "open",
+      "status": "blocked",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-FUSED-INFER-ATTENTION-SCORE-V2-001",
+      "acceptance_status": "blocked",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest",
+      "reason": "Running ms_ops tests/operators/aclnn/test_npu_fused_infer_attention_score_v2_op.py fails during collection/build. npu_fused_infer_attention_score_v2_op.cpp:76 passes std::pair<std::optional<std::vector<int64_t>>, bool> into MindSpore ConvertTypes, but op_api_convert.h has no ConvertType overload for that type.",
+      "next": "Convert optional int-array arguments before pairing with transpose flags, or pass std::optional<std::vector<int64_t>> / std::pair<std::vector<int64_t>, bool> in a form supported by MindSpore ConvertType, then rerun pytest and dashboard artifact collection.",
+      "artifact": "acceptance/artifacts/OP-FUSED-INFER-ATTENTION-SCORE-V2-001/result.json"
     },
     {
       "id": "4.1#60",
@@ -4354,11 +4940,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.1",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-FUSION-ATTENTION-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "ms_ops tests/operators/aclnn/test_npu_fusion_attention_op.py completed successfully on the refreshed remote ms_ops checkout.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared.",
+      "artifact": "acceptance/artifacts/OP-FUSION-ATTENTION-001/result.json"
     },
     {
       "id": "4.6#61",
@@ -4379,11 +4972,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.6",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-GROUPED-MATMUL-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_grouped_matmul_op.py completed in the quant/matmul batch; aggregate batch result was 25 passed and 9 skipped across 34 collected tests.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-GROUPED-MATMUL-001/result.json"
     },
     {
       "id": "4.6#63",
@@ -4404,11 +5004,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.6",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-GROUPED-MATMUL-FINALIZE-ROUTING-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_grouped_matmul_finalize_routing_op.py completed in the quant/matmul batch; aggregate batch result was 25 passed and 9 skipped across 34 collected tests.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-GROUPED-MATMUL-FINALIZE-ROUTING-001/result.json"
     },
     {
       "id": "4.5#65",
@@ -4429,11 +5036,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.5",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-INTERLEAVE-ROPE-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_interleave_rope_op.py completed successfully in the rope/norm batch; aggregate batch result was 13 passed.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-INTERLEAVE-ROPE-001/result.json"
     },
     {
       "id": "4.3#66",
@@ -4454,11 +5068,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.3",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-KV-RMSNORM-ROPE-CACHE-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "ms_ops tests/operators/aclnn/test_npu_kv_rmsnorm_rope_cache_op.py reported 8 passed on the refreshed remote ms_ops checkout; the process also logged an Ascend lazy async copy/device error during exit, so this remains provisional reference evidence.",
+      "next": "Rerun with blocking/device diagnostics if the post-exit Ascend async copy error must be resolved before dashboard golden/actual collection.",
+      "artifact": "acceptance/artifacts/OP-KV-RMSNORM-ROPE-CACHE-001/result.json"
     },
     {
       "id": "4.4#67",
@@ -4479,11 +5100,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.4",
-      "status": "open",
+      "status": "blocked",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-LIGHTNING-INDEXER-001",
+      "acceptance_status": "fail",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_lightning_indexer_op.py still fails: MindSpore output matches expected and torch_out, but torch_npu torch_values shape is (1, 2, 1, 16) while the test expects an empty shape (0,).",
+      "next": "Clarify whether torch_npu now returns non-empty values for this scenario or the test expectation should be updated; then rerun pytest and collect dashboard golden/actual artifacts.",
+      "artifact": "acceptance/artifacts/OP-LIGHTNING-INDEXER-001/result.json"
     },
     {
       "id": "4.9#68",
@@ -4505,11 +5133,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.9",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MHC-POST-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_mhc_post_op.py completed with 1 passed and 1 skipped case(s). Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+      "next": "Review skipped pytest scenarios if coverage is required, then regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+      "artifact": "acceptance/artifacts/OP-MHC-POST-001/result.json"
     },
     {
       "id": "4.9#69",
@@ -4531,11 +5166,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.9",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MHC-PRE-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_mhc_pre_op.py completed with 1 passed and 1 skipped case(s). Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+      "next": "Review skipped pytest scenarios if coverage is required, then regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+      "artifact": "acceptance/artifacts/OP-MHC-PRE-001/result.json"
     },
     {
       "id": "4.9#70",
@@ -4557,11 +5199,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.9",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MHC-SINKHORN-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_mhc_sinkhorn_op.py completed with 1 passed and 2 skipped case(s). Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+      "next": "Review skipped pytest scenarios if coverage is required, then regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+      "artifact": "acceptance/artifacts/OP-MHC-SINKHORN-001/result.json"
     },
     {
       "id": "4.1#71",
@@ -4583,11 +5232,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.1",
-      "status": "open",
+      "status": "blocked",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MLA-PROLOG-V3-001",
+      "acceptance_status": "blocked",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_mla_prolog_v3_op.py still fails: 1 failed and 1 passed in the stale-case rerun. test_default_bf16_output_shapes fails at Tensor.asnumpy() because aclnnMlaPrologV3WeightNzGetWorkspaceSize rejects INT8/ND weights/cache; CANN supported signatures require FRACTAL_NZ weights and matching optional inputs.",
+      "next": "Fix npu_mla_prolog_v3 test/operator input layout and optional argument set to match CANN supported signatures, then rerun pytest and dashboard artifact collection.",
+      "artifact": "acceptance/artifacts/OP-MLA-PROLOG-V3-001/result.json"
     },
     {
       "id": "4.6#72",
@@ -4608,11 +5264,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.6",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MOE-COMPUTE-EXPERT-TOKENS-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_compute_expert_tokens_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+      "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+      "artifact": "acceptance/artifacts/OP-MOE-COMPUTE-EXPERT-TOKENS-001/result.json"
     },
     {
       "id": "4.7#74",
@@ -4633,11 +5296,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.7",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MOE-DISTRIBUTE-COMBINE-V2-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_distribute_combine_v2_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+      "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+      "artifact": "acceptance/artifacts/OP-MOE-DISTRIBUTE-COMBINE-V2-001/result.json"
     },
     {
       "id": "4.7#75",
@@ -4658,11 +5328,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.7",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MOE-DISTRIBUTE-DISPATCH-V2-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_distribute_dispatch_v2_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+      "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+      "artifact": "acceptance/artifacts/OP-MOE-DISTRIBUTE-DISPATCH-V2-001/result.json"
     },
     {
       "id": "4.6#76",
@@ -4683,11 +5360,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.6",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MOE-FINALIZE-ROUTING-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_finalize_routing_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+      "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+      "artifact": "acceptance/artifacts/OP-MOE-FINALIZE-ROUTING-001/result.json"
     },
     {
       "id": "4.6#78",
@@ -4708,11 +5392,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.6",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MOE-GATING-TOP-K-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_gating_top_k_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+      "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+      "artifact": "acceptance/artifacts/OP-MOE-GATING-TOP-K-001/result.json"
     },
     {
       "id": "4.6#80",
@@ -4733,11 +5424,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.6",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MOE-GATING-TOP-K-SOFTMAX-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_gating_top_k_softmax_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+      "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+      "artifact": "acceptance/artifacts/OP-MOE-GATING-TOP-K-SOFTMAX-001/result.json"
     },
     {
       "id": "4.6#82",
@@ -4758,11 +5456,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.6",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MOE-INIT-ROUTING-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_init_routing_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+      "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+      "artifact": "acceptance/artifacts/OP-MOE-INIT-ROUTING-001/result.json"
     },
     {
       "id": "4.6#84",
@@ -4783,11 +5488,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.6",
-      "status": "open",
+      "status": "blocked",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MOE-INIT-ROUTING-V2-001",
+      "acceptance_status": "blocked",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, rerunning tests/operators/aclnn/test_npu_moe_init_routing_v2_op.py still fails during collection while building npu_moe_init_routing_v2_op.cpp. The compile error is reached from npu_moe_init_routing_v2_op.cpp:199 during MindSpore ConvertTypes instantiation for optional tensor/vector arguments.",
+      "next": "Fix npu_moe_init_routing_v2_op.cpp launch argument conversion for optional IntArray/vector parameters, then rerun pytest and dashboard artifact collection.",
+      "artifact": "acceptance/artifacts/OP-MOE-INIT-ROUTING-V2-001/result.json"
     },
     {
       "id": "4.8#85",
@@ -4808,11 +5520,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.8",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MOE-RE-ROUTING-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_re_routing_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+      "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+      "artifact": "acceptance/artifacts/OP-MOE-RE-ROUTING-001/result.json"
     },
     {
       "id": "4.5#87",
@@ -4833,11 +5552,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.5",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-MROPE-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_mrope_op.py completed successfully in the rope/norm batch; aggregate batch result was 13 passed.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-MROPE-001/result.json"
     },
     {
       "id": "4.14#88",
@@ -4858,11 +5584,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.14",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-PREFETCH-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_prefetch_op.py completed successfully in the routing/sampling batch; aggregate batch result was 5 passed and 4 skipped.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-PREFETCH-001/result.json"
     },
     {
       "id": "4.9#89",
@@ -4884,11 +5617,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.9",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-QUANT-LIGHTNING-INDEXER-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "ms_ops tests/operators/aclnn/test_npu_quant_lightning_indexer_op.py completed successfully on the refreshed remote ms_ops checkout.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared.",
+      "artifact": "acceptance/artifacts/OP-QUANT-LIGHTNING-INDEXER-001/result.json"
     },
     {
       "id": "4.9#90",
@@ -4909,11 +5649,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.9",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-QUANT-MATMUL-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_quant_matmul_op.py completed in the quant/matmul batch; aggregate batch result was 25 passed and 9 skipped across 34 collected tests.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-QUANT-MATMUL-001/result.json"
     },
     {
       "id": "4.5#91",
@@ -4934,11 +5681,16 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.5",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-RMSNORM-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "migration_evidence",
+      "stage": "compare",
+      "artifact": "acceptance/artifacts/OP-RMSNORM-001/result.json"
     },
     {
       "id": "4.5#92",
@@ -4959,11 +5711,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.5",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-ROTARY-MUL-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_rotary_mul_op.py completed successfully in the rope/norm batch; aggregate batch result was 13 passed.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-ROTARY-MUL-001/result.json"
     },
     {
       "id": "4.2#93",
@@ -4984,11 +5743,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.2",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-SCATTER-ND-UPDATE-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_scatter_nd_update_op.py completed in the scatter/infra batch; aggregate batch result was 2 passed, 1 skipped, and 12 failed from npu_swiglu_mx_quant tests.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-SCATTER-ND-UPDATE-001/result.json"
     },
     {
       "id": "4.2#94",
@@ -5009,11 +5775,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.2",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-SCATTER-PA-KV-CACHE-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "ms_ops tests/operators/aclnn/test_npu_scatter_pa_kv_cache_op.py completed successfully on the refreshed remote ms_ops checkout.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared.",
+      "artifact": "acceptance/artifacts/OP-SCATTER-PA-KV-CACHE-001/result.json"
     },
     {
       "id": "4.5#95",
@@ -5034,11 +5807,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.5",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-SWIGLU-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest_rerun",
+      "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_swiglu_op.py completed in the stale-case rerun; the rerun batch had 3 passed and 2 failed from other operators.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are refreshed and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-SWIGLU-001/result.json"
     },
     {
       "id": "4.14#96",
@@ -5059,11 +5839,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.14",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-TOP-K-TOP-P-SAMPLE-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_top_k_top_p_sample_op.py completed successfully in the routing/sampling batch; aggregate batch result was 5 passed and 4 skipped.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-TOP-K-TOP-P-SAMPLE-001/result.json"
     },
     {
       "id": "4.11#97",
@@ -5084,11 +5871,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.11",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-TRANSPOSE-BATCHMATMUL-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_transpose_batchmatmul_op.py completed in the quant/matmul batch; aggregate batch result was 25 passed and 9 skipped across 34 collected tests.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-TRANSPOSE-BATCHMATMUL-001/result.json"
     },
     {
       "id": "4.9#98",
@@ -5110,11 +5904,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.9",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-AI-INFRA-QUANT-LIGHTNING-INDEXER-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_quant_lightning_indexer_op.py completed successfully in the remaining infra batch; aggregate batch result was 5 passed and 4 skipped.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-AI-INFRA-QUANT-LIGHTNING-INDEXER-001/result.json"
     },
     {
       "id": "4.1#99",
@@ -5135,11 +5936,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.1",
-      "status": "open",
+      "status": "blocked",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-FLASH-ATTENTION-UNPAD-001",
+      "acceptance_status": "blocked",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest",
+      "reason": "ms_ops tests/operators/aclnn/test_npu_flash_attention_unpad_op.py fails during collection/build. _npu_flash_attention_unpad_op.cpp references ATB symbols unavailable in the current environment: atb::infer, HashOpParam<...>, and ms::pynative::RunAtbOp.",
+      "next": "Align the ATB/MindSpore custom-op integration or environment headers/libraries, then rerun pytest and dashboard artifact collection.",
+      "artifact": "acceptance/artifacts/OP-FLASH-ATTENTION-UNPAD-001/result.json"
     },
     {
       "id": "4.14#100",
@@ -5160,11 +5968,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.14",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-RECURRENT-GATED-DELTA-RULE-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_recurrent_gated_delta_rule_op.py completed successfully in the routing/sampling batch; aggregate batch result was 5 passed and 4 skipped.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-RECURRENT-GATED-DELTA-RULE-001/result.json"
     },
     {
       "id": "4.5#101",
@@ -5186,11 +6001,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.5",
-      "status": "open",
+      "status": "blocked",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-SWIGLU-MX-QUANT-001",
+      "acceptance_status": "fail",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_swiglu_mx_quant_op.py fails 12 tests. The returned tensors are undefined; shape/dtype/asnumpy access raises MindSpore RuntimeError: Failure info [The Tensor is not defined] from pynative custom tensor.cc:146.",
+      "next": "Fix npu_swiglu_mx_quant output tensor construction or runtime launch so returned y/mxscale tensors are defined, then rerun pytest and dashboard artifact collection.",
+      "artifact": "acceptance/artifacts/OP-SWIGLU-MX-QUANT-001/result.json"
     },
     {
       "id": "4.9#102",
@@ -5211,11 +6033,18 @@
       "section": "ms_custom_ops operator rows",
       "lane": "Custom Ops/API",
       "group": "4.9",
-      "status": "open",
+      "status": "accepted",
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-TRANS-QUANT-PARAM-001",
+      "acceptance_status": "pass",
+      "evidence_grade": "provisional_reference",
+      "stage": "ms_ops_pytest",
+      "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_trans_quant_param_op.py completed in the quant/matmul batch; aggregate batch result was 25 passed and 9 skipped across 34 collected tests.",
+      "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+      "artifact": "acceptance/artifacts/OP-TRANS-QUANT-PARAM-001/result.json"
     },
     {
       "id": "4.1#505",
@@ -5240,7 +6069,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-FUSED-INFER-ATTENTION-SINK-METADATA-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_probe",
+      "reason": "No direct pytest or implementation mapping was found in the refreshed remote ms_ops checkout under tests/ or custom_ops for this attention/cache case.",
+      "next": "Locate or add an ms_ops implementation/test mapping, or collect dashboard golden/actual artifacts from the preserved ops_gate reference before marking this case pass.",
+      "artifact": "acceptance/artifacts/OP-FUSED-INFER-ATTENTION-SINK-METADATA-001/result.json"
     },
     {
       "id": "4.14#506",
@@ -5265,7 +6101,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-CHUNK-GATED-DELTA-RULE-RECURRENCE-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_probe",
+      "reason": "After latest ms_ops git pull, no direct pytest file tests/operators/aclnn/test_npu_chunk_gated_delta_rule_recurrence_op.py exists in the remote ms_ops checkout.",
+      "next": "Add or locate a direct ms_ops pytest for this operator, then rerun and collect dashboard golden/actual artifacts.",
+      "artifact": "acceptance/artifacts/OP-CHUNK-GATED-DELTA-RULE-RECURRENCE-001/result.json"
     },
     {
       "id": "4.14#507",
@@ -5290,7 +6133,14 @@
       "owner": "ting",
       "evidence": [],
       "notes": "",
-      "kind": "operator_row"
+      "kind": "operator_row",
+      "case_id": "OP-LOWER-TRIANGULAR-INVERSE-001",
+      "acceptance_status": "not_run",
+      "evidence_grade": "tool_contract_only",
+      "stage": "ms_ops_pytest_probe",
+      "reason": "After latest ms_ops git pull, no direct pytest file tests/operators/aclnn/test_npu_lower_triangular_inverse_op.py exists in the remote ms_ops checkout.",
+      "next": "Add or locate a direct ms_ops pytest for npu_lower_triangular_inverse, then rerun and collect dashboard golden/actual artifacts.",
+      "artifact": "acceptance/artifacts/OP-LOWER-TRIANGULAR-INVERSE-001/result.json"
     }
   ],
   "operator_groups": {
@@ -5302,7 +6152,7 @@
       "section": "ms_custom_ops",
       "lane": "Custom Ops/API",
       "group": "Attention fused/sink",
-      "status": "open",
+      "status": "blocked",
       "rows": "21, 38, 43, 48, 56, 58, 60, 71, 99, 505",
       "item_count": 10,
       "evidence": [],
@@ -5310,7 +6160,9 @@
       "notes": "",
       "kind": "checkbox",
       "status_counts": {
-        "open": 10
+        "open": 3,
+        "blocked": 5,
+        "accepted": 2
       },
       "child_ids": [
         "4.1#21",
@@ -5348,7 +6200,14 @@
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-FUSED-INFER-ATTENTION-SINK-001",
+          "acceptance_status": "not_run",
+          "evidence_grade": "tool_contract_only",
+          "stage": "ms_ops_pytest_probe",
+          "reason": "No direct pytest or implementation mapping was found in the refreshed remote ms_ops checkout under tests/ or custom_ops for this attention/cache case.",
+          "next": "Locate or add an ms_ops implementation/test mapping, or collect dashboard golden/actual artifacts from the preserved ops_gate reference before marking this case pass.",
+          "artifact": "acceptance/artifacts/OP-FUSED-INFER-ATTENTION-SINK-001/result.json"
         },
         {
           "id": "4.1#38",
@@ -5369,11 +6228,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.1",
-          "status": "open",
+          "status": "blocked",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-ATTENTION-PIONEER-001",
+          "acceptance_status": "blocked",
+          "evidence_grade": "tool_contract_only",
+          "stage": "ms_ops_pytest_rerun",
+          "reason": "After refreshing ms_ops, rerunning tests/operators/aclnn/test_npu_attention_pioneer_op.py still fails during collection/build. _npu_attention_pioneer_op.cpp:64/72 passes std::pair<std::optional<std::vector<int64_t>>, bool> into MindSpore ConvertTypes, but op_api_convert.h has no ConvertType overload for that type.",
+          "next": "Convert optional int-array arguments before wrapping with the transpose flag, or pass std::optional<std::vector<int64_t>> / std::pair<std::vector<int64_t>, bool> in a form supported by MindSpore ConvertType, then rerun pytest and dashboard artifact collection.",
+          "artifact": "acceptance/artifacts/OP-ATTENTION-PIONEER-001/result.json"
         },
         {
           "id": "4.1#43",
@@ -5398,7 +6264,14 @@
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-FUSED-INFER-ATTENTION-SCORE-V2-INFER-OUTPUT-001",
+          "acceptance_status": "not_run",
+          "evidence_grade": "tool_contract_only",
+          "stage": "ms_ops_pytest_probe",
+          "reason": "The refreshed remote ms_ops checkout has no direct pytest file for _npu_fused_infer_attention_score_v2_infer_output. The available test_npu_fused_infer_attention_score_v2_get_max_workspace_op.py validates a different workspace-query helper path and cannot be used as pass evidence for the infer-output operator.",
+          "next": "Add or locate a direct infer-output ms_ops test, or collect dashboard golden/actual artifacts for OP-FUSED-INFER-ATTENTION-SCORE-V2-INFER-OUTPUT-001 before marking this case pass.",
+          "artifact": "acceptance/artifacts/OP-FUSED-INFER-ATTENTION-SCORE-V2-INFER-OUTPUT-001/result.json"
         },
         {
           "id": "4.1#48",
@@ -5420,11 +6293,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.1",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-ATTENTION-UPDATE-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "ms_ops tests/operators/aclnn/test_npu_attention_update_op.py completed successfully on the refreshed remote ms_ops checkout.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared.",
+          "artifact": "acceptance/artifacts/OP-ATTENTION-UPDATE-001/result.json"
         },
         {
           "id": "4.1#56",
@@ -5445,11 +6325,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.1",
-          "status": "open",
+          "status": "blocked",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-FUSED-INFER-ATTENTION-SCORE-001",
+          "acceptance_status": "blocked",
+          "evidence_grade": "tool_contract_only",
+          "stage": "ms_ops_pytest",
+          "reason": "Running ms_ops tests/operators/aclnn/test_npu_fused_infer_attention_score_op.py fails during collection/build. npu_fused_infer_attention_score_op.cpp:301/308 passes std::pair<std::optional<std::vector<int64_t>>, bool> into MindSpore ConvertTypes, but op_api_convert.h has no ConvertType overload for that type.",
+          "next": "Convert optional int-array arguments before pairing with transpose flags, or pass std::optional<std::vector<int64_t>> / std::pair<std::vector<int64_t>, bool> in a form supported by MindSpore ConvertType, then rerun pytest and dashboard artifact collection.",
+          "artifact": "acceptance/artifacts/OP-FUSED-INFER-ATTENTION-SCORE-001/result.json"
         },
         {
           "id": "4.1#58",
@@ -5470,11 +6357,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.1",
-          "status": "open",
+          "status": "blocked",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-FUSED-INFER-ATTENTION-SCORE-V2-001",
+          "acceptance_status": "blocked",
+          "evidence_grade": "tool_contract_only",
+          "stage": "ms_ops_pytest",
+          "reason": "Running ms_ops tests/operators/aclnn/test_npu_fused_infer_attention_score_v2_op.py fails during collection/build. npu_fused_infer_attention_score_v2_op.cpp:76 passes std::pair<std::optional<std::vector<int64_t>>, bool> into MindSpore ConvertTypes, but op_api_convert.h has no ConvertType overload for that type.",
+          "next": "Convert optional int-array arguments before pairing with transpose flags, or pass std::optional<std::vector<int64_t>> / std::pair<std::vector<int64_t>, bool> in a form supported by MindSpore ConvertType, then rerun pytest and dashboard artifact collection.",
+          "artifact": "acceptance/artifacts/OP-FUSED-INFER-ATTENTION-SCORE-V2-001/result.json"
         },
         {
           "id": "4.1#60",
@@ -5495,11 +6389,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.1",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-FUSION-ATTENTION-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "ms_ops tests/operators/aclnn/test_npu_fusion_attention_op.py completed successfully on the refreshed remote ms_ops checkout.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared.",
+          "artifact": "acceptance/artifacts/OP-FUSION-ATTENTION-001/result.json"
         },
         {
           "id": "4.1#71",
@@ -5521,11 +6422,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.1",
-          "status": "open",
+          "status": "blocked",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-MLA-PROLOG-V3-001",
+          "acceptance_status": "blocked",
+          "evidence_grade": "tool_contract_only",
+          "stage": "ms_ops_pytest_rerun",
+          "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_mla_prolog_v3_op.py still fails: 1 failed and 1 passed in the stale-case rerun. test_default_bf16_output_shapes fails at Tensor.asnumpy() because aclnnMlaPrologV3WeightNzGetWorkspaceSize rejects INT8/ND weights/cache; CANN supported signatures require FRACTAL_NZ weights and matching optional inputs.",
+          "next": "Fix npu_mla_prolog_v3 test/operator input layout and optional argument set to match CANN supported signatures, then rerun pytest and dashboard artifact collection.",
+          "artifact": "acceptance/artifacts/OP-MLA-PROLOG-V3-001/result.json"
         },
         {
           "id": "4.1#99",
@@ -5546,11 +6454,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.1",
-          "status": "open",
+          "status": "blocked",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-FLASH-ATTENTION-UNPAD-001",
+          "acceptance_status": "blocked",
+          "evidence_grade": "tool_contract_only",
+          "stage": "ms_ops_pytest",
+          "reason": "ms_ops tests/operators/aclnn/test_npu_flash_attention_unpad_op.py fails during collection/build. _npu_flash_attention_unpad_op.cpp references ATB symbols unavailable in the current environment: atb::infer, HashOpParam<...>, and ms::pynative::RunAtbOp.",
+          "next": "Align the ATB/MindSpore custom-op integration or environment headers/libraries, then rerun pytest and dashboard artifact collection.",
+          "artifact": "acceptance/artifacts/OP-FLASH-ATTENTION-UNPAD-001/result.json"
         },
         {
           "id": "4.1#505",
@@ -5575,7 +6490,14 @@
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-FUSED-INFER-ATTENTION-SINK-METADATA-001",
+          "acceptance_status": "not_run",
+          "evidence_grade": "tool_contract_only",
+          "stage": "ms_ops_pytest_probe",
+          "reason": "No direct pytest or implementation mapping was found in the refreshed remote ms_ops checkout under tests/ or custom_ops for this attention/cache case.",
+          "next": "Locate or add an ms_ops implementation/test mapping, or collect dashboard golden/actual artifacts from the preserved ops_gate reference before marking this case pass.",
+          "artifact": "acceptance/artifacts/OP-FUSED-INFER-ATTENTION-SINK-METADATA-001/result.json"
         }
       ],
       "child_count": 10
@@ -5596,7 +6518,8 @@
       "notes": "",
       "kind": "checkbox",
       "status_counts": {
-        "open": 4
+        "open": 1,
+        "accepted": 3
       },
       "child_ids": [
         "4.2#19",
@@ -5628,7 +6551,14 @@
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-AI-INFRA-SCATTER-BLOCK-UPDATE-001",
+          "acceptance_status": "not_run",
+          "evidence_grade": "tool_contract_only",
+          "stage": "compare",
+          "reason": "Missing golden or actual .npz artifacts.",
+          "next": "Collect torch_npu/PT golden artifacts and MindSpore actual artifacts, then rerun compare_outputs.py.",
+          "artifact": "acceptance/artifacts/OP-AI-INFRA-SCATTER-BLOCK-UPDATE-001/result.json"
         },
         {
           "id": "4.1#48",
@@ -5650,11 +6580,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.1",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-ATTENTION-UPDATE-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "ms_ops tests/operators/aclnn/test_npu_attention_update_op.py completed successfully on the refreshed remote ms_ops checkout.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared.",
+          "artifact": "acceptance/artifacts/OP-ATTENTION-UPDATE-001/result.json"
         },
         {
           "id": "4.2#93",
@@ -5675,11 +6612,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.2",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-SCATTER-ND-UPDATE-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_scatter_nd_update_op.py completed in the scatter/infra batch; aggregate batch result was 2 passed, 1 skipped, and 12 failed from npu_swiglu_mx_quant tests.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-SCATTER-ND-UPDATE-001/result.json"
         },
         {
           "id": "4.2#94",
@@ -5700,11 +6644,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.2",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-SCATTER-PA-KV-CACHE-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "ms_ops tests/operators/aclnn/test_npu_scatter_pa_kv_cache_op.py completed successfully on the refreshed remote ms_ops checkout.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared.",
+          "artifact": "acceptance/artifacts/OP-SCATTER-PA-KV-CACHE-001/result.json"
         }
       ],
       "child_count": 4
@@ -5725,7 +6676,8 @@
       "notes": "",
       "kind": "checkbox",
       "status_counts": {
-        "open": 2
+        "open": 1,
+        "accepted": 1
       },
       "child_ids": [
         "4.3#17",
@@ -5755,7 +6707,14 @@
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-AI-INFRA-KV-RMSNORM-ROPE-CACHE-V2-001",
+          "acceptance_status": "not_run",
+          "evidence_grade": "tool_contract_only",
+          "stage": "ms_ops_pytest_probe",
+          "reason": "No direct pytest or implementation mapping was found in the refreshed remote ms_ops checkout under tests/ or custom_ops for this attention/cache case.",
+          "next": "Locate or add an ms_ops implementation/test mapping, or collect dashboard golden/actual artifacts from the preserved ops_gate reference before marking this case pass.",
+          "artifact": "acceptance/artifacts/OP-AI-INFRA-KV-RMSNORM-ROPE-CACHE-V2-001/result.json"
         },
         {
           "id": "4.3#66",
@@ -5776,11 +6735,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.3",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-KV-RMSNORM-ROPE-CACHE-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "ms_ops tests/operators/aclnn/test_npu_kv_rmsnorm_rope_cache_op.py reported 8 passed on the refreshed remote ms_ops checkout; the process also logged an Ascend lazy async copy/device error during exit, so this remains provisional reference evidence.",
+          "next": "Rerun with blocking/device diagnostics if the post-exit Ascend async copy error must be resolved before dashboard golden/actual collection.",
+          "artifact": "acceptance/artifacts/OP-KV-RMSNORM-ROPE-CACHE-001/result.json"
         }
       ],
       "child_count": 2
@@ -5793,7 +6759,7 @@
       "section": "ms_custom_ops",
       "lane": "Custom Ops/API",
       "group": "Pangu lightning / sparse attention",
-      "status": "open",
+      "status": "blocked",
       "rows": "16, 20, 23, 26, 44, 67, 71",
       "item_count": 7,
       "evidence": [],
@@ -5801,7 +6767,8 @@
       "notes": "",
       "kind": "checkbox",
       "status_counts": {
-        "open": 7
+        "open": 5,
+        "blocked": 2
       },
       "child_ids": [
         "4.4#16",
@@ -5837,7 +6804,14 @@
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-AI-INFRA-KV-QUANT-SPARSE-FALSH-ATTENTION-001",
+          "acceptance_status": "not_run",
+          "evidence_grade": "tool_contract_only",
+          "stage": "ms_ops_pytest_probe",
+          "reason": "No direct pytest or implementation mapping was found in the refreshed remote ms_ops checkout under tests/ or custom_ops for this attention/cache case.",
+          "next": "Locate or add an ms_ops implementation/test mapping, or collect dashboard golden/actual artifacts from the preserved ops_gate reference before marking this case pass.",
+          "artifact": "acceptance/artifacts/OP-AI-INFRA-KV-QUANT-SPARSE-FALSH-ATTENTION-001/result.json"
         },
         {
           "id": "4.4#20",
@@ -5862,7 +6836,14 @@
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-AI-INFRA-SPARSE-FLASH-ATTENTION-PIONEER-001",
+          "acceptance_status": "not_run",
+          "evidence_grade": "tool_contract_only",
+          "stage": "ms_ops_pytest_probe",
+          "reason": "No direct pytest or implementation mapping was found in the refreshed remote ms_ops checkout under tests/ or custom_ops for this attention/cache case.",
+          "next": "Locate or add an ms_ops implementation/test mapping, or collect dashboard golden/actual artifacts from the preserved ops_gate reference before marking this case pass.",
+          "artifact": "acceptance/artifacts/OP-AI-INFRA-SPARSE-FLASH-ATTENTION-PIONEER-001/result.json"
         },
         {
           "id": "4.4#23",
@@ -5887,7 +6868,14 @@
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-LIGHTNING-INDEXER-ENHANCE-001",
+          "acceptance_status": "not_run",
+          "evidence_grade": "tool_contract_only",
+          "stage": "compare",
+          "reason": "Missing golden or actual .npz artifacts.",
+          "next": "Collect torch_npu/PT golden artifacts and MindSpore actual artifacts, then rerun compare_outputs.py.",
+          "artifact": "acceptance/artifacts/OP-LIGHTNING-INDEXER-ENHANCE-001/result.json"
         },
         {
           "id": "4.4#26",
@@ -5912,7 +6900,14 @@
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-SPARSE-FLASH-ATTENTION-ENHANCE-001",
+          "acceptance_status": "not_run",
+          "evidence_grade": "tool_contract_only",
+          "stage": "ms_ops_pytest_probe",
+          "reason": "After latest ms_ops git pull, no direct pytest file tests/operators/aclnn/test_npu_sparse_flash_attention_enhance_op.py exists in the remote ms_ops checkout.",
+          "next": "Add or locate a direct ms_ops pytest for this operator, then rerun and collect dashboard golden/actual artifacts.",
+          "artifact": "acceptance/artifacts/OP-SPARSE-FLASH-ATTENTION-ENHANCE-001/result.json"
         },
         {
           "id": "4.4#44",
@@ -5938,7 +6933,14 @@
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-KV-QUANT-SPARSE-FLASH-ATTENTION-PIONEER-001",
+          "acceptance_status": "not_run",
+          "evidence_grade": "tool_contract_only",
+          "stage": "ms_ops_pytest_probe",
+          "reason": "No direct pytest or implementation mapping was found in the refreshed remote ms_ops checkout under tests/ or custom_ops for this attention/cache case.",
+          "next": "Locate or add an ms_ops implementation/test mapping, or collect dashboard golden/actual artifacts from the preserved ops_gate reference before marking this case pass.",
+          "artifact": "acceptance/artifacts/OP-KV-QUANT-SPARSE-FLASH-ATTENTION-PIONEER-001/result.json"
         },
         {
           "id": "4.4#67",
@@ -5959,11 +6961,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.4",
-          "status": "open",
+          "status": "blocked",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-LIGHTNING-INDEXER-001",
+          "acceptance_status": "fail",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest_rerun",
+          "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_lightning_indexer_op.py still fails: MindSpore output matches expected and torch_out, but torch_npu torch_values shape is (1, 2, 1, 16) while the test expects an empty shape (0,).",
+          "next": "Clarify whether torch_npu now returns non-empty values for this scenario or the test expectation should be updated; then rerun pytest and collect dashboard golden/actual artifacts.",
+          "artifact": "acceptance/artifacts/OP-LIGHTNING-INDEXER-001/result.json"
         },
         {
           "id": "4.1#71",
@@ -5985,11 +6994,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.1",
-          "status": "open",
+          "status": "blocked",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-MLA-PROLOG-V3-001",
+          "acceptance_status": "blocked",
+          "evidence_grade": "tool_contract_only",
+          "stage": "ms_ops_pytest_rerun",
+          "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_mla_prolog_v3_op.py still fails: 1 failed and 1 passed in the stale-case rerun. test_default_bf16_output_shapes fails at Tensor.asnumpy() because aclnnMlaPrologV3WeightNzGetWorkspaceSize rejects INT8/ND weights/cache; CANN supported signatures require FRACTAL_NZ weights and matching optional inputs.",
+          "next": "Fix npu_mla_prolog_v3 test/operator input layout and optional argument set to match CANN supported signatures, then rerun pytest and dashboard artifact collection.",
+          "artifact": "acceptance/artifacts/OP-MLA-PROLOG-V3-001/result.json"
         }
       ],
       "child_count": 7
@@ -6002,7 +7018,7 @@
       "section": "ms_custom_ops",
       "lane": "Custom Ops/API",
       "group": "Norm / RoPE / SwiGLU",
-      "status": "open",
+      "status": "blocked",
       "rows": "45, 46, 65, 87, 91, 92, 95, 101",
       "item_count": 8,
       "evidence": [],
@@ -6010,7 +7026,8 @@
       "notes": "",
       "kind": "checkbox",
       "status_counts": {
-        "open": 8
+        "accepted": 7,
+        "blocked": 1
       },
       "child_ids": [
         "4.5#45",
@@ -6042,11 +7059,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.5",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-ADD-RMSNORM-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_add_rms_norm_op.py completed successfully in the rope/norm batch; aggregate batch result was 13 passed.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-ADD-RMSNORM-001/result.json"
         },
         {
           "id": "4.5#46",
@@ -6067,11 +7091,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.5",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-APPLY-ROTARY-POS-EMB-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_apply_rotary_pos_emb_op.py completed successfully in the rope/norm batch; aggregate batch result was 13 passed.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-APPLY-ROTARY-POS-EMB-001/result.json"
         },
         {
           "id": "4.5#65",
@@ -6092,11 +7123,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.5",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-INTERLEAVE-ROPE-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_interleave_rope_op.py completed successfully in the rope/norm batch; aggregate batch result was 13 passed.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-INTERLEAVE-ROPE-001/result.json"
         },
         {
           "id": "4.5#87",
@@ -6117,11 +7155,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.5",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-MROPE-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_mrope_op.py completed successfully in the rope/norm batch; aggregate batch result was 13 passed.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-MROPE-001/result.json"
         },
         {
           "id": "4.5#91",
@@ -6142,11 +7187,16 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.5",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-RMSNORM-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "migration_evidence",
+          "stage": "compare",
+          "artifact": "acceptance/artifacts/OP-RMSNORM-001/result.json"
         },
         {
           "id": "4.5#92",
@@ -6167,11 +7217,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.5",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-ROTARY-MUL-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_rotary_mul_op.py completed successfully in the rope/norm batch; aggregate batch result was 13 passed.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-ROTARY-MUL-001/result.json"
         },
         {
           "id": "4.5#95",
@@ -6192,11 +7249,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.5",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-SWIGLU-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest_rerun",
+          "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_swiglu_op.py completed in the stale-case rerun; the rerun batch had 3 passed and 2 failed from other operators.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are refreshed and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-SWIGLU-001/result.json"
         },
         {
           "id": "4.5#101",
@@ -6218,11 +7282,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.5",
-          "status": "open",
+          "status": "blocked",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-SWIGLU-MX-QUANT-001",
+          "acceptance_status": "fail",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_swiglu_mx_quant_op.py fails 12 tests. The returned tensors are undefined; shape/dtype/asnumpy access raises MindSpore RuntimeError: Failure info [The Tensor is not defined] from pynative custom tensor.cc:146.",
+          "next": "Fix npu_swiglu_mx_quant output tensor construction or runtime launch so returned y/mxscale tensors are defined, then rerun pytest and dashboard artifact collection.",
+          "artifact": "acceptance/artifacts/OP-SWIGLU-MX-QUANT-001/result.json"
         }
       ],
       "child_count": 8
@@ -6235,7 +7306,7 @@
       "section": "ms_custom_ops",
       "lane": "Custom Ops/API",
       "group": "MoE local routing + expert compute",
-      "status": "open",
+      "status": "blocked",
       "rows": "61, 63, 72, 76, 78, 80, 82, 84",
       "item_count": 8,
       "evidence": [],
@@ -6243,7 +7314,8 @@
       "notes": "",
       "kind": "checkbox",
       "status_counts": {
-        "open": 8
+        "accepted": 7,
+        "blocked": 1
       },
       "child_ids": [
         "4.6#61",
@@ -6275,11 +7347,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.6",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-GROUPED-MATMUL-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_grouped_matmul_op.py completed in the quant/matmul batch; aggregate batch result was 25 passed and 9 skipped across 34 collected tests.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-GROUPED-MATMUL-001/result.json"
         },
         {
           "id": "4.6#63",
@@ -6300,11 +7379,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.6",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-GROUPED-MATMUL-FINALIZE-ROUTING-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_grouped_matmul_finalize_routing_op.py completed in the quant/matmul batch; aggregate batch result was 25 passed and 9 skipped across 34 collected tests.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-GROUPED-MATMUL-FINALIZE-ROUTING-001/result.json"
         },
         {
           "id": "4.6#72",
@@ -6325,11 +7411,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.6",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-MOE-COMPUTE-EXPERT-TOKENS-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest_rerun",
+          "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_compute_expert_tokens_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+          "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+          "artifact": "acceptance/artifacts/OP-MOE-COMPUTE-EXPERT-TOKENS-001/result.json"
         },
         {
           "id": "4.6#76",
@@ -6350,11 +7443,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.6",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-MOE-FINALIZE-ROUTING-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest_rerun",
+          "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_finalize_routing_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+          "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+          "artifact": "acceptance/artifacts/OP-MOE-FINALIZE-ROUTING-001/result.json"
         },
         {
           "id": "4.6#78",
@@ -6375,11 +7475,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.6",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-MOE-GATING-TOP-K-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest_rerun",
+          "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_gating_top_k_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+          "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+          "artifact": "acceptance/artifacts/OP-MOE-GATING-TOP-K-001/result.json"
         },
         {
           "id": "4.6#80",
@@ -6400,11 +7507,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.6",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-MOE-GATING-TOP-K-SOFTMAX-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest_rerun",
+          "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_gating_top_k_softmax_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+          "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+          "artifact": "acceptance/artifacts/OP-MOE-GATING-TOP-K-SOFTMAX-001/result.json"
         },
         {
           "id": "4.6#82",
@@ -6425,11 +7539,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.6",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-MOE-INIT-ROUTING-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest_rerun",
+          "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_init_routing_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+          "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+          "artifact": "acceptance/artifacts/OP-MOE-INIT-ROUTING-001/result.json"
         },
         {
           "id": "4.6#84",
@@ -6450,11 +7571,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.6",
-          "status": "open",
+          "status": "blocked",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-MOE-INIT-ROUTING-V2-001",
+          "acceptance_status": "blocked",
+          "evidence_grade": "tool_contract_only",
+          "stage": "ms_ops_pytest_rerun",
+          "reason": "After refreshing ms_ops, rerunning tests/operators/aclnn/test_npu_moe_init_routing_v2_op.py still fails during collection while building npu_moe_init_routing_v2_op.cpp. The compile error is reached from npu_moe_init_routing_v2_op.cpp:199 during MindSpore ConvertTypes instantiation for optional tensor/vector arguments.",
+          "next": "Fix npu_moe_init_routing_v2_op.cpp launch argument conversion for optional IntArray/vector parameters, then rerun pytest and dashboard artifact collection.",
+          "artifact": "acceptance/artifacts/OP-MOE-INIT-ROUTING-V2-001/result.json"
         }
       ],
       "child_count": 8
@@ -6467,7 +7595,7 @@
       "section": "ms_custom_ops",
       "lane": "Custom Ops/API",
       "group": "MoE distribute dispatch/combine",
-      "status": "open",
+      "status": "accepted",
       "rows": "74, 75",
       "item_count": 2,
       "evidence": [],
@@ -6475,7 +7603,7 @@
       "notes": "",
       "kind": "checkbox",
       "status_counts": {
-        "open": 2
+        "accepted": 2
       },
       "child_ids": [
         "4.7#74",
@@ -6501,11 +7629,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.7",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-MOE-DISTRIBUTE-COMBINE-V2-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest_rerun",
+          "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_distribute_combine_v2_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+          "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+          "artifact": "acceptance/artifacts/OP-MOE-DISTRIBUTE-COMBINE-V2-001/result.json"
         },
         {
           "id": "4.7#75",
@@ -6526,11 +7661,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.7",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-MOE-DISTRIBUTE-DISPATCH-V2-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest_rerun",
+          "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_distribute_dispatch_v2_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+          "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+          "artifact": "acceptance/artifacts/OP-MOE-DISTRIBUTE-DISPATCH-V2-001/result.json"
         }
       ],
       "child_count": 2
@@ -6543,7 +7685,7 @@
       "section": "ms_custom_ops",
       "lane": "Custom Ops/API",
       "group": "all_to_all_single / re-routing",
-      "status": "open",
+      "status": "accepted",
       "rows": "85",
       "item_count": 1,
       "evidence": [],
@@ -6551,7 +7693,7 @@
       "notes": "",
       "kind": "checkbox",
       "status_counts": {
-        "open": 1
+        "accepted": 1
       },
       "child_ids": [
         "4.8#85"
@@ -6576,11 +7718,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.8",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-MOE-RE-ROUTING-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest_rerun",
+          "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_moe_re_routing_op.py passed again. Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+          "next": "Regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+          "artifact": "acceptance/artifacts/OP-MOE-RE-ROUTING-001/result.json"
         }
       ],
       "child_count": 1
@@ -6593,7 +7742,7 @@
       "section": "ms_custom_ops",
       "lane": "Custom Ops/API",
       "group": "Quant / custom dtype / MHC-MOME",
-      "status": "open",
+      "status": "blocked",
       "rows": "16, 44, 49, 52, 68, 69, 70, 89, 90, 98, 101, 102",
       "item_count": 12,
       "evidence": [],
@@ -6601,7 +7750,9 @@
       "notes": "",
       "kind": "checkbox",
       "status_counts": {
-        "open": 12
+        "open": 2,
+        "accepted": 9,
+        "blocked": 1
       },
       "child_ids": [
         "4.4#16",
@@ -6642,7 +7793,14 @@
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-AI-INFRA-KV-QUANT-SPARSE-FALSH-ATTENTION-001",
+          "acceptance_status": "not_run",
+          "evidence_grade": "tool_contract_only",
+          "stage": "ms_ops_pytest_probe",
+          "reason": "No direct pytest or implementation mapping was found in the refreshed remote ms_ops checkout under tests/ or custom_ops for this attention/cache case.",
+          "next": "Locate or add an ms_ops implementation/test mapping, or collect dashboard golden/actual artifacts from the preserved ops_gate reference before marking this case pass.",
+          "artifact": "acceptance/artifacts/OP-AI-INFRA-KV-QUANT-SPARSE-FALSH-ATTENTION-001/result.json"
         },
         {
           "id": "4.4#44",
@@ -6668,7 +7826,14 @@
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-KV-QUANT-SPARSE-FLASH-ATTENTION-PIONEER-001",
+          "acceptance_status": "not_run",
+          "evidence_grade": "tool_contract_only",
+          "stage": "ms_ops_pytest_probe",
+          "reason": "No direct pytest or implementation mapping was found in the refreshed remote ms_ops checkout under tests/ or custom_ops for this attention/cache case.",
+          "next": "Locate or add an ms_ops implementation/test mapping, or collect dashboard golden/actual artifacts from the preserved ops_gate reference before marking this case pass.",
+          "artifact": "acceptance/artifacts/OP-KV-QUANT-SPARSE-FLASH-ATTENTION-PIONEER-001/result.json"
         },
         {
           "id": "4.9#49",
@@ -6689,11 +7854,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.9",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-DEQUANT-SWIGLU-QUANT-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_dequant_swiglu_quant_op.py completed in the quant/matmul batch; aggregate batch result was 25 passed and 9 skipped across 34 collected tests.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-DEQUANT-SWIGLU-QUANT-001/result.json"
         },
         {
           "id": "4.9#52",
@@ -6714,11 +7886,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.9",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-DYNAMIC-QUANT-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_dynamic_quant_op.py completed in the quant/matmul batch; aggregate batch result was 25 passed and 9 skipped across 34 collected tests.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-DYNAMIC-QUANT-001/result.json"
         },
         {
           "id": "4.9#68",
@@ -6740,11 +7919,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.9",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-MHC-POST-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest_rerun",
+          "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_mhc_post_op.py completed with 1 passed and 1 skipped case(s). Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+          "next": "Review skipped pytest scenarios if coverage is required, then regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+          "artifact": "acceptance/artifacts/OP-MHC-POST-001/result.json"
         },
         {
           "id": "4.9#69",
@@ -6766,11 +7952,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.9",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-MHC-PRE-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest_rerun",
+          "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_mhc_pre_op.py completed with 1 passed and 1 skipped case(s). Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+          "next": "Review skipped pytest scenarios if coverage is required, then regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+          "artifact": "acceptance/artifacts/OP-MHC-PRE-001/result.json"
         },
         {
           "id": "4.9#70",
@@ -6792,11 +7985,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.9",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-MHC-SINKHORN-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest_rerun",
+          "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_mhc_sinkhorn_op.py completed with 1 passed and 2 skipped case(s). Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+          "next": "Review skipped pytest scenarios if coverage is required, then regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+          "artifact": "acceptance/artifacts/OP-MHC-SINKHORN-001/result.json"
         },
         {
           "id": "4.9#89",
@@ -6818,11 +8018,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.9",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-QUANT-LIGHTNING-INDEXER-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "ms_ops tests/operators/aclnn/test_npu_quant_lightning_indexer_op.py completed successfully on the refreshed remote ms_ops checkout.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared.",
+          "artifact": "acceptance/artifacts/OP-QUANT-LIGHTNING-INDEXER-001/result.json"
         },
         {
           "id": "4.9#90",
@@ -6843,11 +8050,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.9",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-QUANT-MATMUL-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_quant_matmul_op.py completed in the quant/matmul batch; aggregate batch result was 25 passed and 9 skipped across 34 collected tests.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-QUANT-MATMUL-001/result.json"
         },
         {
           "id": "4.9#98",
@@ -6869,11 +8083,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.9",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-AI-INFRA-QUANT-LIGHTNING-INDEXER-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_quant_lightning_indexer_op.py completed successfully in the remaining infra batch; aggregate batch result was 5 passed and 4 skipped.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-AI-INFRA-QUANT-LIGHTNING-INDEXER-001/result.json"
         },
         {
           "id": "4.5#101",
@@ -6895,11 +8116,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.5",
-          "status": "open",
+          "status": "blocked",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-SWIGLU-MX-QUANT-001",
+          "acceptance_status": "fail",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_swiglu_mx_quant_op.py fails 12 tests. The returned tensors are undefined; shape/dtype/asnumpy access raises MindSpore RuntimeError: Failure info [The Tensor is not defined] from pynative custom tensor.cc:146.",
+          "next": "Fix npu_swiglu_mx_quant output tensor construction or runtime launch so returned y/mxscale tensors are defined, then rerun pytest and dashboard artifact collection.",
+          "artifact": "acceptance/artifacts/OP-SWIGLU-MX-QUANT-001/result.json"
         },
         {
           "id": "4.9#102",
@@ -6920,11 +8148,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.9",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-TRANS-QUANT-PARAM-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_trans_quant_param_op.py completed in the quant/matmul batch; aggregate batch result was 25 passed and 9 skipped across 34 collected tests.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-TRANS-QUANT-PARAM-001/result.json"
         }
       ],
       "child_count": 12
@@ -6957,7 +8192,7 @@
       "section": "ms_custom_ops",
       "lane": "Custom Ops/API",
       "group": "MindSpore core/API 平替",
-      "status": "open",
+      "status": "accepted",
       "rows": "97",
       "item_count": 1,
       "evidence": [],
@@ -6965,7 +8200,7 @@
       "notes": "",
       "kind": "checkbox",
       "status_counts": {
-        "open": 1
+        "accepted": 1
       },
       "child_ids": [
         "4.11#97"
@@ -6990,11 +8225,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.11",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-TRANSPOSE-BATCHMATMUL-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_transpose_batchmatmul_op.py completed in the quant/matmul batch; aggregate batch result was 25 passed and 9 skipped across 34 collected tests.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-TRANSPOSE-BATCHMATMUL-001/result.json"
         }
       ],
       "child_count": 1
@@ -7055,7 +8297,8 @@
       "notes": "",
       "kind": "checkbox",
       "status_counts": {
-        "open": 16
+        "open": 3,
+        "accepted": 13
       },
       "child_ids": [
         "4.14#14",
@@ -7099,7 +8342,14 @@
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-AGGREGATE-HIDDEN-001",
+          "acceptance_status": "not_run",
+          "evidence_grade": "tool_contract_only",
+          "stage": "compare",
+          "reason": "Missing golden or actual .npz artifacts.",
+          "next": "Collect torch_npu/PT golden artifacts and MindSpore actual artifacts, then rerun compare_outputs.py.",
+          "artifact": "acceptance/artifacts/OP-AGGREGATE-HIDDEN-001/result.json"
         },
         {
           "id": "4.14#15",
@@ -7120,11 +8370,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.14",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-AI-INFRA-FUSED-CAUSAL-CONV1D-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_fused_causal_conv1d_op.py completed successfully in the remaining infra batch; aggregate batch result was 5 passed and 4 skipped.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-AI-INFRA-FUSED-CAUSAL-CONV1D-001/result.json"
         },
         {
           "id": "4.14#18",
@@ -7145,11 +8402,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.14",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-AI-INFRA-MANIFOLD-CONSTRAINED-HYPER-CONNECTION-POST-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_mhc_post_op.py completed successfully in the remaining infra batch; aggregate batch result was 5 passed and 4 skipped.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-AI-INFRA-MANIFOLD-CONSTRAINED-HYPER-CONNECTION-POST-001/result.json"
         },
         {
           "id": "4.14#24",
@@ -7170,11 +8434,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.14",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-MANIFOLD-CONSTRAINED-HYPER-CONNECTION-PRE-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_mhc_pre_op.py completed successfully: 1 passed and 1 skipped.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-MANIFOLD-CONSTRAINED-HYPER-CONNECTION-PRE-001/result.json"
         },
         {
           "id": "4.14#25",
@@ -7195,11 +8466,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.14",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-SINKHORN-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_mhc_sinkhorn_op.py completed successfully in the remaining infra batch; aggregate batch result was 5 passed and 4 skipped.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-SINKHORN-001/result.json"
         },
         {
           "id": "4.14#55",
@@ -7220,11 +8498,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.14",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-FUSED-CAUSAL-CONV1D-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "ms_ops tests/operators/aclnn/test_npu_fused_causal_conv1d_op.py completed successfully on the refreshed remote ms_ops checkout.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared.",
+          "artifact": "acceptance/artifacts/OP-FUSED-CAUSAL-CONV1D-001/result.json"
         },
         {
           "id": "4.9#68",
@@ -7246,11 +8531,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.9",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-MHC-POST-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest_rerun",
+          "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_mhc_post_op.py completed with 1 passed and 1 skipped case(s). Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+          "next": "Review skipped pytest scenarios if coverage is required, then regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+          "artifact": "acceptance/artifacts/OP-MHC-POST-001/result.json"
         },
         {
           "id": "4.9#69",
@@ -7272,11 +8564,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.9",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-MHC-PRE-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest_rerun",
+          "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_mhc_pre_op.py completed with 1 passed and 1 skipped case(s). Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+          "next": "Review skipped pytest scenarios if coverage is required, then regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+          "artifact": "acceptance/artifacts/OP-MHC-PRE-001/result.json"
         },
         {
           "id": "4.9#70",
@@ -7298,11 +8597,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.9",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-MHC-SINKHORN-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest_rerun",
+          "reason": "After refreshing ms_ops, remote pytest tests/operators/aclnn/test_npu_mhc_sinkhorn_op.py completed with 1 passed and 2 skipped case(s). Dashboard golden/actual artifacts still need regeneration before upgrading to migration_evidence.",
+          "next": "Review skipped pytest scenarios if coverage is required, then regenerate dashboard golden/actual/metadata artifacts and rerun compare_outputs.py for migration_evidence.",
+          "artifact": "acceptance/artifacts/OP-MHC-SINKHORN-001/result.json"
         },
         {
           "id": "4.14#88",
@@ -7323,11 +8629,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.14",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-PREFETCH-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_prefetch_op.py completed successfully in the routing/sampling batch; aggregate batch result was 5 passed and 4 skipped.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-PREFETCH-001/result.json"
         },
         {
           "id": "4.9#89",
@@ -7349,11 +8662,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.9",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-QUANT-LIGHTNING-INDEXER-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "ms_ops tests/operators/aclnn/test_npu_quant_lightning_indexer_op.py completed successfully on the refreshed remote ms_ops checkout.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared.",
+          "artifact": "acceptance/artifacts/OP-QUANT-LIGHTNING-INDEXER-001/result.json"
         },
         {
           "id": "4.14#96",
@@ -7374,11 +8694,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.14",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-TOP-K-TOP-P-SAMPLE-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_top_k_top_p_sample_op.py completed successfully in the routing/sampling batch; aggregate batch result was 5 passed and 4 skipped.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-TOP-K-TOP-P-SAMPLE-001/result.json"
         },
         {
           "id": "4.9#98",
@@ -7400,11 +8727,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.9",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-AI-INFRA-QUANT-LIGHTNING-INDEXER-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_quant_lightning_indexer_op.py completed successfully in the remaining infra batch; aggregate batch result was 5 passed and 4 skipped.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-AI-INFRA-QUANT-LIGHTNING-INDEXER-001/result.json"
         },
         {
           "id": "4.14#100",
@@ -7425,11 +8759,18 @@
           "section": "ms_custom_ops operator rows",
           "lane": "Custom Ops/API",
           "group": "4.14",
-          "status": "open",
+          "status": "accepted",
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-RECURRENT-GATED-DELTA-RULE-001",
+          "acceptance_status": "pass",
+          "evidence_grade": "provisional_reference",
+          "stage": "ms_ops_pytest",
+          "reason": "Refreshed remote ms_ops pytest file tests/operators/aclnn/test_npu_recurrent_gated_delta_rule_op.py completed successfully in the routing/sampling batch; aggregate batch result was 5 passed and 4 skipped.",
+          "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+          "artifact": "acceptance/artifacts/OP-RECURRENT-GATED-DELTA-RULE-001/result.json"
         },
         {
           "id": "4.14#506",
@@ -7454,7 +8795,14 @@
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-CHUNK-GATED-DELTA-RULE-RECURRENCE-001",
+          "acceptance_status": "not_run",
+          "evidence_grade": "tool_contract_only",
+          "stage": "ms_ops_pytest_probe",
+          "reason": "After latest ms_ops git pull, no direct pytest file tests/operators/aclnn/test_npu_chunk_gated_delta_rule_recurrence_op.py exists in the remote ms_ops checkout.",
+          "next": "Add or locate a direct ms_ops pytest for this operator, then rerun and collect dashboard golden/actual artifacts.",
+          "artifact": "acceptance/artifacts/OP-CHUNK-GATED-DELTA-RULE-RECURRENCE-001/result.json"
         },
         {
           "id": "4.14#507",
@@ -7479,7 +8827,14 @@
           "owner": "ting",
           "evidence": [],
           "notes": "",
-          "kind": "operator_row"
+          "kind": "operator_row",
+          "case_id": "OP-LOWER-TRIANGULAR-INVERSE-001",
+          "acceptance_status": "not_run",
+          "evidence_grade": "tool_contract_only",
+          "stage": "ms_ops_pytest_probe",
+          "reason": "After latest ms_ops git pull, no direct pytest file tests/operators/aclnn/test_npu_lower_triangular_inverse_op.py exists in the remote ms_ops checkout.",
+          "next": "Add or locate a direct ms_ops pytest for npu_lower_triangular_inverse, then rerun and collect dashboard golden/actual artifacts.",
+          "artifact": "acceptance/artifacts/OP-LOWER-TRIANGULAR-INVERSE-001/result.json"
         }
       ],
       "child_count": 16

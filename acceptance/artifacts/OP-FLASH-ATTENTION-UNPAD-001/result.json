@@ -1,0 +1,20 @@
+{
+  "artifact": "acceptance/artifacts/OP-FLASH-ATTENTION-UNPAD-001/result.json",
+  "case_id": "OP-FLASH-ATTENTION-UNPAD-001",
+  "custom_op_required": true,
+  "evidence_grade": "tool_contract_only",
+  "generation_mode": "direct-copy-reference",
+  "metrics": {
+    "pytest_collect_errors": 1
+  },
+  "next": "Align the ATB/MindSpore custom-op integration or environment headers/libraries, then rerun pytest and dashboard artifact collection.",
+  "operator_dir": "501_npu_flash_attention_unpad",
+  "reason": "ms_ops tests/operators/aclnn/test_npu_flash_attention_unpad_op.py fails during collection/build. _npu_flash_attention_unpad_op.cpp references ATB symbols unavailable in the current environment: atb::infer, HashOpParam<...>, and ms::pynative::RunAtbOp.",
+  "reference_status": "direct",
+  "repo_target": "ms_custom_ops",
+  "row": 501,
+  "stage": "ms_ops_pytest",
+  "status": "blocked",
+  "torch_api": "torch_npu._npu_flash_attention_unpad",
+  "watch_type": "custom_op_acceptance"
+}

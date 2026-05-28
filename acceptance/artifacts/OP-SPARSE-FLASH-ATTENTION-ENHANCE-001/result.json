@@ -1,0 +1,20 @@
+{
+  "artifact": "acceptance/artifacts/OP-SPARSE-FLASH-ATTENTION-ENHANCE-001/result.json",
+  "case_id": "OP-SPARSE-FLASH-ATTENTION-ENHANCE-001",
+  "custom_op_required": true,
+  "evidence_grade": "tool_contract_only",
+  "generation_mode": "aclnn-docs-derived",
+  "metrics": {
+    "pytest_file_missing": "tests/operators/aclnn/test_npu_sparse_flash_attention_enhance_op.py"
+  },
+  "next": "Add or locate a direct ms_ops pytest for this operator, then rerun and collect dashboard golden/actual artifacts.",
+  "operator_dir": "026_npu_sparse_flash_attention_enhance",
+  "reason": "After latest ms_ops git pull, no direct pytest file tests/operators/aclnn/test_npu_sparse_flash_attention_enhance_op.py exists in the remote ms_ops checkout.",
+  "reference_status": "indirect",
+  "repo_target": "ms_custom_ops",
+  "row": 26,
+  "stage": "ms_ops_pytest_probe",
+  "status": "not_run",
+  "torch_api": "torch.ops.custom.npu_sparse_flash_attention_enhance",
+  "watch_type": "custom_op_acceptance"
+}

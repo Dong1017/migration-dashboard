@@ -14,6 +14,16 @@ OP_ROW_RE = re.compile(r"^\| (\d+) \| `([^`]+)` \| (.*?) \| (.*?) \| (.*?) \| (.
 CHECKBOX_ID_RE = re.compile(r"`(4\.\d+)`")
 STATUS_KEYS = ["status", "owner", "evidence", "reason", "next", "notes", "updated_by"]
 SOURCE_NAME = "migration-analysis-v0.5.md"
+OP_GATE_MANIFEST = Path("acceptance/op_gate_cases.json")
+OP_GATE_ARTIFACTS_DIR = Path("acceptance/artifacts")
+ACCEPTANCE_EVIDENCE = Path("data/acceptance_evidence.json")
+OP_GATE_STATUS_MAP = {
+    "pass": "accepted",
+    "blocked": "blocked",
+    "fail": "blocked",
+    "xfail": "blocked",
+    "not_run": "open",
+}
 
 
 def classify(item_id: str, title: str) -> tuple[str, str, str]:
@@ -70,6 +80,46 @@ def load_status_overlays(status_dir: Path) -> dict:
     return overlays
 
 
+def result_to_dashboard_status(status: str | None) -> str:
+    return OP_GATE_STATUS_MAP.get(status or "", "open")
+
+
+def load_acceptance_evidence(evidence_path: Path = ACCEPTANCE_EVIDENCE) -> dict[str, dict]:
+    if not evidence_path.exists():
+        return {}
+    data = read_json(evidence_path, {"items": []})
+    return {item["case_id"]: item for item in data.get("items", [])}
+
+
+def load_op_gate_status(manifest_path: Path = OP_GATE_MANIFEST, artifacts_dir: Path = OP_GATE_ARTIFACTS_DIR) -> dict[int, dict]:
+    if not manifest_path.exists():
+        return {}
+
+    evidence_by_case = load_acceptance_evidence()
+    op_status = {}
+    for entry in json.loads(manifest_path.read_text(encoding="utf-8")):
+        case_id = entry["case_id"]
+        result_path = artifacts_dir / case_id / "result.json"
+        result = evidence_by_case.get(case_id) or read_json(result_path, {"case_id": case_id})
+        acceptance_status = result.get("status")
+        status = {
+            "case_id": case_id,
+            "acceptance_status": acceptance_status or "not_run",
+            "status": result_to_dashboard_status(acceptance_status),
+            "evidence_grade": result.get("evidence_grade", ""),
+            "stage": result.get("stage", ""),
+            "reason": result.get("reason", ""),
+            "next": result.get("next", ""),
+            "artifact": result.get("artifact", str(result_path).replace("\\", "/")),
+        }
+        rows = [int(entry["row"])]
+        if entry["row"] in {501, 502, 503, 504}:
+            rows.append(int(entry["row"]) - 402)
+        for row in rows:
+            op_status[row] = status
+    return op_status
+
+
 def module_defaults(config_path: Path) -> dict:
     config = read_json(config_path, {"modules": {}})
     return {
@@ -90,6 +140,16 @@ def apply_status(target: dict, update: dict | None, default_owner: str = "") -> 
             target[key] = update[key]
 
 
+def apply_op_gate_status(target: dict, op_update: dict | None, explicit_update: dict | None) -> None:
+    if not op_update:
+        return
+
+    target.update({key: value for key, value in op_update.items() if value})
+    if explicit_update and "status" in explicit_update:
+        return
+    target["status"] = op_update["status"]
+
+
 def best_row_update(overlays: dict, parents: list[str], row: str) -> dict | None:
     for parent_id in parents:
         update = overlays["operator_rows"].get(f"{parent_id}#{row}")
@@ -98,7 +158,7 @@ def best_row_update(overlays: dict, parents: list[str], row: str) -> dict | None
     return None
 
 
-def parse_operator_rows(markdown: str, overlays: dict, defaults: dict) -> list[dict]:
+def parse_operator_rows(markdown: str, overlays: dict, defaults: dict, op_gate_status: dict[int, dict]) -> list[dict]:
     rows = []
     in_ops_table = False
     for line in markdown.splitlines():
@@ -113,13 +173,14 @@ def parse_operator_rows(markdown: str, overlays: dict, defaults: dict) -> list[d
         if not match:
             continue
         row, api, source_label, coverage, ms_candidate, handling = match.groups()
+        row_number = int(row)
         parents = CHECKBOX_ID_RE.findall(coverage)
         if not parents:
             parents = ["4.14"]
         primary_parent = parents[0]
         child = {
             "id": f"{primary_parent}#{row}",
-            "row": int(row),
+            "row": row_number,
             "api": api,
             "parent_id": primary_parent,
             "parent_ids": parents,
@@ -140,7 +201,9 @@ def parse_operator_rows(markdown: str, overlays: dict, defaults: dict) -> list[d
             "notes": "",
             "kind": "operator_row",
         }
-        apply_status(child, best_row_update(overlays, parents, row), defaults.get("ms_custom_ops", ""))
+        row_update = best_row_update(overlays, parents, row)
+        apply_status(child, row_update, defaults.get("ms_custom_ops", ""))
+        apply_op_gate_status(child, op_gate_status.get(row_number), row_update)
         rows.append(child)
     return rows
 
@@ -203,14 +266,52 @@ def attach_operator_groups(operator_rows: list[dict], operator_groups: dict[str,
             group["status"] = "open"
 
 
+def read_existing_data(path: Path = Path("data.json")) -> dict:
+    return read_json(path, {"items": [], "metrics": {}})
+
+
+def preserve_non_operator_status(items: list[dict], existing_data: dict) -> None:
+    existing_items = {item["id"]: item for item in existing_data.get("items", [])}
+    for item in items:
+        if item.get("repo") == "ms_custom_ops":
+            continue
+        existing = existing_items.get(item["id"])
+        if not existing:
+            continue
+        for key in STATUS_KEYS:
+            if key in existing:
+                item[key] = existing[key]
+
+
+def repo_details(items: list[dict]) -> dict[str, dict]:
+    details = {}
+    for repo in sorted({item["repo"] for item in items}):
+        repo_items = [item for item in items if item["repo"] == repo]
+        total = len(repo_items)
+        accepted = sum(item["status"] == "accepted" for item in repo_items)
+        blocked = sum(item["status"] in {"blocked", "xfail"} for item in repo_items)
+        open_count = sum(item["status"] == "open" for item in repo_items)
+        details[repo] = {
+            "total": total,
+            "accepted": accepted,
+            "blocked": blocked,
+            "open": open_count,
+            "completion_rate": round(accepted * 100 / total, 1) if total else 0,
+        }
+    return details
+
+
 def build_data(markdown: str, status_dir: Path = Path("data/status"), config_path: Path = Path("data/status_config.json")) -> dict:
     overlays = load_status_overlays(status_dir)
     defaults = module_defaults(config_path)
-    operator_rows = parse_operator_rows(markdown, overlays, defaults)
+    existing_data = read_existing_data()
+    op_gate_status = load_op_gate_status()
+    operator_rows = parse_operator_rows(markdown, overlays, defaults, op_gate_status)
     checkbox_items, operator_groups = parse_checkbox_items(markdown, overlays, defaults)
+    items = checkbox_items + operator_rows
+    preserve_non_operator_status(items, existing_data)
     attach_operator_groups(operator_rows, operator_groups)
 
-    items = checkbox_items + operator_rows
     status_counts = Counter(item["status"] for item in items)
     by_priority = Counter(item["priority"] for item in items)
     by_repo = Counter(item["repo"] for item in items)
@@ -226,6 +327,7 @@ def build_data(markdown: str, status_dir: Path = Path("data/status"), config_pat
         "operator_groups": len(operator_groups),
         "by_priority": dict(by_priority),
         "by_repo": dict(by_repo),
+        "by_repo_detail": repo_details(items),
         "generated_at": dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).isoformat(),
         "source": f"{SOURCE_NAME} Appendix E + Section 5.3",
     }

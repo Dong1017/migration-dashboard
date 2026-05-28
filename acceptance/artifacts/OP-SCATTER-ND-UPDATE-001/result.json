@@ -1,0 +1,24 @@
+{
+  "artifact": "acceptance/artifacts/OP-SCATTER-ND-UPDATE-001/result.json",
+  "case_id": "OP-SCATTER-ND-UPDATE-001",
+  "custom_op_required": true,
+  "evidence_grade": "provisional_reference",
+  "generation_mode": "direct-copy-reference",
+  "metrics": {
+    "batch_duration_seconds": 127.51,
+    "batch_pytest_failed": 12,
+    "batch_pytest_passed": 2,
+    "batch_pytest_skipped": 1,
+    "pytest_file": "tests/operators/aclnn/test_npu_scatter_nd_update_op.py"
+  },
+  "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+  "operator_dir": "093_npu_scatter_nd_update",
+  "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_scatter_nd_update_op.py completed in the scatter/infra batch; aggregate batch result was 2 passed, 1 skipped, and 12 failed from npu_swiglu_mx_quant tests.",
+  "reference_status": "skipped",
+  "repo_target": "ms_custom_ops",
+  "row": 93,
+  "stage": "ms_ops_pytest",
+  "status": "pass",
+  "torch_api": "torch_npu.npu_scatter_nd_update_",
+  "watch_type": "custom_op_acceptance"
+}

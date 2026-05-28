@@ -1,0 +1,20 @@
+{
+  "artifact": "acceptance/artifacts/OP-CHUNK-GATED-DELTA-RULE-RECURRENCE-001/result.json",
+  "case_id": "OP-CHUNK-GATED-DELTA-RULE-RECURRENCE-001",
+  "custom_op_required": true,
+  "evidence_grade": "tool_contract_only",
+  "generation_mode": "direct-copy-reference",
+  "metrics": {
+    "pytest_file_missing": "tests/operators/aclnn/test_npu_chunk_gated_delta_rule_recurrence_op.py"
+  },
+  "next": "Add or locate a direct ms_ops pytest for this operator, then rerun and collect dashboard golden/actual artifacts.",
+  "operator_dir": "506_npu_chunk_gated_delta_rule_recurrence",
+  "reason": "After latest ms_ops git pull, no direct pytest file tests/operators/aclnn/test_npu_chunk_gated_delta_rule_recurrence_op.py exists in the remote ms_ops checkout.",
+  "reference_status": "direct",
+  "repo_target": "ms_custom_ops",
+  "row": 506,
+  "stage": "ms_ops_pytest_probe",
+  "status": "not_run",
+  "torch_api": "torch.ops.custom.npu_chunk_gated_delta_rule_recurrence",
+  "watch_type": "custom_op_acceptance"
+}

@@ -1,0 +1,20 @@
+{
+  "artifact": "acceptance/artifacts/OP-ATTENTION-PIONEER-001/result.json",
+  "case_id": "OP-ATTENTION-PIONEER-001",
+  "custom_op_required": true,
+  "evidence_grade": "tool_contract_only",
+  "generation_mode": "manual-from-metadata",
+  "metrics": {
+    "pytest_collect_errors": 1
+  },
+  "next": "Convert optional int-array arguments before wrapping with the transpose flag, or pass std::optional<std::vector<int64_t>> / std::pair<std::vector<int64_t>, bool> in a form supported by MindSpore ConvertType, then rerun pytest and dashboard artifact collection.",
+  "operator_dir": "038_npu_attention_pioneer",
+  "reason": "After refreshing ms_ops, rerunning tests/operators/aclnn/test_npu_attention_pioneer_op.py still fails during collection/build. _npu_attention_pioneer_op.cpp:64/72 passes std::pair<std::optional<std::vector<int64_t>>, bool> into MindSpore ConvertTypes, but op_api_convert.h has no ConvertType overload for that type.",
+  "reference_status": "missing",
+  "repo_target": "ms_custom_ops",
+  "row": 38,
+  "stage": "ms_ops_pytest_rerun",
+  "status": "blocked",
+  "torch_api": "torch_npu._npu_attention_pioneer",
+  "watch_type": "custom_op_acceptance"
+}

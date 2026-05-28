@@ -1,0 +1,21 @@
+{
+  "artifact": "acceptance/artifacts/OP-FUSED-CAUSAL-CONV1D-001/result.json",
+  "case_id": "OP-FUSED-CAUSAL-CONV1D-001",
+  "custom_op_required": true,
+  "evidence_grade": "provisional_reference",
+  "generation_mode": "manual-from-metadata",
+  "metrics": {
+    "pytest_passed": 1,
+    "pytest_skipped": 1
+  },
+  "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared.",
+  "operator_dir": "055_npu_fused_causal_conv1d",
+  "reason": "ms_ops tests/operators/aclnn/test_npu_fused_causal_conv1d_op.py completed successfully on the refreshed remote ms_ops checkout.",
+  "reference_status": "missing",
+  "repo_target": "ms_custom_ops",
+  "row": 55,
+  "stage": "ms_ops_pytest",
+  "status": "pass",
+  "torch_api": "torch_npu.npu_fused_causal_conv1d",
+  "watch_type": "custom_op_acceptance"
+}

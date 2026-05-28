@@ -1,0 +1,23 @@
+{
+  "artifact": "acceptance/artifacts/OP-LIGHTNING-INDEXER-ENHANCE-001/result.json",
+  "case_id": "OP-LIGHTNING-INDEXER-ENHANCE-001",
+  "custom_op_required": true,
+  "evidence_grade": "tool_contract_only",
+  "generation_mode": "aclnn-docs-derived",
+  "metrics": {
+    "finite_check": "",
+    "max_abs_error": null,
+    "max_rel_error": null,
+    "pass_ratio": null
+  },
+  "next": "Collect torch_npu/PT golden artifacts and MindSpore actual artifacts, then rerun compare_outputs.py.",
+  "operator_dir": "023_npu_lightning_indexer_enhance",
+  "reason": "Missing golden or actual .npz artifacts.",
+  "reference_status": "indirect",
+  "repo_target": "ms_custom_ops",
+  "row": 23,
+  "stage": "compare",
+  "status": "not_run",
+  "torch_api": "torch.ops.custom.npu_lightning_indexer_enhance",
+  "watch_type": "custom_op_acceptance"
+}

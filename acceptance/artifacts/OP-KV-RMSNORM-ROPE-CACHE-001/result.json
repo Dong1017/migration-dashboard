@@ -1,0 +1,21 @@
+{
+  "artifact": "acceptance/artifacts/OP-KV-RMSNORM-ROPE-CACHE-001/result.json",
+  "case_id": "OP-KV-RMSNORM-ROPE-CACHE-001",
+  "custom_op_required": true,
+  "evidence_grade": "provisional_reference",
+  "generation_mode": "direct-copy-reference",
+  "metrics": {
+    "post_exit_ascend_async_copy_error": 1,
+    "pytest_passed": 8
+  },
+  "next": "Rerun with blocking/device diagnostics if the post-exit Ascend async copy error must be resolved before dashboard golden/actual collection.",
+  "operator_dir": "066_npu_kv_rmsnorm_rope_cache",
+  "reason": "ms_ops tests/operators/aclnn/test_npu_kv_rmsnorm_rope_cache_op.py reported 8 passed on the refreshed remote ms_ops checkout; the process also logged an Ascend lazy async copy/device error during exit, so this remains provisional reference evidence.",
+  "reference_status": "skipped",
+  "repo_target": "ms_custom_ops",
+  "row": 66,
+  "stage": "ms_ops_pytest",
+  "status": "pass",
+  "torch_api": "torch_npu.npu_kv_rmsnorm_rope_cache",
+  "watch_type": "custom_op_acceptance"
+}

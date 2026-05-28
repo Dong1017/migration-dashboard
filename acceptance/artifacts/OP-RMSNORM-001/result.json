@@ -1,0 +1,23 @@
+{
+  "artifact": "acceptance/artifacts/OP-RMSNORM-001/result.json",
+  "case_id": "OP-RMSNORM-001",
+  "custom_op_required": true,
+  "evidence_grade": "migration_evidence",
+  "generation_mode": "direct-copy-reference",
+  "metrics": {
+    "finite_check": "pass",
+    "max_abs_error": 3.814697265625e-06,
+    "max_rel_error": 8.873425466109948e-07,
+    "pass_ratio": 1.0
+  },
+  "next": "",
+  "operator_dir": "091_npu_rms_norm",
+  "reason": "",
+  "reference_status": "direct",
+  "repo_target": "ms_custom_ops",
+  "row": 91,
+  "stage": "compare",
+  "status": "pass",
+  "torch_api": "torch_npu.npu_rms_norm",
+  "watch_type": "custom_op_acceptance"
+}

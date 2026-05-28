@@ -1,0 +1,21 @@
+{
+  "artifact": "acceptance/artifacts/OP-FUSION-ATTENTION-001/result.json",
+  "case_id": "OP-FUSION-ATTENTION-001",
+  "custom_op_required": true,
+  "evidence_grade": "provisional_reference",
+  "generation_mode": "direct-copy-reference",
+  "metrics": {
+    "pytest_passed": 9,
+    "pytest_skipped": 1
+  },
+  "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared.",
+  "operator_dir": "060_npu_fusion_attention",
+  "reason": "ms_ops tests/operators/aclnn/test_npu_fusion_attention_op.py completed successfully on the refreshed remote ms_ops checkout.",
+  "reference_status": "direct",
+  "repo_target": "ms_custom_ops",
+  "row": 60,
+  "stage": "ms_ops_pytest",
+  "status": "pass",
+  "torch_api": "torch_npu.npu_fusion_attention",
+  "watch_type": "custom_op_acceptance"
+}

@@ -1,0 +1,23 @@
+{
+  "artifact": "acceptance/artifacts/OP-AI-INFRA-MANIFOLD-CONSTRAINED-HYPER-CONNECTION-POST-001/result.json",
+  "case_id": "OP-AI-INFRA-MANIFOLD-CONSTRAINED-HYPER-CONNECTION-POST-001",
+  "custom_op_required": true,
+  "evidence_grade": "provisional_reference",
+  "generation_mode": "manual-from-metadata",
+  "metrics": {
+    "batch_duration_seconds": 39.95,
+    "batch_pytest_passed": 5,
+    "batch_pytest_skipped": 4,
+    "pytest_file": "tests/operators/aclnn/test_npu_mhc_post_op.py"
+  },
+  "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
+  "operator_dir": "018_npu_ai_infra_manifold_constrained_hyper_connection_post",
+  "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_mhc_post_op.py completed successfully in the remaining infra batch; aggregate batch result was 5 passed and 4 skipped.",
+  "reference_status": "missing",
+  "repo_target": "ms_custom_ops",
+  "row": 18,
+  "stage": "ms_ops_pytest",
+  "status": "pass",
+  "torch_api": "torch.ops.custom.npu_ai_infra_manifold_constrained_hyper_connection_post",
+  "watch_type": "custom_op_acceptance"
+}

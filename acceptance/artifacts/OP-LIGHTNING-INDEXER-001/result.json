@@ -1,0 +1,23 @@
+{
+  "artifact": "acceptance/artifacts/OP-LIGHTNING-INDEXER-001/result.json",
+  "case_id": "OP-LIGHTNING-INDEXER-001",
+  "custom_op_required": true,
+  "evidence_grade": "provisional_reference",
+  "generation_mode": "direct-copy-reference",
+  "metrics": {
+    "batch_duration_seconds": 37.28,
+    "batch_pytest_failed": 2,
+    "pytest_failed": 1,
+    "pytest_file": "tests/operators/aclnn/test_npu_lightning_indexer_op.py"
+  },
+  "next": "Clarify whether torch_npu now returns non-empty values for this scenario or the test expectation should be updated; then rerun pytest and collect dashboard golden/actual artifacts.",
+  "operator_dir": "067_npu_lightning_indexer",
+  "reason": "After latest ms_ops git pull, tests/operators/aclnn/test_npu_lightning_indexer_op.py still fails: MindSpore output matches expected and torch_out, but torch_npu torch_values shape is (1, 2, 1, 16) while the test expects an empty shape (0,).",
+  "reference_status": "skipped",
+  "repo_target": "ms_custom_ops",
+  "row": 67,
+  "stage": "ms_ops_pytest_rerun",
+  "status": "fail",
+  "torch_api": "torch_npu.npu_lightning_indexer",
+  "watch_type": "custom_op_acceptance"
+}
