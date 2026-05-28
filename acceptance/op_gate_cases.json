@@ -1528,5 +1528,115 @@
     "reference_status": "runnable",
     "expected_result_status": "not_run",
     "copied_files": 29
+  },
+  {
+    "row": 508,
+    "operator_dir": "508_npu_fused_infer_attention_score_get_max_workspace",
+    "slug": "fias-workspace",
+    "case_id": "OP-FIAS-WORKSPACE-001",
+    "torch_api": "ms.ops.custom._npu_fused_infer_attention_score_get_max_workspace_op",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "ms_ops-manual-only",
+    "reference_tests": [],
+    "reference_docs": [
+      "D:/pangu_workspace/ms_ops/docs/operators/_npu_fused_infer_attention_score_get_max_workspace.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "ms_ops"
+    ],
+    "reference_status": "manual_only",
+    "expected_result_status": "not_run",
+    "copied_files": 0
+  },
+  {
+    "row": 509,
+    "operator_dir": "509_npu_fused_infer_attention_score_v2_get_max_workspace",
+    "slug": "fias-v2-workspace",
+    "case_id": "OP-FIAS-V2-WORKSPACE-001",
+    "torch_api": "ms.ops.custom._npu_fused_infer_attention_score_v2_get_max_workspace_op",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "ms_ops-manual-only",
+    "reference_tests": [],
+    "reference_docs": [
+      "D:/pangu_workspace/ms_ops/docs/operators/_npu_fused_infer_attention_score_v2_get_max_workspace.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "ms_ops"
+    ],
+    "reference_status": "manual_only",
+    "expected_result_status": "not_run",
+    "copied_files": 0
+  },
+  {
+    "row": 510,
+    "operator_dir": "510_fast_gelu",
+    "slug": "fast-gelu",
+    "case_id": "OP-FAST-GELU-001",
+    "torch_api": "ms.ops.custom.fast_gelu",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "ms_ops-manual-only",
+    "reference_tests": [],
+    "reference_docs": [
+      "D:/pangu_workspace/ms_ops/docs/operators/fast_gelu.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "ms_ops"
+    ],
+    "reference_status": "manual_only",
+    "expected_result_status": "not_run",
+    "copied_files": 0
+  },
+  {
+    "row": 511,
+    "operator_dir": "511_geglu",
+    "slug": "geglu",
+    "case_id": "OP-GEGLU-001",
+    "torch_api": "ms.ops.custom.geglu",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "ms_ops-manual-only",
+    "reference_tests": [],
+    "reference_docs": [
+      "D:/pangu_workspace/ms_ops/docs/operators/geglu.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "ms_ops"
+    ],
+    "reference_status": "manual_only",
+    "expected_result_status": "not_run",
+    "copied_files": 0
+  },
+  {
+    "row": 512,
+    "operator_dir": "512_npu_attention_pioneer_get_max_workspace",
+    "slug": "attention-pioneer-workspace",
+    "case_id": "OP-ATTENTION-PIONEER-WORKSPACE-001",
+    "torch_api": "ms.ops.custom._npu_attention_pioneer_get_max_workspace_op",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "ms_ops-manual-only",
+    "reference_tests": [],
+    "reference_docs": [
+      "D:/pangu_workspace/ms_ops/docs/operators/_npu_attention_pioneer_get_max_workspace.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "ms_ops"
+    ],
+    "reference_status": "manual_only",
+    "expected_result_status": "not_run",
+    "copied_files": 0
   }
 ]

@@ -5,16 +5,28 @@
   "evidence_grade": "tool_contract_only",
   "generation_mode": "direct-copy-reference",
   "metrics": {
-    "pytest_file_missing": "tests/operators/aclnn/test_npu_chunk_gated_delta_rule_recurrence_op.py"
+    "pytest_file_missing": "tests/operators/aclnn/test_npu_chunk_gated_delta_rule_recurrence_op.py",
+    "pytest_file": "tests/operators/aclnn/test_npu_chunk_gated_delta_rule_recurrence_op.py",
+    "remote_pytest_attempted": 1,
+    "remote_pytest_total_failed": 37,
+    "remote_pytest_total_passed": 31,
+    "remote_pytest_total_skipped": 8,
+    "remote_pytest_duration_seconds": 845.06,
+    "remote_host": "xinwen@8.92.7.129",
+    "remote_workdir": "/home/xinwen/pangu_workspace/ms_ops",
+    "remote_env": "/home/xinwen/pangu_workspace/val_gate/init_env.sh",
+    "module": "custom_ops",
+    "output_file": "C:/Users/huawei/AppData/Local/Temp/claude/D--pangu-workspace-migration-dashboard/2866c1e0-9285-414d-80bd-b377addcc772/tasks/be5jj4u9n.output",
+    "remote_pytest_failed": 2
   },
-  "next": "Add or locate a direct ms_ops pytest for this operator, then rerun and collect dashboard golden/actual artifacts.",
+  "next": "Fix the remote ms_ops/Ascend dependency issue, then rerun tests/operators/aclnn/test_npu_chunk_gated_delta_rule_recurrence_op.py on xinwen@8.92.7.129 with custom_ops import enabled.",
   "operator_dir": "506_npu_chunk_gated_delta_rule_recurrence",
-  "reason": "After latest ms_ops git pull, no direct pytest file tests/operators/aclnn/test_npu_chunk_gated_delta_rule_recurrence_op.py exists in the remote ms_ops checkout.",
+  "reason": "Remote Ascend ms_ops pytest failed while loading omni reference: ModuleNotFoundError: No module named 'omni_custom_ops'.",
   "reference_status": "direct",
   "repo_target": "ms_custom_ops",
   "row": 506,
-  "stage": "ms_ops_pytest_probe",
-  "status": "not_run",
+  "stage": "remote_ms_ops_pytest",
+  "status": "blocked",
   "torch_api": "torch.ops.custom.npu_chunk_gated_delta_rule_recurrence",
   "watch_type": "custom_op_acceptance"
 }

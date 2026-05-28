@@ -1,13 +1,12 @@
 {
-  "artifact": "acceptance/artifacts/OP-AI-INFRA-KV-QUANT-SPARSE-FALSH-ATTENTION-001/result.json",
-  "case_id": "OP-AI-INFRA-KV-QUANT-SPARSE-FALSH-ATTENTION-001",
+  "artifact": "acceptance/artifacts/OP-GEGLU-001/result.json",
+  "case_id": "OP-GEGLU-001",
   "custom_op_required": true,
   "evidence_grade": "provisional_reference",
-  "generation_mode": "aclnn-docs-derived",
+  "generation_mode": "ms_ops-manual-only",
   "metrics": {
-    "missing_direct_test_file": 1,
-    "missing_ms_ops_mapping": 1,
-    "pytest_file": "tests/operators/aclnn/test_npu_ai_infra_kv_quant_sparse_flash_attention_op.py",
+    "manual_only_entry": 1,
+    "pytest_file": "tests/operators/aclnn/test_npu_geglu_op.py",
     "remote_pytest_attempted": 1,
     "remote_pytest_total_failed": 37,
     "remote_pytest_total_passed": 31,
@@ -20,13 +19,13 @@
     "output_file": "C:/Users/huawei/AppData/Local/Temp/claude/D--pangu-workspace-migration-dashboard/2866c1e0-9285-414d-80bd-b377addcc772/tasks/be5jj4u9n.output"
   },
   "next": "Promote to migration_evidence only after dashboard golden/actual artifacts are collected and compared for this operator.",
-  "operator_dir": "016_npu_ai_infra_kv_quant_sparse_falsh_attention",
-  "reason": "Remote Ascend ms_ops pytest batch completed with no failures reported for tests/operators/aclnn/test_npu_ai_infra_kv_quant_sparse_flash_attention_op.py.",
-  "reference_status": "indirect",
+  "operator_dir": "511_geglu",
+  "reason": "Remote Ascend ms_ops pytest batch completed with no failures reported for tests/operators/aclnn/test_npu_geglu_op.py.",
+  "reference_status": "manual_only",
   "repo_target": "ms_custom_ops",
-  "row": 16,
+  "row": 511,
   "stage": "remote_ms_ops_pytest",
   "status": "pass",
-  "torch_api": "torch.ops.custom.npu_ai_infra_kv_quant_sparse_falsh_attention",
+  "torch_api": "ms.ops.custom.geglu",
   "watch_type": "custom_op_acceptance"
 }

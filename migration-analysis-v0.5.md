@@ -72,7 +72,7 @@ ms_custom_ops
 | `vllm + omni_npu` | 78 | Bridge、MS comm state、HCCL 复用、Engine/API、PD/Serving、安全门禁。 |
 | `omni_models` | 34 | MLA/MoE/MTP/Embedding/LM Head、权重/config、TP/EP/EPLB、首发外能力标注。 |
 | `ms_custom_ops` | 14 | attention/KV/MoE/distributed/quant 等算子等价和 unsupported/xfail 闭环。 |
-| **总计** | **126** | 文档设计口径；Dashboard 执行口径为 173 个跟踪项。 |
+| **总计** | **126** | 文档设计口径；Dashboard 执行口径为 178 个跟踪项。 |
 
 ### 2.3 测试层级
 
@@ -243,7 +243,7 @@ NPUModelRunner.execute_model()
 
 ### 5.3 确认开发的自定义算子逐项清单
 
-本节承接 `op-analysis.md` 中 `Col I (自定义算子接入)` 的最新“是”类标签，仅纳入：`是`、`是，omni-ops-master`、`是，omni-ops-v1.5.0`。截至 v0.5，共 61 个执行 Row：`是` 45 个、`是，omni-ops-master` 9 个、`是，omni-ops-v1.5.0` 7 个。
+本节承接 `op-analysis.md` 中 `Col I (自定义算子接入)` 的最新“是”类标签，仅纳入：`是`、`是，omni-ops-master`、`是，omni-ops-v1.5.0`。截至 v0.5，共 66 个执行 Row：原 dashboard 61 个，加上 ms_ops operation manual-only 5 个。
 
 Dashboard 中这些 Row 会展开为实际跟踪项，ID 形如 `4.1#505`；`4.1` - `4.14` 只作为能力组/折叠标题，不计入完成率。
 
@@ -310,6 +310,11 @@ Dashboard 中这些 Row 会展开为实际跟踪项，ID 形如 `4.1#505`；`4.1
 | 505 | `torch.ops.custom.npu_fused_infer_attention_sink_metadata` | 是，omni-ops-master | `4.1` | mindspore.ops.fused_infer_attention_score | ops_gate copied 30；sink metadata 语义需结合 golden 核对 |
 | 506 | `torch.ops.custom.npu_chunk_gated_delta_rule_recurrence` | 是，omni-ops-master | `4.14` | - | ops_gate copied 24；待确认/补充 golden 或 xfail 依据 |
 | 507 | `torch.ops.custom.npu_lower_triangular_inverse` | 是，omni-ops-master | `4.14` | - | ops_gate copied 29；待确认/补充 golden 或 xfail 依据 |
+| 508 | `ms.ops.custom._npu_fused_infer_attention_score_get_max_workspace_op` | ms_ops manual-only | `4.1` | _npu_fused_infer_attention_score_get_max_workspace_op | ms_ops operation manual listed; add dashboard acceptance coverage and keep open until real result evidence passes. |
+| 509 | `ms.ops.custom._npu_fused_infer_attention_score_v2_get_max_workspace_op` | ms_ops manual-only | `4.1` | _npu_fused_infer_attention_score_v2_get_max_workspace_op | ms_ops operation manual listed; add dashboard acceptance coverage and keep open until real result evidence passes. |
+| 510 | `ms.ops.custom.fast_gelu` | ms_ops manual-only | `4.5` | ms.ops.custom.fast_gelu | ms_ops Function-layer API listed; add dashboard acceptance coverage and keep open until real result evidence passes. |
+| 511 | `ms.ops.custom.geglu` | ms_ops manual-only | `4.5` | ms.ops.custom.geglu | ms_ops Function-layer API listed; add dashboard acceptance coverage and keep open until real result evidence passes. |
+| 512 | `ms.ops.custom._npu_attention_pioneer_get_max_workspace_op` | ms_ops manual-only | `4.1` | _npu_attention_pioneer_get_max_workspace_op | ms_ops operation manual listed; Ascend950 workspace helper remains open until executable acceptance evidence exists. |
 
 处理口径：
 
@@ -629,13 +634,13 @@ failure:
 | `omni_models` | 34 | 24 | 7 | 3 | 0 |
 | `ms_custom_ops` | 14 | 10 | 3 | 1 | 0 |
 | **文档设计总计** | **126** | **96** | **26** | **4** | **0** |
-| **Dashboard 执行总计** | **173** | - | - | - | **0** |
+| **Dashboard 执行总计** | **178** | - | - | - | **0** |
 
 
 Dashboard 执行口径：
 
 - 文档 checkbox 设计口径仍为 126 个聚合验收项。
-- Dashboard 执行口径为 173 个实际跟踪项：78 (`vllm_omni_npu`) + 34 (`omni_models`) + 61 (`ms_custom_ops` Row)。
+- Dashboard 执行口径为 178 个实际跟踪项：78 (`vllm_omni_npu`) + 34 (`omni_models`) + 66 (`ms_custom_ops` Row)。
 - `ms_custom_ops` 的 `4.1` - `4.14` 在 Dashboard 中只作为算子能力组/折叠标题，不计入完成率；第 5.3 节 Row 子项才参与状态和完成度统计。
 
 覆盖口径：
@@ -783,15 +788,15 @@ Dashboard 执行口径：
 
 ### E.3 ms_custom_ops
 
-> Dashboard 中 `4.1` - `4.14` 为折叠分组，不计入完成率；实际计数来自第 5.3 节的 61 个 Row 子项。
+> Dashboard 中 `4.1` - `4.14` 为折叠分组，不计入完成率；实际计数来自第 5.3 节的 66 个 Row 子项。
 
 | Checkbox | 优先级 | 验收点 | 对应 5.3 Row | 逐项数 |
 |---|---|---|---|---:|
-| [ ] `4.1` | P0 | Attention fused/sink。 | 21, 38, 43, 48, 56, 58, 60, 71, 99, 505 | 10 |
+| [ ] `4.1` | P0 | Attention fused/sink。 | 21, 38, 43, 48, 56, 58, 60, 71, 99, 505, 508, 509, 512 | 13 |
 | [ ] `4.2` | P0 | KV cache scatter/update。 | 19, 48, 93, 94 | 4 |
 | [ ] `4.3` | P0 | KV RMSNorm + RoPE cache。 | 17, 66 | 2 |
 | [ ] `4.4` | P0 | Pangu lightning / sparse attention。 | 16, 20, 23, 26, 44, 67, 71 | 7 |
-| [ ] `4.5` | P0 | Norm / RoPE / SwiGLU。 | 45, 46, 65, 87, 91, 92, 95, 101 | 8 |
+| [ ] `4.5` | P0 | Norm / RoPE / SwiGLU。 | 45, 46, 65, 87, 91, 92, 95, 101, 510, 511 | 10 |
 | [ ] `4.6` | P0 | MoE local routing + expert compute。 | 61, 63, 72, 76, 78, 80, 82, 84 | 8 |
 | [ ] `4.7` | P1 | MoE distribute dispatch/combine。 | 74, 75 | 2 |
 | [ ] `4.8` | P1 | all_to_all_single / re-routing。 | 85 | 1 |
