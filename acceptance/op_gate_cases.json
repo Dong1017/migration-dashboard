@@ -1,0 +1,1532 @@
+[
+  {
+    "row": 14,
+    "operator_dir": "014_npu_aggregate_hidden",
+    "slug": "aggregate-hidden",
+    "case_id": "OP-AGGREGATE-HIDDEN-001",
+    "torch_api": "torch.ops.custom.npu_aggregate_hidden",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "manual-from-metadata",
+    "reference_tests": [],
+    "reference_docs": [],
+    "reference_impls": [],
+    "source_repos": [],
+    "reference_status": "missing",
+    "expected_result_status": "blocked",
+    "copied_files": 0
+  },
+  {
+    "row": 15,
+    "operator_dir": "015_npu_ai_infra_fused_causal_conv1d",
+    "slug": "ai-infra-fused-causal-conv1d",
+    "case_id": "OP-AI-INFRA-FUSED-CAUSAL-CONV1D-001",
+    "torch_api": "torch.ops.custom.npu_ai_infra_fused_causal_conv1d",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "manual-from-metadata",
+    "reference_tests": [],
+    "reference_docs": [],
+    "reference_impls": [],
+    "source_repos": [],
+    "reference_status": "missing",
+    "expected_result_status": "blocked",
+    "copied_files": 0
+  },
+  {
+    "row": 16,
+    "operator_dir": "016_npu_ai_infra_kv_quant_sparse_falsh_attention",
+    "slug": "ai-infra-kv-quant-sparse-falsh-attention",
+    "case_id": "OP-AI-INFRA-KV-QUANT-SPARSE-FALSH-ATTENTION-001",
+    "torch_api": "torch.ops.custom.npu_ai_infra_kv_quant_sparse_falsh_attention",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "aclnn-docs-derived",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/016_npu_ai_infra_kv_quant_sparse_falsh_attention/MindSpore/tests/ut/cpp/ops/test_ops_sparse_flash_attention.cc"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/016_npu_ai_infra_kv_quant_sparse_falsh_attention/MindSpore/docs/api/api_python/mindspore.ops.rst",
+      "D:/pangu_workspace/ops_gate/016_npu_ai_infra_kv_quant_sparse_falsh_attention/MindSpore/docs/api/api_python/ops/mindspore.ops.sparse_flash_attention.rst",
+      "D:/pangu_workspace/ops_gate/016_npu_ai_infra_kv_quant_sparse_falsh_attention/MindSpore/docs/api/api_python_en/mindspore.ops.rst",
+      "D:/pangu_workspace/ops_gate/016_npu_ai_infra_kv_quant_sparse_falsh_attention/op-plugin/docs/context/torch_npu-npu_kv_quant_sparse_flash_attention.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "MindSpore",
+      "op-plugin"
+    ],
+    "reference_status": "indirect",
+    "expected_result_status": "not_run",
+    "copied_files": 16
+  },
+  {
+    "row": 17,
+    "operator_dir": "017_npu_ai_infra_kv_rmsnorm_rope_cache_v2",
+    "slug": "ai-infra-kv-rmsnorm-rope-cache-v2",
+    "case_id": "OP-AI-INFRA-KV-RMSNORM-ROPE-CACHE-V2-001",
+    "torch_api": "torch.ops.custom.npu_ai_infra_kv_rmsnorm_rope_cache_v2",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "manual-from-metadata",
+    "reference_tests": [],
+    "reference_docs": [],
+    "reference_impls": [],
+    "source_repos": [],
+    "reference_status": "missing",
+    "expected_result_status": "blocked",
+    "copied_files": 0
+  },
+  {
+    "row": 18,
+    "operator_dir": "018_npu_ai_infra_manifold_constrained_hyper_connection_post",
+    "slug": "ai-infra-manifold-constrained-hyper-connection-post",
+    "case_id": "OP-AI-INFRA-MANIFOLD-CONSTRAINED-HYPER-CONNECTION-POST-001",
+    "torch_api": "torch.ops.custom.npu_ai_infra_manifold_constrained_hyper_connection_post",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "manual-from-metadata",
+    "reference_tests": [],
+    "reference_docs": [],
+    "reference_impls": [],
+    "source_repos": [],
+    "reference_status": "missing",
+    "expected_result_status": "blocked",
+    "copied_files": 0
+  },
+  {
+    "row": 19,
+    "operator_dir": "019_npu_ai_infra_scatter_block_update",
+    "slug": "ai-infra-scatter-block-update",
+    "case_id": "OP-AI-INFRA-SCATTER-BLOCK-UPDATE-001",
+    "torch_api": "torch.ops.custom.npu_ai_infra_scatter_block_update_",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "manual-from-metadata",
+    "reference_tests": [],
+    "reference_docs": [],
+    "reference_impls": [],
+    "source_repos": [],
+    "reference_status": "missing",
+    "expected_result_status": "blocked",
+    "copied_files": 0
+  },
+  {
+    "row": 20,
+    "operator_dir": "020_npu_ai_infra_sparse_flash_attention_pioneer",
+    "slug": "ai-infra-sparse-flash-attention-pioneer",
+    "case_id": "OP-AI-INFRA-SPARSE-FLASH-ATTENTION-PIONEER-001",
+    "torch_api": "torch.ops.custom.npu_ai_infra_sparse_flash_attention_pioneer",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "aclnn-docs-derived",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/020_npu_ai_infra_sparse_flash_attention_pioneer/MindSpore/tests/ut/cpp/ops/test_ops_sparse_flash_attention.cc"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/020_npu_ai_infra_sparse_flash_attention_pioneer/MindSpore/docs/api/api_python/mindspore.ops.rst",
+      "D:/pangu_workspace/ops_gate/020_npu_ai_infra_sparse_flash_attention_pioneer/MindSpore/docs/api/api_python/ops/mindspore.ops.sparse_flash_attention.rst",
+      "D:/pangu_workspace/ops_gate/020_npu_ai_infra_sparse_flash_attention_pioneer/MindSpore/docs/api/api_python_en/mindspore.ops.rst",
+      "D:/pangu_workspace/ops_gate/020_npu_ai_infra_sparse_flash_attention_pioneer/op-plugin/docs/context/torch_npu-npu_kv_quant_sparse_flash_attention.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "MindSpore",
+      "op-plugin"
+    ],
+    "reference_status": "indirect",
+    "expected_result_status": "not_run",
+    "copied_files": 16
+  },
+  {
+    "row": 21,
+    "operator_dir": "021_npu_fused_infer_attention_sink",
+    "slug": "fused-infer-attention-sink",
+    "case_id": "OP-FUSED-INFER-ATTENTION-SINK-001",
+    "torch_api": "torch.ops.custom.npu_fused_infer_attention_sink",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "manual-from-metadata",
+    "reference_tests": [],
+    "reference_docs": [],
+    "reference_impls": [],
+    "source_repos": [],
+    "reference_status": "missing",
+    "expected_result_status": "blocked",
+    "copied_files": 0
+  },
+  {
+    "row": 23,
+    "operator_dir": "023_npu_lightning_indexer_enhance",
+    "slug": "lightning-indexer-enhance",
+    "case_id": "OP-LIGHTNING-INDEXER-ENHANCE-001",
+    "torch_api": "torch.ops.custom.npu_lightning_indexer_enhance",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "aclnn-docs-derived",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/023_npu_lightning_indexer_enhance/MindSpore/tests/st/ops/test_ops_lightning_indexer.py",
+      "D:/pangu_workspace/ops_gate/023_npu_lightning_indexer_enhance/op-plugin/test/allowlist_for_publicAPI.json",
+      "D:/pangu_workspace/ops_gate/023_npu_lightning_indexer_enhance/op-plugin/test/core_tests/test_fake_tensor.py",
+      "D:/pangu_workspace/ops_gate/023_npu_lightning_indexer_enhance/op-plugin/test/core_tests/torch_npu_OpApi_schema_all.json"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/023_npu_lightning_indexer_enhance/MindSpore/docs/api/api_python/mindspore.ops.rst",
+      "D:/pangu_workspace/ops_gate/023_npu_lightning_indexer_enhance/MindSpore/docs/api/api_python/ops/mindspore.ops.func_lightning_indexer.rst",
+      "D:/pangu_workspace/ops_gate/023_npu_lightning_indexer_enhance/MindSpore/docs/api/api_python/ops/mindspore.ops.sparse_flash_attention.rst",
+      "D:/pangu_workspace/ops_gate/023_npu_lightning_indexer_enhance/MindSpore/docs/api/api_python_en/mindspore.ops.rst"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "MindSpore",
+      "op-plugin"
+    ],
+    "reference_status": "indirect",
+    "expected_result_status": "not_run",
+    "copied_files": 16
+  },
+  {
+    "row": 24,
+    "operator_dir": "024_npu_manifold_constrained_hyper_connection_pre",
+    "slug": "manifold-constrained-hyper-connection-pre",
+    "case_id": "OP-MANIFOLD-CONSTRAINED-HYPER-CONNECTION-PRE-001",
+    "torch_api": "torch.ops.custom.npu_manifold_constrained_hyper_connection_pre",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "manual-from-metadata",
+    "reference_tests": [],
+    "reference_docs": [],
+    "reference_impls": [],
+    "source_repos": [],
+    "reference_status": "missing",
+    "expected_result_status": "blocked",
+    "copied_files": 0
+  },
+  {
+    "row": 25,
+    "operator_dir": "025_npu_sinkhorn",
+    "slug": "sinkhorn",
+    "case_id": "OP-SINKHORN-001",
+    "torch_api": "torch.ops.custom.npu_sinkhorn",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "manual-from-metadata",
+    "reference_tests": [],
+    "reference_docs": [],
+    "reference_impls": [],
+    "source_repos": [],
+    "reference_status": "missing",
+    "expected_result_status": "blocked",
+    "copied_files": 0
+  },
+  {
+    "row": 26,
+    "operator_dir": "026_npu_sparse_flash_attention_enhance",
+    "slug": "sparse-flash-attention-enhance",
+    "case_id": "OP-SPARSE-FLASH-ATTENTION-ENHANCE-001",
+    "torch_api": "torch.ops.custom.npu_sparse_flash_attention_enhance",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "aclnn-docs-derived",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/026_npu_sparse_flash_attention_enhance/MindSpore/tests/ut/cpp/ops/test_ops_sparse_flash_attention.cc"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/026_npu_sparse_flash_attention_enhance/MindSpore/docs/api/api_python/mindspore.ops.rst",
+      "D:/pangu_workspace/ops_gate/026_npu_sparse_flash_attention_enhance/MindSpore/docs/api/api_python/ops/mindspore.ops.sparse_flash_attention.rst",
+      "D:/pangu_workspace/ops_gate/026_npu_sparse_flash_attention_enhance/MindSpore/docs/api/api_python_en/mindspore.ops.rst",
+      "D:/pangu_workspace/ops_gate/026_npu_sparse_flash_attention_enhance/op-plugin/docs/context/torch_npu-npu_kv_quant_sparse_flash_attention.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "MindSpore",
+      "op-plugin"
+    ],
+    "reference_status": "indirect",
+    "expected_result_status": "not_run",
+    "copied_files": 16
+  },
+  {
+    "row": 38,
+    "operator_dir": "038_npu_attention_pioneer",
+    "slug": "attention-pioneer",
+    "case_id": "OP-ATTENTION-PIONEER-001",
+    "torch_api": "torch_npu._npu_attention_pioneer",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "manual-from-metadata",
+    "reference_tests": [],
+    "reference_docs": [],
+    "reference_impls": [],
+    "source_repos": [],
+    "reference_status": "missing",
+    "expected_result_status": "blocked",
+    "copied_files": 0
+  },
+  {
+    "row": 43,
+    "operator_dir": "043_npu_fused_infer_attention_score_v2_infer_output",
+    "slug": "fused-infer-attention-score-v2-infer-output",
+    "case_id": "OP-FUSED-INFER-ATTENTION-SCORE-V2-INFER-OUTPUT-001",
+    "torch_api": "torch_npu._npu_fused_infer_attention_score_v2_infer_output",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/043_npu_fused_infer_attention_score_v2_infer_output/op-plugin/test/test_custom_ops/test_npu_fused_infer_attention_score_v2_with_workspace.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/043_npu_fused_infer_attention_score_v2_infer_output/MindSpore/docs/api/api_python/mindspore.ops.rst",
+      "D:/pangu_workspace/ops_gate/043_npu_fused_infer_attention_score_v2_infer_output/MindSpore/docs/api/api_python/ops/mindspore.ops.func_fused_infer_attention_score.rst",
+      "D:/pangu_workspace/ops_gate/043_npu_fused_infer_attention_score_v2_infer_output/MindSpore/docs/api/api_python_en/mindspore.ops.rst",
+      "D:/pangu_workspace/ops_gate/043_npu_fused_infer_attention_score_v2_infer_output/op-plugin/docs/context/torch_npu-npu-graph_task_group_begin.md"
+    ],
+    "reference_impls": [
+      "D:/pangu_workspace/ops_gate/043_npu_fused_infer_attention_score_v2_infer_output/op-plugin/op_plugin/ops/opapi/FusedInferAttentionScoreV2KernelNpuOpApi.cpp",
+      "D:/pangu_workspace/ops_gate/043_npu_fused_infer_attention_score_v2_infer_output/torch_npu/torch_npu/csrc/npu/Graph.cpp"
+    ],
+    "source_repos": [
+      "MindSpore",
+      "op-plugin",
+      "torch_npu"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 25
+  },
+  {
+    "row": 44,
+    "operator_dir": "044_npu_kv_quant_sparse_flash_attention_pioneer",
+    "slug": "kv-quant-sparse-flash-attention-pioneer",
+    "case_id": "OP-KV-QUANT-SPARSE-FLASH-ATTENTION-PIONEER-001",
+    "torch_api": "torch_npu._npu_kv_quant_sparse_flash_attention_pioneer",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "manual-from-metadata",
+    "reference_tests": [],
+    "reference_docs": [],
+    "reference_impls": [],
+    "source_repos": [],
+    "reference_status": "missing",
+    "expected_result_status": "blocked",
+    "copied_files": 0
+  },
+  {
+    "row": 45,
+    "operator_dir": "045_npu_add_rms_norm",
+    "slug": "add-rms-norm",
+    "case_id": "OP-ADD-RMSNORM-001",
+    "torch_api": "torch_npu.npu_add_rms_norm",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/045_npu_add_rms_norm/op-plugin/test/test_custom_ops/test_npu_add_rms_norm.py"
+    ],
+    "reference_docs": [],
+    "reference_impls": [],
+    "source_repos": [
+      "op-plugin",
+      "torch_npu"
+    ],
+    "reference_status": "direct",
+    "expected_result_status": "not_run",
+    "copied_files": 15
+  },
+  {
+    "row": 46,
+    "operator_dir": "046_npu_apply_rotary_pos_emb",
+    "slug": "apply-rotary-pos-emb",
+    "case_id": "OP-APPLY-ROTARY-POS-EMB-001",
+    "torch_api": "torch_npu.npu_apply_rotary_pos_emb",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/046_npu_apply_rotary_pos_emb/op-plugin/test/test_custom_ops/test_npu_apply_rotary_pos_emb.py"
+    ],
+    "reference_docs": [],
+    "reference_impls": [
+      "D:/pangu_workspace/ops_gate/046_npu_apply_rotary_pos_emb/op-plugin/op_plugin/ops/opapi/ApplyRotaryPosEmbNpuOpApi.cpp"
+    ],
+    "source_repos": [
+      "op-plugin",
+      "torch_npu"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 7
+  },
+  {
+    "row": 48,
+    "operator_dir": "048_npu_attention_update",
+    "slug": "attention-update",
+    "case_id": "OP-ATTENTION-UPDATE-001",
+    "torch_api": "torch_npu.npu_attention_update",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/048_npu_attention_update/op-plugin/test/test_custom_ops/test_npu_attention_update.py"
+    ],
+    "reference_docs": [],
+    "reference_impls": [
+      "D:/pangu_workspace/ops_gate/048_npu_attention_update/op-plugin/op_plugin/ops/opapi/AttentionUpdateKernelNpuOpApi.cpp"
+    ],
+    "source_repos": [
+      "op-plugin"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 6
+  },
+  {
+    "row": 49,
+    "operator_dir": "049_npu_dequant_swiglu_quant",
+    "slug": "dequant-swiglu-quant",
+    "case_id": "OP-DEQUANT-SWIGLU-QUANT-001",
+    "torch_api": "torch_npu.npu_dequant_swiglu_quant",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/049_npu_dequant_swiglu_quant/op-plugin/test/test_custom_ops/test_npu_dequant_swiglu_quant.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/049_npu_dequant_swiglu_quant/op-plugin/docs/context/torch_npu-npu_dequant_swiglu_quant.md",
+      "D:/pangu_workspace/ops_gate/049_npu_dequant_swiglu_quant/op-plugin/docs/context/torch_npu_list.md",
+      "D:/pangu_workspace/ops_gate/049_npu_dequant_swiglu_quant/op-plugin/docs/menu_Pytorch_API.md"
+    ],
+    "reference_impls": [
+      "D:/pangu_workspace/ops_gate/049_npu_dequant_swiglu_quant/op-plugin/op_plugin/ops/opapi/DequantSwigluQuantOpApi.cpp"
+    ],
+    "source_repos": [
+      "op-plugin"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 8
+  },
+  {
+    "row": 52,
+    "operator_dir": "052_npu_dynamic_quant",
+    "slug": "dynamic-quant",
+    "case_id": "OP-DYNAMIC-QUANT-001",
+    "torch_api": "torch_npu.npu_dynamic_quant",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/052_npu_dynamic_quant/op-plugin/test/test_custom_ops/test_npu_dynamic_quant.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/052_npu_dynamic_quant/op-plugin/docs/context/torch_npu-npu_dynamic_quant.md",
+      "D:/pangu_workspace/ops_gate/052_npu_dynamic_quant/op-plugin/docs/context/torch_npu-npu_dynamic_quant_asymmetric.md",
+      "D:/pangu_workspace/ops_gate/052_npu_dynamic_quant/op-plugin/docs/context/torch_npu_list.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "op-plugin",
+      "torch_npu"
+    ],
+    "reference_status": "direct",
+    "expected_result_status": "not_run",
+    "copied_files": 15
+  },
+  {
+    "row": 55,
+    "operator_dir": "055_npu_fused_causal_conv1d",
+    "slug": "fused-causal-conv1d",
+    "case_id": "OP-FUSED-CAUSAL-CONV1D-001",
+    "torch_api": "torch_npu.npu_fused_causal_conv1d",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "manual-from-metadata",
+    "reference_tests": [],
+    "reference_docs": [],
+    "reference_impls": [],
+    "source_repos": [],
+    "reference_status": "missing",
+    "expected_result_status": "blocked",
+    "copied_files": 0
+  },
+  {
+    "row": 56,
+    "operator_dir": "056_npu_fused_infer_attention_score",
+    "slug": "fused-infer-attention-score",
+    "case_id": "OP-FUSED-INFER-ATTENTION-SCORE-001",
+    "torch_api": "torch_npu.npu_fused_infer_attention_score",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/056_npu_fused_infer_attention_score/op-plugin/test/test_custom_ops/test_npu_fused_infer_attention_score.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/056_npu_fused_infer_attention_score/op-plugin/docs/context/torch_npu-npu-graph_task_group_begin.md",
+      "D:/pangu_workspace/ops_gate/056_npu_fused_infer_attention_score/op-plugin/docs/context/torch_npu-npu-graph_task_group_end.md",
+      "D:/pangu_workspace/ops_gate/056_npu_fused_infer_attention_score/op-plugin/docs/context/torch_npu-npu-graph_task_update_begin.md"
+    ],
+    "reference_impls": [
+      "D:/pangu_workspace/ops_gate/056_npu_fused_infer_attention_score/torch_npu/torch_npu/csrc/npu/Graph.cpp"
+    ],
+    "source_repos": [
+      "op-plugin",
+      "torch_npu"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 16
+  },
+  {
+    "row": 58,
+    "operator_dir": "058_npu_fused_infer_attention_score_v2",
+    "slug": "fused-infer-attention-score-v2",
+    "case_id": "OP-FUSED-INFER-ATTENTION-SCORE-V2-001",
+    "torch_api": "torch_npu.npu_fused_infer_attention_score_v2",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/058_npu_fused_infer_attention_score_v2/op-plugin/test/test_custom_ops/test_npu_fused_infer_attention_score_v2.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/058_npu_fused_infer_attention_score_v2/op-plugin/docs/context/torch_npu-npu_fused_infer_attention_score_v2.md",
+      "D:/pangu_workspace/ops_gate/058_npu_fused_infer_attention_score_v2/op-plugin/docs/context/torch_npu_list.md",
+      "D:/pangu_workspace/ops_gate/058_npu_fused_infer_attention_score_v2/op-plugin/docs/menu_Pytorch_API.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "op-plugin",
+      "torch_npu"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 12
+  },
+  {
+    "row": 60,
+    "operator_dir": "060_npu_fusion_attention",
+    "slug": "fusion-attention",
+    "case_id": "OP-FUSION-ATTENTION-001",
+    "torch_api": "torch_npu.npu_fusion_attention",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/060_npu_fusion_attention/op-plugin/test/test_custom_ops/test_npu_flash_attention_v2.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/060_npu_fusion_attention/op-plugin/docs/context/scrap_API.md",
+      "D:/pangu_workspace/ops_gate/060_npu_fusion_attention/op-plugin/docs/context/torch_npu-npu_fusion_attention.md",
+      "D:/pangu_workspace/ops_gate/060_npu_fusion_attention/op-plugin/docs/context/torch_npu_list.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "op-plugin",
+      "torch_npu"
+    ],
+    "reference_status": "direct",
+    "expected_result_status": "not_run",
+    "copied_files": 19
+  },
+  {
+    "row": 61,
+    "operator_dir": "061_npu_grouped_matmul",
+    "slug": "grouped-matmul",
+    "case_id": "OP-GROUPED-MATMUL-001",
+    "torch_api": "torch_npu.npu_grouped_matmul",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/061_npu_grouped_matmul/op-plugin/test/test_custom_ops/test_npu_grouped_matmul_add.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/061_npu_grouped_matmul/op-plugin/docs/context/torch_npu-npu_grouped_matmul.md",
+      "D:/pangu_workspace/ops_gate/061_npu_grouped_matmul/op-plugin/docs/context/torch_npu-npu_grouped_matmul_finalize_routing.md",
+      "D:/pangu_workspace/ops_gate/061_npu_grouped_matmul/op-plugin/docs/context/torch_npu-npu_grouped_matmul_swiglu_quant_v2.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "op-plugin",
+      "torch_npu"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 18
+  },
+  {
+    "row": 63,
+    "operator_dir": "063_npu_grouped_matmul_finalize_routing",
+    "slug": "grouped-matmul-finalize-routing",
+    "case_id": "OP-GROUPED-MATMUL-FINALIZE-ROUTING-001",
+    "torch_api": "torch_npu.npu_grouped_matmul_finalize_routing",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/063_npu_grouped_matmul_finalize_routing/op-plugin/test/test_custom_ops/test_npu_grouped_matmul_finalize_routing.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/063_npu_grouped_matmul_finalize_routing/op-plugin/docs/context/torch_npu-npu_grouped_matmul_finalize_routing.md",
+      "D:/pangu_workspace/ops_gate/063_npu_grouped_matmul_finalize_routing/op-plugin/docs/menu_Pytorch_API.md"
+    ],
+    "reference_impls": [
+      "D:/pangu_workspace/ops_gate/063_npu_grouped_matmul_finalize_routing/op-plugin/op_plugin/ops/opapi/GroupedMatmulFinalizeRoutingKernelNpuOpApi.cpp"
+    ],
+    "source_repos": [
+      "op-plugin"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 8
+  },
+  {
+    "row": 65,
+    "operator_dir": "065_npu_interleave_rope",
+    "slug": "interleave-rope",
+    "case_id": "OP-INTERLEAVE-ROPE-001",
+    "torch_api": "torch_npu.npu_interleave_rope",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "aclnn-docs-derived",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/065_npu_interleave_rope/op-plugin/test/core_tests/torch_npu_OpApi_schema_all.json"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/065_npu_interleave_rope/op-plugin/docs/context/torch_npu-npu_interleave_rope.md",
+      "D:/pangu_workspace/ops_gate/065_npu_interleave_rope/op-plugin/docs/context/torch_npu_list.md",
+      "D:/pangu_workspace/ops_gate/065_npu_interleave_rope/op-plugin/docs/menu_Pytorch_API.md"
+    ],
+    "reference_impls": [
+      "D:/pangu_workspace/ops_gate/065_npu_interleave_rope/op-plugin/op_plugin/ops/opapi/InterleaveRopeNpuOpApi.cpp"
+    ],
+    "source_repos": [
+      "op-plugin"
+    ],
+    "reference_status": "indirect",
+    "expected_result_status": "not_run",
+    "copied_files": 7
+  },
+  {
+    "row": 66,
+    "operator_dir": "066_npu_kv_rmsnorm_rope_cache",
+    "slug": "kv-rmsnorm-rope-cache",
+    "case_id": "OP-KV-RMSNORM-ROPE-CACHE-001",
+    "torch_api": "torch_npu.npu_kv_rmsnorm_rope_cache",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/066_npu_kv_rmsnorm_rope_cache/op-plugin/test/test_custom_ops/test_npu_kv_rms_norm_rope_cache.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/066_npu_kv_rmsnorm_rope_cache/op-plugin/docs/context/torch_npu-npu_kv_rmsnorm_rope_cache.md",
+      "D:/pangu_workspace/ops_gate/066_npu_kv_rmsnorm_rope_cache/op-plugin/docs/context/torch_npu_list.md",
+      "D:/pangu_workspace/ops_gate/066_npu_kv_rmsnorm_rope_cache/op-plugin/docs/menu_Pytorch_API.md"
+    ],
+    "reference_impls": [
+      "D:/pangu_workspace/ops_gate/066_npu_kv_rmsnorm_rope_cache/op-plugin/op_plugin/ops/opapi/KvRmsNormRopeCacheNpuOpApi.cpp"
+    ],
+    "source_repos": [
+      "op-plugin"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 8
+  },
+  {
+    "row": 67,
+    "operator_dir": "067_npu_lightning_indexer",
+    "slug": "lightning-indexer",
+    "case_id": "OP-LIGHTNING-INDEXER-001",
+    "torch_api": "torch_npu.npu_lightning_indexer",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/067_npu_lightning_indexer/op-plugin/test/test_custom_ops/test_npu_lightning_indexer.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/067_npu_lightning_indexer/op-plugin/docs/context/torch_npu-npu_lightning_indexer.md",
+      "D:/pangu_workspace/ops_gate/067_npu_lightning_indexer/op-plugin/docs/context/torch_npu-npu_sparse_lightning_indexer_grad_kl_loss.md",
+      "D:/pangu_workspace/ops_gate/067_npu_lightning_indexer/op-plugin/docs/context/torch_npu_list.md",
+      "D:/pangu_workspace/ops_gate/067_npu_lightning_indexer/op-plugin/docs/menu_Pytorch_API.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "MindSpore",
+      "op-plugin"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 9
+  },
+  {
+    "row": 68,
+    "operator_dir": "068_npu_mhc_post",
+    "slug": "mhc-post",
+    "case_id": "OP-MHC-POST-001",
+    "torch_api": "torch_npu.npu_mhc_post",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "manual-from-metadata",
+    "reference_tests": [],
+    "reference_docs": [],
+    "reference_impls": [],
+    "source_repos": [],
+    "reference_status": "missing",
+    "expected_result_status": "blocked",
+    "copied_files": 0
+  },
+  {
+    "row": 69,
+    "operator_dir": "069_npu_mhc_pre",
+    "slug": "mhc-pre",
+    "case_id": "OP-MHC-PRE-001",
+    "torch_api": "torch_npu.npu_mhc_pre",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "manual-from-metadata",
+    "reference_tests": [],
+    "reference_docs": [],
+    "reference_impls": [],
+    "source_repos": [],
+    "reference_status": "missing",
+    "expected_result_status": "blocked",
+    "copied_files": 0
+  },
+  {
+    "row": 70,
+    "operator_dir": "070_npu_mhc_sinkhorn",
+    "slug": "mhc-sinkhorn",
+    "case_id": "OP-MHC-SINKHORN-001",
+    "torch_api": "torch_npu.npu_mhc_sinkhorn",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "manual-from-metadata",
+    "reference_tests": [],
+    "reference_docs": [],
+    "reference_impls": [],
+    "source_repos": [],
+    "reference_status": "missing",
+    "expected_result_status": "blocked",
+    "copied_files": 0
+  },
+  {
+    "row": 71,
+    "operator_dir": "071_npu_mla_prolog_v3",
+    "slug": "mla-prolog-v3",
+    "case_id": "OP-MLA-PROLOG-V3-001",
+    "torch_api": "torch_npu.npu_mla_prolog_v3",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/071_npu_mla_prolog_v3/op-plugin/test/test_custom_ops/test_mla_prolog_v3.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/071_npu_mla_prolog_v3/op-plugin/docs/context/torch_npu-npu_mla_prolog_v2.md",
+      "D:/pangu_workspace/ops_gate/071_npu_mla_prolog_v3/op-plugin/docs/context/torch_npu_list.md",
+      "D:/pangu_workspace/ops_gate/071_npu_mla_prolog_v3/op-plugin/docs/menu_Pytorch_API.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "op-plugin"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 8
+  },
+  {
+    "row": 72,
+    "operator_dir": "072_npu_moe_compute_expert_tokens",
+    "slug": "moe-compute-expert-tokens",
+    "case_id": "OP-MOE-COMPUTE-EXPERT-TOKENS-001",
+    "torch_api": "torch_npu.npu_moe_compute_expert_tokens",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/072_npu_moe_compute_expert_tokens/op-plugin/test/test_custom_ops/test_npu_moe_compute_tokens.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/072_npu_moe_compute_expert_tokens/op-plugin/docs/context/torch_npu-npu_moe_compute_expert_tokens.md",
+      "D:/pangu_workspace/ops_gate/072_npu_moe_compute_expert_tokens/op-plugin/docs/context/torch_npu_list.md",
+      "D:/pangu_workspace/ops_gate/072_npu_moe_compute_expert_tokens/op-plugin/docs/menu_Pytorch_API.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "op-plugin",
+      "torch_npu"
+    ],
+    "reference_status": "direct",
+    "expected_result_status": "not_run",
+    "copied_files": 13
+  },
+  {
+    "row": 74,
+    "operator_dir": "074_npu_moe_distribute_combine_v2",
+    "slug": "moe-distribute-combine-v2",
+    "case_id": "OP-MOE-DISTRIBUTE-COMBINE-V2-001",
+    "torch_api": "torch_npu.npu_moe_distribute_combine_v2",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/074_npu_moe_distribute_combine_v2/op-plugin/test/test_custom_ops/test_moe_distribute_combine_v2.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/074_npu_moe_distribute_combine_v2/op-plugin/docs/context/torch_npu-npu_moe_distribute_combine_v2.md",
+      "D:/pangu_workspace/ops_gate/074_npu_moe_distribute_combine_v2/op-plugin/docs/context/torch_npu-npu_moe_distribute_dispatch_v2.md",
+      "D:/pangu_workspace/ops_gate/074_npu_moe_distribute_combine_v2/op-plugin/docs/context/torch_npu-npu_moe_update_expert.md",
+      "D:/pangu_workspace/ops_gate/074_npu_moe_distribute_combine_v2/op-plugin/docs/context/torch_npu_list.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "op-plugin"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 8
+  },
+  {
+    "row": 75,
+    "operator_dir": "075_npu_moe_distribute_dispatch_v2",
+    "slug": "moe-distribute-dispatch-v2",
+    "case_id": "OP-MOE-DISTRIBUTE-DISPATCH-V2-001",
+    "torch_api": "torch_npu.npu_moe_distribute_dispatch_v2",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/075_npu_moe_distribute_dispatch_v2/op-plugin/test/test_custom_ops/test_moe_distribute_dispatch_v2.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/075_npu_moe_distribute_dispatch_v2/op-plugin/docs/context/torch_npu-npu_moe_distribute_combine_add_rms_norm.md",
+      "D:/pangu_workspace/ops_gate/075_npu_moe_distribute_dispatch_v2/op-plugin/docs/context/torch_npu-npu_moe_distribute_combine_v2.md",
+      "D:/pangu_workspace/ops_gate/075_npu_moe_distribute_dispatch_v2/op-plugin/docs/context/torch_npu-npu_moe_distribute_dispatch_v2.md",
+      "D:/pangu_workspace/ops_gate/075_npu_moe_distribute_dispatch_v2/op-plugin/docs/context/torch_npu-npu_moe_update_expert.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "op-plugin"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 8
+  },
+  {
+    "row": 76,
+    "operator_dir": "076_npu_moe_finalize_routing",
+    "slug": "moe-finalize-routing",
+    "case_id": "OP-MOE-FINALIZE-ROUTING-001",
+    "torch_api": "torch_npu.npu_moe_finalize_routing",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/076_npu_moe_finalize_routing/op-plugin/test/test_custom_ops/test_npu_moe_finalize_routing_v2.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/076_npu_moe_finalize_routing/op-plugin/docs/context/torch_npu-npu_moe_finalize_routing.md",
+      "D:/pangu_workspace/ops_gate/076_npu_moe_finalize_routing/op-plugin/docs/context/torch_npu_list.md",
+      "D:/pangu_workspace/ops_gate/076_npu_moe_finalize_routing/op-plugin/docs/menu_Pytorch_API.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "op-plugin",
+      "torch_npu"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 14
+  },
+  {
+    "row": 78,
+    "operator_dir": "078_npu_moe_gating_top_k",
+    "slug": "moe-gating-top-k",
+    "case_id": "OP-MOE-GATING-TOP-K-001",
+    "torch_api": "torch_npu.npu_moe_gating_top_k",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/078_npu_moe_gating_top_k/op-plugin/test/test_custom_ops/test_npu_moe_gating_topk.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/078_npu_moe_gating_top_k/op-plugin/docs/context/torch_npu-npu_moe_gating_top_k.md",
+      "D:/pangu_workspace/ops_gate/078_npu_moe_gating_top_k/op-plugin/docs/context/torch_npu-npu_moe_gating_top_k_softmax.md",
+      "D:/pangu_workspace/ops_gate/078_npu_moe_gating_top_k/op-plugin/docs/context/torch_npu-npu_moe_init_routing.md",
+      "D:/pangu_workspace/ops_gate/078_npu_moe_gating_top_k/op-plugin/docs/context/torch_npu-npu_moe_init_routing_v2.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "op-plugin",
+      "torch_npu"
+    ],
+    "reference_status": "direct",
+    "expected_result_status": "not_run",
+    "copied_files": 10
+  },
+  {
+    "row": 80,
+    "operator_dir": "080_npu_moe_gating_top_k_softmax",
+    "slug": "moe-gating-top-k-softmax",
+    "case_id": "OP-MOE-GATING-TOP-K-SOFTMAX-001",
+    "torch_api": "torch_npu.npu_moe_gating_top_k_softmax",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/080_npu_moe_gating_top_k_softmax/op-plugin/test/test_custom_ops/test_npu_moe_gating_top_k_softmax.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/080_npu_moe_gating_top_k_softmax/op-plugin/docs/context/torch_npu-npu_moe_gating_top_k_softmax.md",
+      "D:/pangu_workspace/ops_gate/080_npu_moe_gating_top_k_softmax/op-plugin/docs/context/torch_npu-npu_moe_init_routing.md",
+      "D:/pangu_workspace/ops_gate/080_npu_moe_gating_top_k_softmax/op-plugin/docs/context/torch_npu-npu_moe_init_routing_v2.md",
+      "D:/pangu_workspace/ops_gate/080_npu_moe_gating_top_k_softmax/op-plugin/docs/context/torch_npu_list.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "op-plugin",
+      "torch_npu"
+    ],
+    "reference_status": "direct",
+    "expected_result_status": "not_run",
+    "copied_files": 10
+  },
+  {
+    "row": 82,
+    "operator_dir": "082_npu_moe_init_routing",
+    "slug": "moe-init-routing",
+    "case_id": "OP-MOE-INIT-ROUTING-001",
+    "torch_api": "torch_npu.npu_moe_init_routing",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/082_npu_moe_init_routing/op-plugin/test/test_custom_ops/test_npu_moe_init_routing.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/082_npu_moe_init_routing/op-plugin/docs/context/torch_npu-npu_moe_init_routing.md",
+      "D:/pangu_workspace/ops_gate/082_npu_moe_init_routing/op-plugin/docs/context/torch_npu-npu_moe_init_routing_v2.md",
+      "D:/pangu_workspace/ops_gate/082_npu_moe_init_routing/op-plugin/docs/context/torch_npu_list.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "op-plugin",
+      "torch_npu"
+    ],
+    "reference_status": "direct",
+    "expected_result_status": "not_run",
+    "copied_files": 12
+  },
+  {
+    "row": 84,
+    "operator_dir": "084_npu_moe_init_routing_v2",
+    "slug": "moe-init-routing-v2",
+    "case_id": "OP-MOE-INIT-ROUTING-V2-001",
+    "torch_api": "torch_npu.npu_moe_init_routing_v2",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/084_npu_moe_init_routing_v2/op-plugin/test/test_custom_ops/test_npu_moe_init_routing_v2.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/084_npu_moe_init_routing_v2/op-plugin/docs/context/torch_npu-npu_moe_init_routing_v2.md",
+      "D:/pangu_workspace/ops_gate/084_npu_moe_init_routing_v2/op-plugin/docs/context/torch_npu_list.md",
+      "D:/pangu_workspace/ops_gate/084_npu_moe_init_routing_v2/op-plugin/docs/menu_Pytorch_API.md"
+    ],
+    "reference_impls": [
+      "D:/pangu_workspace/ops_gate/084_npu_moe_init_routing_v2/op-plugin/op_plugin/ops/opapi/MoeInitRoutingV2KernelNpuOpApi.cpp"
+    ],
+    "source_repos": [
+      "op-plugin"
+    ],
+    "reference_status": "direct",
+    "expected_result_status": "not_run",
+    "copied_files": 8
+  },
+  {
+    "row": 85,
+    "operator_dir": "085_npu_moe_re_routing",
+    "slug": "moe-re-routing",
+    "case_id": "OP-MOE-RE-ROUTING-001",
+    "torch_api": "torch_npu.npu_moe_re_routing",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "aclnn-docs-derived",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/085_npu_moe_re_routing/op-plugin/test/core_tests/torch_npu_OpApi_schema_all.json"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/085_npu_moe_re_routing/op-plugin/docs/context/torch_npu-npu_moe_re_routing.md",
+      "D:/pangu_workspace/ops_gate/085_npu_moe_re_routing/op-plugin/docs/context/torch_npu_list.md",
+      "D:/pangu_workspace/ops_gate/085_npu_moe_re_routing/op-plugin/docs/menu_Pytorch_API.md"
+    ],
+    "reference_impls": [
+      "D:/pangu_workspace/ops_gate/085_npu_moe_re_routing/op-plugin/op_plugin/ops/opapi/MoeReRoutingOpApi.cpp"
+    ],
+    "source_repos": [
+      "op-plugin"
+    ],
+    "reference_status": "indirect",
+    "expected_result_status": "not_run",
+    "copied_files": 7
+  },
+  {
+    "row": 87,
+    "operator_dir": "087_npu_mrope",
+    "slug": "mrope",
+    "case_id": "OP-MROPE-001",
+    "torch_api": "torch_npu.npu_mrope",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/087_npu_mrope/op-plugin/test/test_base_ops/test_mrope.py"
+    ],
+    "reference_docs": [],
+    "reference_impls": [],
+    "source_repos": [
+      "op-plugin"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 6
+  },
+  {
+    "row": 88,
+    "operator_dir": "088_npu_prefetch",
+    "slug": "prefetch",
+    "case_id": "OP-PREFETCH-001",
+    "torch_api": "torch_npu.npu_prefetch",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/088_npu_prefetch/op-plugin/test/test_v2r4_ops/test_npu_prefetch.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/088_npu_prefetch/op-plugin/docs/context/torch_npu-npu_prefetch.md",
+      "D:/pangu_workspace/ops_gate/088_npu_prefetch/op-plugin/docs/context/torch_npu_list.md",
+      "D:/pangu_workspace/ops_gate/088_npu_prefetch/op-plugin/docs/menu_Pytorch_API.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "op-plugin",
+      "torch_npu"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 12
+  },
+  {
+    "row": 89,
+    "operator_dir": "089_npu_quant_lightning_indexer",
+    "slug": "quant-lightning-indexer",
+    "case_id": "OP-QUANT-LIGHTNING-INDEXER-001",
+    "torch_api": "torch_npu.npu_quant_lightning_indexer",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/089_npu_quant_lightning_indexer/op-plugin/test/test_custom_ops/test_npu_quant_lightning_indexer.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/089_npu_quant_lightning_indexer/op-plugin/docs/context/torch_npu-npu_quant_lightning_indexer.md",
+      "D:/pangu_workspace/ops_gate/089_npu_quant_lightning_indexer/op-plugin/docs/context/torch_npu_list.md",
+      "D:/pangu_workspace/ops_gate/089_npu_quant_lightning_indexer/op-plugin/docs/menu_Pytorch_API.md"
+    ],
+    "reference_impls": [
+      "D:/pangu_workspace/ops_gate/089_npu_quant_lightning_indexer/op-plugin/op_plugin/ops/opapi/QuantLightningIndexerKernelNpuOpApi.cpp"
+    ],
+    "source_repos": [
+      "op-plugin"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 8
+  },
+  {
+    "row": 90,
+    "operator_dir": "090_npu_quant_matmul",
+    "slug": "quant-matmul",
+    "case_id": "OP-QUANT-MATMUL-001",
+    "torch_api": "torch_npu.npu_quant_matmul",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/090_npu_quant_matmul/op-plugin/test/test_custom_ops/test_npu_quant_matmul.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/090_npu_quant_matmul/op-plugin/docs/context/torch_npu-contrib-module-LinearA8W8Quant.md",
+      "D:/pangu_workspace/ops_gate/090_npu_quant_matmul/op-plugin/docs/context/torch_npu-contrib-module-LinearQuant.md",
+      "D:/pangu_workspace/ops_gate/090_npu_quant_matmul/op-plugin/docs/context/torch_npu-contrib_list.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "op-plugin",
+      "torch_npu"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 15
+  },
+  {
+    "row": 91,
+    "operator_dir": "091_npu_rms_norm",
+    "slug": "rms-norm",
+    "case_id": "OP-RMSNORM-001",
+    "torch_api": "torch_npu.npu_rms_norm",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/091_npu_rms_norm/op-plugin/test/test_custom_ops/test_npu_rms_norm.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/091_npu_rms_norm/op-plugin/docs/context/torch_npu-npu_moe_distribute_combine_add_rms_norm.md",
+      "D:/pangu_workspace/ops_gate/091_npu_rms_norm/op-plugin/docs/context/torch_npu-npu_moe_distribute_dispatch_v2.md",
+      "D:/pangu_workspace/ops_gate/091_npu_rms_norm/op-plugin/docs/context/torch_npu_list.md",
+      "D:/pangu_workspace/ops_gate/091_npu_rms_norm/op-plugin/docs/menu_Pytorch_API.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "MindSpore",
+      "PyTorch",
+      "op-plugin",
+      "torch_npu"
+    ],
+    "reference_status": "direct",
+    "expected_result_status": "not_run",
+    "copied_files": 34
+  },
+  {
+    "row": 92,
+    "operator_dir": "092_npu_rotary_mul",
+    "slug": "rotary-mul",
+    "case_id": "OP-ROTARY-MUL-001",
+    "torch_api": "torch_npu.npu_rotary_mul",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/092_npu_rotary_mul/torch_npu/test/custom_ops/test_npu_rotary_mul.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/092_npu_rotary_mul/op-plugin/docs/context/torch_npu-npu_rotary_mul.md",
+      "D:/pangu_workspace/ops_gate/092_npu_rotary_mul/op-plugin/docs/context/torch_npu_list.md",
+      "D:/pangu_workspace/ops_gate/092_npu_rotary_mul/op-plugin/docs/menu_Pytorch_API.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "op-plugin",
+      "torch_npu"
+    ],
+    "reference_status": "direct",
+    "expected_result_status": "not_run",
+    "copied_files": 16
+  },
+  {
+    "row": 93,
+    "operator_dir": "093_npu_scatter_nd_update",
+    "slug": "scatter-nd-update",
+    "case_id": "OP-SCATTER-ND-UPDATE-001",
+    "torch_api": "torch_npu.npu_scatter_nd_update_",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/093_npu_scatter_nd_update/torch_npu/test/custom_ops/test_functionalization.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/093_npu_scatter_nd_update/op-plugin/docs/context/torch_npu-npu_scatter_nd_update_.md",
+      "D:/pangu_workspace/ops_gate/093_npu_scatter_nd_update/op-plugin/docs/context/torch_npu_list.md",
+      "D:/pangu_workspace/ops_gate/093_npu_scatter_nd_update/op-plugin/docs/menu_Pytorch_API.md"
+    ],
+    "reference_impls": [
+      "D:/pangu_workspace/ops_gate/093_npu_scatter_nd_update/op-plugin/op_plugin/ops/opapi/ScatterNdUpdateKernelNpuOpApi.cpp"
+    ],
+    "source_repos": [
+      "op-plugin",
+      "torch_npu"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 9
+  },
+  {
+    "row": 94,
+    "operator_dir": "094_npu_scatter_pa_kv_cache",
+    "slug": "scatter-pa-kv-cache",
+    "case_id": "OP-SCATTER-PA-KV-CACHE-001",
+    "torch_api": "torch_npu.npu_scatter_pa_kv_cache",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/094_npu_scatter_pa_kv_cache/op-plugin/test/test_custom_ops/test_scatter_pa_kv_cache.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/094_npu_scatter_pa_kv_cache/op-plugin/docs/context/torch_npu-npu_scatter_pa_kv_cache.md",
+      "D:/pangu_workspace/ops_gate/094_npu_scatter_pa_kv_cache/op-plugin/docs/context/torch_npu_list.md",
+      "D:/pangu_workspace/ops_gate/094_npu_scatter_pa_kv_cache/op-plugin/docs/menu_Pytorch_API.md"
+    ],
+    "reference_impls": [
+      "D:/pangu_workspace/ops_gate/094_npu_scatter_pa_kv_cache/op-plugin/op_plugin/ops/opapi/ScatterPaKvCacheNpuOpApi.cpp"
+    ],
+    "source_repos": [
+      "op-plugin"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 8
+  },
+  {
+    "row": 95,
+    "operator_dir": "095_npu_swiglu",
+    "slug": "swiglu",
+    "case_id": "OP-SWIGLU-001",
+    "torch_api": "torch_npu.npu_swiglu",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/095_npu_swiglu/op-plugin/test/test_custom_ops/test_npu_swi_glu.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/095_npu_swiglu/op-plugin/docs/context/torch_npu-npu_swiglu_quant.md",
+      "D:/pangu_workspace/ops_gate/095_npu_swiglu/op-plugin/docs/context/torch_npu-set_stream_limit.md",
+      "D:/pangu_workspace/ops_gate/095_npu_swiglu/op-plugin/docs/context/torch_npu_list.md"
+    ],
+    "reference_impls": [
+      "D:/pangu_workspace/ops_gate/095_npu_swiglu/MindSpore/tests/st/custom/custom_op_builder/pyboost/jit_test_files/atb_swiglu.cpp"
+    ],
+    "source_repos": [
+      "MindSpore",
+      "op-plugin",
+      "torch_npu"
+    ],
+    "reference_status": "direct",
+    "expected_result_status": "not_run",
+    "copied_files": 13
+  },
+  {
+    "row": 96,
+    "operator_dir": "096_npu_top_k_top_p_sample",
+    "slug": "top-k-top-p-sample",
+    "case_id": "OP-TOP-K-TOP-P-SAMPLE-001",
+    "torch_api": "torch_npu.npu_top_k_top_p_sample",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/096_npu_top_k_top_p_sample/op-plugin/test/test_custom_ops/test_top_k_top_p_sample.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/096_npu_top_k_top_p_sample/op-plugin/docs/context/torch_npu-npu_top_k_top_p_sample.md",
+      "D:/pangu_workspace/ops_gate/096_npu_top_k_top_p_sample/op-plugin/docs/context/torch_npu_list.md",
+      "D:/pangu_workspace/ops_gate/096_npu_top_k_top_p_sample/op-plugin/docs/menu_Pytorch_API.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "op-plugin"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 7
+  },
+  {
+    "row": 97,
+    "operator_dir": "097_npu_transpose_batchmatmul",
+    "slug": "transpose-batchmatmul",
+    "case_id": "OP-TRANSPOSE-BATCHMATMUL-001",
+    "torch_api": "torch_npu.npu_transpose_batchmatmul",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/097_npu_transpose_batchmatmul/op-plugin/test/test_custom_ops/test_npu_transpose_batchmatmul.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/097_npu_transpose_batchmatmul/op-plugin/docs/context/torch_npu-npu_transpose_batchmatmul.md",
+      "D:/pangu_workspace/ops_gate/097_npu_transpose_batchmatmul/op-plugin/docs/context/torch_npu_list.md",
+      "D:/pangu_workspace/ops_gate/097_npu_transpose_batchmatmul/op-plugin/docs/menu_Pytorch_API.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "op-plugin"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 8
+  },
+  {
+    "row": 98,
+    "operator_dir": "098_npu_ai_infra_quant_lightning_indexer",
+    "slug": "ai-infra-quant-lightning-indexer",
+    "case_id": "OP-AI-INFRA-QUANT-LIGHTNING-INDEXER-001",
+    "torch_api": "torch_npu.torch.ops.custom.npu_ai_infra_quant_lightning_indexer",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "manual-from-metadata",
+    "reference_tests": [],
+    "reference_docs": [],
+    "reference_impls": [],
+    "source_repos": [],
+    "reference_status": "missing",
+    "expected_result_status": "blocked",
+    "copied_files": 0
+  },
+  {
+    "row": 501,
+    "operator_dir": "501_npu_flash_attention_unpad",
+    "slug": "flash-attention-unpad",
+    "case_id": "OP-FLASH-ATTENTION-UNPAD-001",
+    "torch_api": "torch_npu._npu_flash_attention_unpad",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/501_npu_flash_attention_unpad/op-plugin/test/test_custom_ops/test_atb_flash_attention_unpad.py"
+    ],
+    "reference_docs": [],
+    "reference_impls": [
+      "D:/pangu_workspace/ops_gate/501_npu_flash_attention_unpad/op-plugin/op_plugin/ops/atb/SelfAttentionUnpadAtb.cpp"
+    ],
+    "source_repos": [
+      "op-plugin"
+    ],
+    "reference_status": "direct",
+    "expected_result_status": "not_run",
+    "copied_files": 3
+  },
+  {
+    "row": 502,
+    "operator_dir": "502_npu_recurrent_gated_delta_rule",
+    "slug": "recurrent-gated-delta-rule",
+    "case_id": "OP-RECURRENT-GATED-DELTA-RULE-001",
+    "torch_api": "torch_npu.npu_recurrent_gated_delta_rule",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/502_npu_recurrent_gated_delta_rule/op-plugin/test/test_custom_ops/test_npu_recurrent_gated_delta_rule.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/502_npu_recurrent_gated_delta_rule/op-plugin/codegen/templates/_op_plugin_docs.py",
+      "D:/pangu_workspace/ops_gate/502_npu_recurrent_gated_delta_rule/op-plugin/docs/context/torch_npu-npu_recurrent_gated_delta_rule.md",
+      "D:/pangu_workspace/ops_gate/502_npu_recurrent_gated_delta_rule/op-plugin/docs/context/torch_npu_list.md",
+      "D:/pangu_workspace/ops_gate/502_npu_recurrent_gated_delta_rule/op-plugin/docs/menu_Pytorch_API.md"
+    ],
+    "reference_impls": [
+      "D:/pangu_workspace/ops_gate/502_npu_recurrent_gated_delta_rule/op-plugin/op_plugin/ops/opapi/RecurrentGatedDeltaRuleKernelNpuOpApi.cpp"
+    ],
+    "source_repos": [
+      "op-plugin",
+      "torch_npu"
+    ],
+    "reference_status": "skipped",
+    "expected_result_status": "xfail",
+    "copied_files": 12
+  },
+  {
+    "row": 503,
+    "operator_dir": "503_npu_swiglu_mx_quant",
+    "slug": "swiglu-mx-quant",
+    "case_id": "OP-SWIGLU-MX-QUANT-001",
+    "torch_api": "torch_npu.npu_swiglu_mx_quant",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "manual-from-metadata",
+    "reference_tests": [],
+    "reference_docs": [],
+    "reference_impls": [],
+    "source_repos": [],
+    "reference_status": "missing",
+    "expected_result_status": "blocked",
+    "copied_files": 0
+  },
+  {
+    "row": 504,
+    "operator_dir": "504_npu_trans_quant_param",
+    "slug": "trans-quant-param",
+    "case_id": "OP-TRANS-QUANT-PARAM-001",
+    "torch_api": "torch_npu.npu_trans_quant_param",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/504_npu_trans_quant_param/op-plugin/test/test_custom_ops/test_npu_trans_quant_param.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/504_npu_trans_quant_param/op-plugin/codegen/templates/_op_plugin_docs.py",
+      "D:/pangu_workspace/ops_gate/504_npu_trans_quant_param/op-plugin/docs/context/torch_npu-contrib-module-LinearA8W8Quant.md",
+      "D:/pangu_workspace/ops_gate/504_npu_trans_quant_param/op-plugin/docs/context/torch_npu-contrib-module-LinearQuant.md",
+      "D:/pangu_workspace/ops_gate/504_npu_trans_quant_param/op-plugin/docs/context/torch_npu-contrib-module-LinearWeightQuant.md"
+    ],
+    "reference_impls": [],
+    "source_repos": [
+      "op-plugin",
+      "torch_npu"
+    ],
+    "reference_status": "direct",
+    "expected_result_status": "not_run",
+    "copied_files": 16
+  },
+  {
+    "row": 505,
+    "operator_dir": "505_npu_fused_infer_attention_sink_metadata",
+    "slug": "fused-infer-attention-sink-metadata",
+    "case_id": "OP-FUSED-INFER-ATTENTION-SINK-METADATA-001",
+    "torch_api": "torch.ops.custom._npu_fused_infer_attention_sink_metadata",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/505_npu_fused_infer_attention_sink_metadata/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_fused_infer_attention_sink_metadata/tests/st/test_npu_fused_infer_attention_sink_metadata.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/505_npu_fused_infer_attention_sink_metadata/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_fused_infer_attention_sink/docs/npu_fused_infer_attention_sink.md",
+      "D:/pangu_workspace/ops_gate/505_npu_fused_infer_attention_sink_metadata/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_fused_infer_attention_sink_metadata/docs/aclnnAiInfraFusedInferAttentionSinkMetadata.md",
+      "D:/pangu_workspace/ops_gate/505_npu_fused_infer_attention_sink_metadata/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_fused_infer_attention_sink_metadata/docs/aclnnAiInfraFusedInferAttentionSinkMetadataV2.md",
+      "D:/pangu_workspace/ops_gate/505_npu_fused_infer_attention_sink_metadata/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_fused_infer_attention_sink_metadata/docs/npu_fused_infer_attention_sink_metadata.md"
+    ],
+    "reference_impls": [
+      "D:/pangu_workspace/ops_gate/505_npu_fused_infer_attention_sink_metadata/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_fused_infer_attention_sink_metadata/op_api/aclnn_ai_infra_fused_infer_attention_sink_metadata.cpp",
+      "D:/pangu_workspace/ops_gate/505_npu_fused_infer_attention_sink_metadata/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_fused_infer_attention_sink_metadata/op_api/aclnn_ai_infra_fused_infer_attention_sink_metadata.h",
+      "D:/pangu_workspace/ops_gate/505_npu_fused_infer_attention_sink_metadata/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_fused_infer_attention_sink_metadata/op_api/aclnn_ai_infra_fused_infer_attention_sink_metadata_v2.cpp",
+      "D:/pangu_workspace/ops_gate/505_npu_fused_infer_attention_sink_metadata/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_fused_infer_attention_sink_metadata/op_api/aclnn_ai_infra_fused_infer_attention_sink_metadata_v2.h"
+    ],
+    "source_repos": [
+      "omni-ops"
+    ],
+    "reference_status": "direct",
+    "expected_result_status": "not_run",
+    "copied_files": 30
+  },
+  {
+    "row": 506,
+    "operator_dir": "506_npu_chunk_gated_delta_rule_recurrence",
+    "slug": "chunk-gated-delta-rule-recurrence",
+    "case_id": "OP-CHUNK-GATED-DELTA-RULE-RECURRENCE-001",
+    "torch_api": "torch.ops.custom.npu_chunk_gated_delta_rule_recurrence",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "direct-copy-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/506_npu_chunk_gated_delta_rule_recurrence/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_chunk_gated_delta_rule_recurrence/tests/st/test_chunk_gated_delta_rule_recurrence.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/506_npu_chunk_gated_delta_rule_recurrence/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_chunk_gated_delta_rule_recurrence/docs/aclnnAiInfraChunkGatedDeltaRuleRecurrence.md",
+      "D:/pangu_workspace/ops_gate/506_npu_chunk_gated_delta_rule_recurrence/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_chunk_gated_delta_rule_recurrence/docs/npu_chunk_gated_delta_rule_recurrence.md"
+    ],
+    "reference_impls": [
+      "D:/pangu_workspace/ops_gate/506_npu_chunk_gated_delta_rule_recurrence/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_chunk_gated_delta_rule_recurrence/op_host/CMakeLists.txt",
+      "D:/pangu_workspace/ops_gate/506_npu_chunk_gated_delta_rule_recurrence/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_chunk_gated_delta_rule_recurrence/op_host/ai_infra_chunk_gated_delta_rule_recurrence_def.cpp",
+      "D:/pangu_workspace/ops_gate/506_npu_chunk_gated_delta_rule_recurrence/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_chunk_gated_delta_rule_recurrence/op_host/chunk_gated_delta_rule_recurrence_proto.cpp",
+      "D:/pangu_workspace/ops_gate/506_npu_chunk_gated_delta_rule_recurrence/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_chunk_gated_delta_rule_recurrence/op_host/chunk_gated_delta_rule_recurrence_tiling.cpp"
+    ],
+    "source_repos": [
+      "omni-ops"
+    ],
+    "reference_status": "direct",
+    "expected_result_status": "not_run",
+    "copied_files": 24
+  },
+  {
+    "row": 507,
+    "operator_dir": "507_npu_lower_triangular_inverse",
+    "slug": "lower-triangular-inverse",
+    "case_id": "OP-LOWER-TRIANGULAR-INVERSE-001",
+    "torch_api": "torch.ops.custom.npu_lower_triangular_inverse",
+    "repo_target": "ms_custom_ops",
+    "watch_type": "custom_op_acceptance",
+    "custom_op_required": true,
+    "generation_mode": "adapt-reference",
+    "reference_tests": [
+      "D:/pangu_workspace/ops_gate/507_npu_lower_triangular_inverse/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_lower_triangular_inverse/tests/st/test_lower_triangular_inverse.py"
+    ],
+    "reference_docs": [
+      "D:/pangu_workspace/ops_gate/507_npu_lower_triangular_inverse/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_lower_triangular_inverse/docs/aclnnAiInfraLowerTriangularInverse.md",
+      "D:/pangu_workspace/ops_gate/507_npu_lower_triangular_inverse/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_lower_triangular_inverse/docs/npu_lower_triangular_inverse.md"
+    ],
+    "reference_impls": [
+      "D:/pangu_workspace/ops_gate/507_npu_lower_triangular_inverse/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_lower_triangular_inverse/op_api/aclnn_ai_infra_lower_triangular_inverse.cpp",
+      "D:/pangu_workspace/ops_gate/507_npu_lower_triangular_inverse/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_lower_triangular_inverse/op_api/aclnn_ai_infra_lower_triangular_inverse.h",
+      "D:/pangu_workspace/ops_gate/507_npu_lower_triangular_inverse/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_lower_triangular_inverse/op_api/ai_infra_lower_triangular_inverse.cpp",
+      "D:/pangu_workspace/ops_gate/507_npu_lower_triangular_inverse/omni-ops/inference/ascendc/src/ops-transformer/attention/ai_infra_lower_triangular_inverse/op_api/ai_infra_lower_triangular_inverse.h"
+    ],
+    "source_repos": [
+      "omni-ops"
+    ],
+    "reference_status": "runnable",
+    "expected_result_status": "not_run",
+    "copied_files": 29
+  }
+]

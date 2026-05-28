@@ -17,7 +17,6 @@ Do not mark an OP case as `pass` based only on reference docs, MindSpore API tes
 | --- | --- | --- | --- |
 | `OP-RMSNORM-001` | RMSNorm API equivalence watch | `acceptance/references/OP-RMSNORM-001.reference.md` | Real artifact pass means API equivalence/watch evidence only, not custom-op acceptance. |
 | `OP-ADD-RMSNORM-001` | Add-RMSNorm custom-op acceptance | `acceptance/references/OP-ADD-RMSNORM-001.reference.md` | Skeleton/reference only; actual collection is blocked until the custom op exists. |
-| `OP-KV-UPDATE-001` | KV/cache inplace side-effect semantics | `acceptance/references/OP-KV-UPDATE-001.reference.md` | Skeleton contract only; missing real side-effect artifacts means `not_run`. |
 | `BR-WRAPPER-001` | Bridge wrapper control-flow and restore contract | `acceptance/references/BR-WRAPPER-001.reference.md` | Fake contract can pass without NPU; real pass requires real `MSBridgeWrapper` and runtime path. |
 
 ## Boundaries
